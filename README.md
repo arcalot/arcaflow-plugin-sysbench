@@ -6,6 +6,13 @@ using the [Arcaflow python SDK](https://github.com/arcalot/arcaflow-plugin-sdk-p
 Supported sysbench input parameters are defined in the `SysbenchInputParams` schema of the [sysbench_plugin.py](sysbench_plugin.py) file.
 You define your test parameters in a YAML file to be passed to the plugin command as shown in either [sysbench_cpu_example.yaml](sysbench_cpu_example.yaml) or [sysbench_memory_example.yaml](sysbench_memory_example.yaml).
 
+## Image Building
+
+You can change this plugin's image version tag in
+`.github/workflows/carpenter.yaml` by editing the
+`IMAGE_TAG` variable, and pushing that change to the
+branch designated in that workflow.
+
 ## To test:
 
 In order to run the [arca-sysbench plugin](sysbench_plugin.py) run the following steps:
@@ -18,7 +25,7 @@ In order to run the [arca-sysbench plugin](sysbench_plugin.py) run the following
 
 
 ### Native
-*Prerequisite: sysbench should already be installed on your system.* 
+*Prerequisite: sysbench should already be installed on your system.*
 
 1. Clone this repository
 2. Create a `venv` in the current directory with `python3 -m venv $(pwd)/venv`
