@@ -24,7 +24,7 @@ ENTRYPOINT ["python3.9", "/sysbench/sysbench_plugin.py"]
 CMD []
 
 LABEL org.opencontainers.image.title="Sysbench Arcalot Plugin"
-LABEL org.opencontainers.image.source="https://github.com/arcalot/arcaflow-plugins/tree/main/python/sysbench"
+LABEL org.opencontainers.image.source="https://github.com/arcalot/arcaflow-plugin-sysbench"
 LABEL org.opencontainers.image.licenses="Apache-2.0+GPL-2.0-only"
 LABEL org.opencontainers.image.vendor="Arcalot project"
 LABEL org.opencontainers.image.authors="Arcalot contributors"
