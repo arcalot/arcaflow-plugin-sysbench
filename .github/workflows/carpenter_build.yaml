@@ -3,7 +3,7 @@ on:
   pull_request:
 env:
   IMAGE_NAME: arcaflow-plugin-sysbench
-  IMAGE_TAG: 'dev-build'
+  IMAGE_TAG: 'latest'
   GITHUB_USERNAME: ${{ github.actor }}
   GITHUB_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
   GITHUB_NAMESPACE: ${{ github.repository_owner }}
