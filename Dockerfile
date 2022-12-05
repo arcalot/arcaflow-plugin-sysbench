@@ -10,6 +10,7 @@ ADD README.md /sysbench/
 ADD poetry.lock /sysbench/
 ADD pyproject.toml /sysbench/
 ADD sysbench_plugin.py /sysbench/
+ADD sysbench_schema.py /sysbench/
 ADD test_sysbench_plugin.py /sysbench/
 ADD tests /sysbench/tests/
 ADD configs /sysbench/configs/
