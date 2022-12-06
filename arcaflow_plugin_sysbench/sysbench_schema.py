@@ -4,12 +4,7 @@ from arcaflow_plugin_sdk import plugin
 
 
 @dataclass
-class SysbenchCpuInputParams:
-    """
-    This is the data structure for the
-    input parameters of Sysbench CPU benchmark.
-    """
-
+class CommonInputParameters:
     operation: str = field(
         metadata={
             "name": "Operation",
@@ -28,15 +23,6 @@ class SysbenchCpuInputParams:
         metadata={
             "name": "Number of events",
             "description": "Maximum number of events",
-        },
-    )
-    cpumaxprime: typing.Optional[int] = field(
-        default=10000,
-        metadata={
-            "name": "CPU max prime",
-            "description": (
-                "The upper limit of the number of prime numbers generated"
-            ),
         },
     )
     time: typing.Optional[int] = field(
@@ -49,39 +35,30 @@ class SysbenchCpuInputParams:
 
 
 @dataclass
-class SysbenchMemoryInputParams:
+class SysbenchCpuInputParams(CommonInputParameters):
+    """
+    This is the data structure for the
+    input parameters of Sysbench CPU benchmark.
+    """
+
+    cpumaxprime: typing.Optional[int] = field(
+        default=10000,
+        metadata={
+            "name": "CPU max prime",
+            "description": (
+                "The upper limit of the number of prime numbers generated"
+            ),
+        },
+    )
+
+
+@dataclass
+class SysbenchMemoryInputParams(CommonInputParameters):
     """
     This is the data structure for the
     input parameters of Sysbench Memory benchmark.
     """
 
-    operation: str = field(
-        metadata={
-            "name": "Operation",
-            "description": "Sysbench Operation to perform",
-        }
-    )
-    threads: typing.Optional[int] = field(
-        default=1,
-        metadata={
-            "name": "Threads",
-            "description": "Number of worker threads to create",
-        },
-    )
-    events: typing.Optional[int] = field(
-        default=0,
-        metadata={
-            "name": "Number of events",
-            "description": "Maximum number of events",
-        },
-    )
-    time: typing.Optional[int] = field(
-        default=10,
-        metadata={
-            "name": "Time",
-            "description": "Limit for total execution time in seconds",
-        },
-    )
     memoryblocksize: typing.Optional[str] = field(
         default="1KiB",
         metadata={
@@ -403,7 +380,6 @@ class WorkloadError:
     error: str = field(
         metadata={"name": "Failure Error", "description": "Reason for failure"}
     )
-
 
 sysbench_cpu_output_schema = plugin.build_object_schema(
     SysbenchCpuOutputParams
