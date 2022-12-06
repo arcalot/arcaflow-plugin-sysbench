@@ -1,0 +1,9 @@
+version: '3.2'
+services:
+  plugin:
+    image: ghcr.io/arcalot/arcaflow-plugin-sysbench
+    build: .
+    volumes:
+      - source: ./configs/sysbench_cpu_example.yaml
+        target: /config/sysbench_cpu_example.yaml
+        type: bind
