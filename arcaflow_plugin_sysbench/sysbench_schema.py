@@ -1,7 +1,26 @@
+import enum
 import typing
 from dataclasses import dataclass
-from arcaflow_plugin_sdk import plugin, schema
+from arcaflow_plugin_sdk import plugin, schema, validation
 
+class RandType(enum.Enum):
+    UNIFORM = "uniform"
+    GAUSSIAN = "gaussian"
+    SPECIAL = "special"
+    PARETO = "pareto"
+
+class SeqRnd(enum.Enum):
+    SEQ = "seq"
+    RND = "rnd"
+
+class GlobalLocal(enum.Enum):
+    GLOBAL = "global"
+    LOCAL = "local"
+
+class RWN(enum.Enum):
+    READ = "read"
+    WRITE = "write"
+    NONE = "none"
 
 @dataclass
 class CommonInputParameters:
@@ -20,6 +39,101 @@ class CommonInputParameters:
         schema.name("Time"),
         schema.description("Limit for total execution time in seconds"),
     ] = 10
+    forced_shutdown: typing.Annotated[
+        typing.Optional[int],
+        schema.name("Forced Shutdown Seconds"),
+        schema.description(
+            "Number of seconds to wait after the 'time' limit before forcing" " shutdown, or exclude parameter to disable forced shutdown"
+        ),
+    ] = None
+    thread_stack_size: typing.Annotated[
+        # TODO Convert to size type
+        typing.Optional[str],
+        schema.name("Thread stack size"),
+        schema.description("size of stack per thread"),
+    ] = "64K"
+    rate: typing.Annotated[
+        typing.Optional[int],
+        schema.name("Transaction rate"),
+        schema.description("average transactions rate. 0 for unlimited rate"),
+    ] = 0
+    validate: typing.Annotated[
+        typing.Optional[bool],
+        schema.name("Validate"),
+        schema.description("perform validation checks where possible"),
+    ] = False
+    rand_type: typing.Annotated[
+        typing.Optional[RandType],
+        schema.name("Random Number Type"),
+        schema.description("Random numbers distribution")
+    ] = RandType("special")
+    rand_spec_iter: typing.Annotated[
+        typing.Optional[int],
+        schema.name("Rand spec iterations"),
+        schema.description("Number of iterations used for numbers generation"),
+    ] = 12
+    rand_spec_pct: typing.Annotated[
+        typing.Optional[int],
+        schema.name("Rand spec percentage"),
+        schema.description(
+            "Percentage of values to be treated as 'special' (for special"
+            " distribution)"
+        ),
+    ] = 1
+    rand_spec_res: typing.Annotated[
+        typing.Optional[int],
+        schema.name("Rand spec res"),
+        schema.description(
+            "Percentage of 'special' values to use (for special distribution)"
+        ),
+    ] = 75
+    rand_seed: typing.Annotated[
+        typing.Optional[int],
+        schema.name("Rand seed"),
+        schema.description(
+            "seed for random number generator. When 0, the current time is"
+            " used as a RNG seed."
+        ),
+    ] = 0
+    rand_pareto_h: typing.Annotated[
+        typing.Optional[float],
+        schema.name("Rand pareto h"),
+        schema.description("parameter h for pareto distribution"),
+    ] = 0.2
+    percentile: typing.Annotated[
+        typing.Optional[int],
+        validation.min(0),
+        validation.max(100),
+        schema.name("Percentile"),
+        schema.description(
+            "percentile to calculate in latency statistics (1-100)."
+            " Use the special value of 0 to disable percentile calculations"
+        ),
+    ] = 95
+
+# Other common parameters to consider...
+
+# Implementing report-interval would add periodic output to stdout and a new
+# data format we would need to account for in the parse_output section
+# of the plugin
+#   --report-interval=N             periodically report intermediate statistics with a specified interval in seconds. 0 disables intermediate reports [0]
+
+# Implementing report-checkpoints would dump to stdout a full run output at
+# the checkpoint times, requiring additional processing in the parse_output
+# section of the plugin
+#   --report-checkpoints=[LIST,...] dump full statistics and reset all counters at specified points in time. The argument is a list of comma-separated values representing the amount of time in seconds elapsed from start of test when report checkpoint(s) must be performed. Report checkpoints are off by default. []
+
+# Implementing debug would add more verbose output ot stdout that we would
+# need to adjust parse_output to process.
+#   --debug[=on|off]                print more debugging info [off]
+
+# Implementing verbosity changes the output and would require adjustments to
+# the parse_output process.
+#   --verbosity=N verbosity level {5 - debug, 0 - only critical messages} [3]
+
+# Implementing histogram significantly adds to the output, but this might be
+# valuable information to capture, even by default.
+#   --histogram[=on|off] print latency histogram in report [off]
 
 
 @dataclass
@@ -46,25 +160,37 @@ class SysbenchMemoryInputParams(CommonInputParameters):
     """
 
     memory_block_size: typing.Annotated[
+        # TODO: Convert to size
         typing.Optional[str],
         schema.name("Block Size"),
         schema.description("size of memory block for test in KiB/MiB/GiB"),
     ] = "1KiB"
     memory_total_size: typing.Annotated[
+        # TODO: Convert to size
         typing.Optional[str],
         schema.name("Total Size"),
         schema.description("Total size of data to transfer in GiB"),
     ] = "100G"
     memory_scope: typing.Annotated[
-        typing.Optional[str],
+        typing.Optional[GlobalLocal],
         schema.name("Memory Scope"),
         schema.description("Memory Access Scope(global/local)"),
-    ] = "global"
+    ] = GlobalLocal("global")
     memory_oper: typing.Annotated[
-        typing.Optional[str],
+        typing.Optional[RWN],
         schema.name("Memory Operation"),
         schema.description("Type of memory operation(write/read)"),
-    ] = "write"
+    ] = RWN("write")
+    memory_hugetlb: typing.Annotated[
+        typing.Optional[bool],
+        schema.name("Memory hugetlb"),
+        schema.description("Allocate memory from HugeTLB pool (on/off)"),
+    ] = False
+    memory_access_mode: typing.Annotated[
+        typing.Optional[SeqRnd],
+        schema.name("Memory Access Mode"),
+        schema.description("memory access mode (seq,rnd)"),
+    ] = SeqRnd("seq")
 
 
 @dataclass
