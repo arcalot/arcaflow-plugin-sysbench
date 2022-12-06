@@ -5,12 +5,6 @@ from arcaflow_plugin_sdk import plugin
 
 @dataclass
 class CommonInputParameters:
-    operation: str = field(
-        metadata={
-            "name": "Operation",
-            "description": "Sysbench Operation to perform",
-        }
-    )
     threads: typing.Optional[int] = field(
         default=1,
         metadata={

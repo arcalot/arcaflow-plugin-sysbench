@@ -78,7 +78,7 @@ def parse_output(output):
     return sysbench_output, sysbench_results
 
 
-def run_sysbench(params, flags):
+def run_sysbench(params, flags, operation):
     try:
         cmd = [
             "sysbench",
@@ -86,7 +86,7 @@ def run_sysbench(params, flags):
             "--events=" + str(params.events),
             "--time=" + str(params.time),
         ]
-        cmd = cmd + flags + [params.operation, "run"]
+        cmd = cmd + flags + [operation, "run"]
         process_out = subprocess.check_output(cmd, stderr=subprocess.STDOUT)
     except subprocess.CalledProcessError as error:
         raise Exception(
@@ -125,7 +125,7 @@ def RunSysbenchCpu(
     ]
 
     try:
-        output, results = run_sysbench(params, cpu_flags)
+        output, results = run_sysbench(params, cpu_flags, "cpu")
     except Exception as error:
         return "error", WorkloadError(error.args[0], error.args[1])
 
@@ -159,7 +159,7 @@ def RunSysbenchMemory(
     ]
 
     try:
-        output, results = run_sysbench(params, memory_flags)
+        output, results = run_sysbench(params, memory_flags, "memory")
     except Exception as error:
         return "error", WorkloadError(error.args[0], error.args[1])
 
