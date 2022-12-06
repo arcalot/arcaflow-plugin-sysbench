@@ -148,6 +148,7 @@ def RunSysbenchCpu(
 def RunSysbenchMemory(
     params: SysbenchMemoryInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsMemory, WorkloadError]]:
+    
     print("==>> Running sysbench Memory workload ...")
 
     memory_flags = [
