@@ -121,7 +121,7 @@ def RunSysbenchCpu(
     print("==>> Running sysbench CPU workload ...")
 
     cpu_flags = [
-        "--cpu-max-prime=" + str(params.cpumaxprime),
+        "--cpu-max-prime=" + str(params.cpu_max_prime),
     ]
 
     try:
@@ -152,10 +152,10 @@ def RunSysbenchMemory(
     print("==>> Running sysbench Memory workload ...")
 
     memory_flags = [
-        "--memory-block-size=" + str(params.memoryblocksize),
-        "--memory-total-size=" + str(params.memorytotalsize),
-        "--memory-scope=" + str(params.memoryscope),
-        "--memory-oper=" + str(params.memoryoperation),
+        "--memory-block-size=" + str(params.memory_block_size),
+        "--memory-total-size=" + str(params.memory_total_size),
+        "--memory-scope=" + str(params.memory_scope),
+        "--memory-oper=" + str(params.memory_oper),
     ]
 
     try:

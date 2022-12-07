@@ -29,7 +29,7 @@ class SysbenchCpuInputParams(CommonInputParameters):
     input parameters of Sysbench CPU benchmark.
     """
 
-    cpumaxprime: typing.Annotated[
+    cpu_max_prime: typing.Annotated[
         typing.Optional[int],
         schema.name("CPU max prime"),
         schema.description(
@@ -45,22 +45,22 @@ class SysbenchMemoryInputParams(CommonInputParameters):
     input parameters of Sysbench Memory benchmark.
     """
 
-    memoryblocksize: typing.Annotated[
+    memory_block_size: typing.Annotated[
         typing.Optional[str],
         schema.name("Block Size"),
         schema.description("size of memory block for test in KiB/MiB/GiB"),
     ] = "1KiB"
-    memorytotalsize: typing.Annotated[
+    memory_total_size: typing.Annotated[
         typing.Optional[str],
         schema.name("Total Size"),
         schema.description("Total size of data to transfer in GiB"),
     ] = "100G"
-    memoryscope: typing.Annotated[
+    memory_scope: typing.Annotated[
         typing.Optional[str],
         schema.name("Memory Scope"),
         schema.description("Memory Access Scope(global/local)"),
     ] = "global"
-    memoryoperation: typing.Annotated[
+    memory_oper: typing.Annotated[
         typing.Optional[str],
         schema.name("Memory Operation"),
         schema.description("Type of memory operation(write/read)"),

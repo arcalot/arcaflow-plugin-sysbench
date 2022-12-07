@@ -1,4 +1,4 @@
 threads: 2
 events: 0
 time: 15
-cpumaxprime: 12000
+cpu_max_prime: 12000
