@@ -9,13 +9,11 @@ class SysbenchPluginTest(unittest.TestCase):
     @staticmethod
     def test_serialization():
         plugin.test_object_serialization(
-            sysbench_plugin.SysbenchCpuInputParams(operation="cpu", threads=2)
+            sysbench_plugin.SysbenchCpuInputParams(threads=2)
         )
 
         plugin.test_object_serialization(
-            sysbench_plugin.SysbenchMemoryInputParams(
-                operation="memory", threads=2
-            )
+            sysbench_plugin.SysbenchMemoryInputParams(threads=2)
         )
 
         plugin.test_object_serialization(
@@ -91,9 +89,7 @@ class SysbenchPluginTest(unittest.TestCase):
         )
 
     def test_functional_cpu(self):
-        input = sysbench_plugin.SysbenchCpuInputParams(
-            operation="cpu", threads=2
-        )
+        input = sysbench_plugin.SysbenchCpuInputParams(threads=2)
 
         output_id, output_data = sysbench_plugin.RunSysbenchCpu(input)
 
@@ -118,9 +114,7 @@ class SysbenchPluginTest(unittest.TestCase):
         )
 
     def test_functional_memory(self):
-        input = sysbench_plugin.SysbenchMemoryInputParams(
-            operation="memory", threads=2
-        )
+        input = sysbench_plugin.SysbenchMemoryInputParams(threads=2)
 
         output_id, output_data = sysbench_plugin.RunSysbenchMemory(input)
 

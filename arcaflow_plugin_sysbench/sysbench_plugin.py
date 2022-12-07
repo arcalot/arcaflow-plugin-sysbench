@@ -78,6 +78,36 @@ def parse_output(output):
     return sysbench_output, sysbench_results
 
 
+def run_sysbench(params, flags, operation):
+    try:
+        cmd = [
+            "sysbench",
+            "--threads=" + str(params.threads),
+            "--events=" + str(params.events),
+            "--time=" + str(params.time),
+        ]
+        cmd = cmd + flags + [operation, "run"]
+        process_out = subprocess.check_output(cmd, stderr=subprocess.STDOUT)
+    except subprocess.CalledProcessError as error:
+        raise Exception(
+            error.returncode,
+            "{} failed with return code {}:\n{}".format(
+                error.cmd[0], error.returncode, error.output
+            ),
+        ) from error
+
+    stdoutput = process_out.strip().decode("utf-8")
+
+    try:
+        output, results = parse_output(stdoutput)
+    except (KeyError, ValueError) as error:
+        raise Exception(
+            1, "Failure in parsing sysbench output:\n{}".format(stdoutput)
+        ) from error
+
+    return output, results
+
+
 @plugin.step(
     id="sysbenchcpu",
     name="Sysbench CPU Workload",
@@ -87,37 +117,17 @@ def parse_output(output):
 def RunSysbenchCpu(
     params: SysbenchCpuInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsCpu, WorkloadError]]:
-    print("==>> Running sysbench CPU workload ...")
-    try:
-        cmd = [
-            "sysbench",
-            "--threads=" + str(params.threads),
-            "--events=" + str(params.events),
-            "--time=" + str(params.time),
-            "--cpu-max-prime=" + str(params.cpumaxprime),
-            params.operation,
-            "run",
-        ]
-        process_out = subprocess.check_output(cmd, stderr=subprocess.STDOUT)
-    except subprocess.CalledProcessError as error:
-        return "error", WorkloadError(
-            error.returncode,
-            "{} failed with return code {}:\n{}".format(
-                error.cmd[0], error.returncode, error.output
-            ),
-        )
 
-    stdoutput = process_out.strip().decode("utf-8")
+    print("==>> Running sysbench CPU workload ...")
+
+    cpu_flags = [
+        "--cpu-max-prime=" + str(params.cpu_max_prime),
+    ]
+
     try:
-        output, results = parse_output(stdoutput)
-    except KeyError:
-        return "error", WorkloadError(
-            1, "Failure in parsing sysbench output:\n{}".format(stdoutput)
-        )
-    except ValueError:
-        return "error", WorkloadError(
-            1, "Failure in parsing sysbench output:\n{}".format(stdoutput)
-        )
+        output, results = run_sysbench(params, cpu_flags, "cpu")
+    except Exception as error:
+        return "error", WorkloadError(error.args[0], error.args[1])
 
     print("==>> Workload run complete!")
 
@@ -138,42 +148,23 @@ def RunSysbenchCpu(
 def RunSysbenchMemory(
     params: SysbenchMemoryInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsMemory, WorkloadError]]:
-    print("==>> Running sysbench Memory workload ...")
-    try:
-        cmd = [
-            "sysbench",
-            "--threads=" + str(params.threads),
-            "--events=" + str(params.events),
-            "--time=" + str(params.time),
-            "--memory-block-size=" + str(params.memoryblocksize),
-            "--memory-total-size=" + str(params.memorytotalsize),
-            "--memory-scope=" + str(params.memoryscope),
-            "--memory-oper=" + str(params.memoryoperation),
-            params.operation,
-            "run",
-        ]
-        process_out = subprocess.check_output(cmd, stderr=subprocess.STDOUT)
-    except subprocess.CalledProcessError as error:
-        return "error", WorkloadError(
-            error.returncode,
-            "{} failed with return code {}:\n{}".format(
-                error.cmd[0], error.returncode, error.output
-            ),
-        )
 
-    stdoutput = process_out.strip().decode("utf-8")
+    print("==>> Running sysbench Memory workload ...")
+
+    memory_flags = [
+        "--memory-block-size=" + str(params.memory_block_size),
+        "--memory-total-size=" + str(params.memory_total_size),
+        "--memory-scope=" + str(params.memory_scope),
+        "--memory-oper=" + str(params.memory_oper),
+    ]
+
     try:
-        output, results = parse_output(stdoutput)
-    except KeyError:
-        return "error", WorkloadError(
-            1, "Failure in parsing sysbench output:\n{}".format(stdoutput)
-        )
-    except ValueError:
-        return "error", WorkloadError(
-            1, "Failure in parsing sysbench output:\n{}".format(stdoutput)
-        )
+        output, results = run_sysbench(params, memory_flags, "memory")
+    except Exception as error:
+        return "error", WorkloadError(error.args[0], error.args[1])
 
     print("==>> Workload run complete!")
+
     return "success", WorkloadResultsMemory(
         sysbench_memory_output_schema.unserialize(output),
         sysbench_memory_results_schema.unserialize(results),
