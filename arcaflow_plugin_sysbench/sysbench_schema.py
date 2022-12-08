@@ -8,6 +8,7 @@ class OnOff(enum.Enum):
     ON = "on"
     OFF = "off"
 
+
 class RandType(enum.Enum):
     UNIFORM = "uniform"
     GAUSSIAN = "gaussian"
@@ -505,9 +506,8 @@ class WorkloadError:
         schema.description("Reason for failure"),
     ]
 
-sysbench_cpu_input_schema = plugin.build_object_schema(
-    SysbenchCpuInputParams
-)
+
+sysbench_cpu_input_schema = plugin.build_object_schema(SysbenchCpuInputParams)
 sysbench_memory_input_schema = plugin.build_object_schema(
     SysbenchMemoryInputParams
 )

@@ -155,7 +155,7 @@ def RunSysbenchMemory(
     memory_flags = []
     for param, value in serialized_params.items():
         memory_flags.append(f"--{param}={value}")
-    
+
     try:
         output, results = run_sysbench(params, memory_flags, "memory")
     except Exception as error:
