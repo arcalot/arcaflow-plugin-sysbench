@@ -59,7 +59,6 @@ class CommonInputParameters:
         ),
     ] = None
     thread_stack_size: typing.Annotated[
-        # TODO Convert to size type
         typing.Optional[str],
         schema.id("thread-stack-size"),
         schema.name("Thread stack size"),
@@ -187,14 +186,12 @@ class SysbenchMemoryInputParams(CommonInputParameters):
     """
 
     memory_block_size: typing.Annotated[
-        # TODO: Convert to size
         typing.Optional[str],
         schema.id("memory-block-size"),
         schema.name("Block Size"),
         schema.description("size of memory block for test in KiB/MiB/GiB"),
     ] = "1KiB"
     memory_total_size: typing.Annotated[
-        # TODO: Convert to size
         typing.Optional[str],
         schema.id("memory-total-size"),
         schema.name("Total Size"),
