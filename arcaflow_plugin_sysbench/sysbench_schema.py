@@ -3,24 +3,29 @@ import typing
 from dataclasses import dataclass
 from arcaflow_plugin_sdk import plugin, schema, validation
 
+
 class RandType(enum.Enum):
     UNIFORM = "uniform"
     GAUSSIAN = "gaussian"
     SPECIAL = "special"
     PARETO = "pareto"
 
+
 class SeqRnd(enum.Enum):
     SEQ = "seq"
     RND = "rnd"
+
 
 class GlobalLocal(enum.Enum):
     GLOBAL = "global"
     LOCAL = "local"
 
+
 class RWN(enum.Enum):
     READ = "read"
     WRITE = "write"
     NONE = "none"
+
 
 @dataclass
 class CommonInputParameters:
@@ -43,7 +48,8 @@ class CommonInputParameters:
         typing.Optional[int],
         schema.name("Forced Shutdown Seconds"),
         schema.description(
-            "Number of seconds to wait after the 'time' limit before forcing" " shutdown, or exclude parameter to disable forced shutdown"
+            "Number of seconds to wait after the 'time' limit before forcing"
+            " shutdown, or exclude parameter to disable forced shutdown"
         ),
     ] = None
     thread_stack_size: typing.Annotated[
@@ -65,7 +71,7 @@ class CommonInputParameters:
     rand_type: typing.Annotated[
         typing.Optional[RandType],
         schema.name("Random Number Type"),
-        schema.description("Random numbers distribution")
+        schema.description("Random numbers distribution"),
     ] = RandType("special")
     rand_spec_iter: typing.Annotated[
         typing.Optional[int],
@@ -111,17 +117,24 @@ class CommonInputParameters:
         ),
     ] = 95
 
+
 # Other common parameters to consider...
 
 # Implementing report-interval would add periodic output to stdout and a new
 # data format we would need to account for in the parse_output section
 # of the plugin
-#   --report-interval=N             periodically report intermediate statistics with a specified interval in seconds. 0 disables intermediate reports [0]
+#   --report-interval=N             periodically report intermediate
+# statistics with a specified interval in seconds. 0 disables intermediate
+# reports [0]
 
 # Implementing report-checkpoints would dump to stdout a full run output at
 # the checkpoint times, requiring additional processing in the parse_output
 # section of the plugin
-#   --report-checkpoints=[LIST,...] dump full statistics and reset all counters at specified points in time. The argument is a list of comma-separated values representing the amount of time in seconds elapsed from start of test when report checkpoint(s) must be performed. Report checkpoints are off by default. []
+#   --report-checkpoints=[LIST,...] dump full statistics and reset all
+# counters at specified points in time. The argument is a list of
+# comma-separated values representing the amount of time in seconds elapsed
+# from start of test when report checkpoint(s) must be performed. Report
+# checkpoints are off by default. []
 
 # Implementing debug would add more verbose output ot stdout that we would
 # need to adjust parse_output to process.
