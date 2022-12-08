@@ -4,6 +4,10 @@ from dataclasses import dataclass
 from arcaflow_plugin_sdk import plugin, schema, validation
 
 
+class OnOff(enum.Enum):
+    ON = "on"
+    OFF = "off"
+
 class RandType(enum.Enum):
     UNIFORM = "uniform"
     GAUSSIAN = "gaussian"
@@ -46,6 +50,7 @@ class CommonInputParameters:
     ] = 10
     forced_shutdown: typing.Annotated[
         typing.Optional[int],
+        schema.id("forced-shutdown"),
         schema.name("Forced Shutdown Seconds"),
         schema.description(
             "Number of seconds to wait after the 'time' limit before forcing"
@@ -55,6 +60,7 @@ class CommonInputParameters:
     thread_stack_size: typing.Annotated[
         # TODO Convert to size type
         typing.Optional[str],
+        schema.id("thread-stack-size"),
         schema.name("Thread stack size"),
         schema.description("size of stack per thread"),
     ] = "64K"
@@ -64,22 +70,25 @@ class CommonInputParameters:
         schema.description("average transactions rate. 0 for unlimited rate"),
     ] = 0
     validate: typing.Annotated[
-        typing.Optional[bool],
+        typing.Optional[OnOff],
         schema.name("Validate"),
         schema.description("perform validation checks where possible"),
-    ] = False
+    ] = OnOff.OFF
     rand_type: typing.Annotated[
         typing.Optional[RandType],
+        schema.id("rand-type"),
         schema.name("Random Number Type"),
         schema.description("Random numbers distribution"),
-    ] = RandType("special")
+    ] = RandType.SPECIAL
     rand_spec_iter: typing.Annotated[
         typing.Optional[int],
+        schema.id("rand-spec-iter"),
         schema.name("Rand spec iterations"),
         schema.description("Number of iterations used for numbers generation"),
     ] = 12
     rand_spec_pct: typing.Annotated[
         typing.Optional[int],
+        schema.id("rand-spec-pct"),
         schema.name("Rand spec percentage"),
         schema.description(
             "Percentage of values to be treated as 'special' (for special"
@@ -88,6 +97,7 @@ class CommonInputParameters:
     ] = 1
     rand_spec_res: typing.Annotated[
         typing.Optional[int],
+        schema.id("rand-spec-res"),
         schema.name("Rand spec res"),
         schema.description(
             "Percentage of 'special' values to use (for special distribution)"
@@ -95,6 +105,7 @@ class CommonInputParameters:
     ] = 75
     rand_seed: typing.Annotated[
         typing.Optional[int],
+        schema.id("rand-seed"),
         schema.name("Rand seed"),
         schema.description(
             "seed for random number generator. When 0, the current time is"
@@ -103,6 +114,7 @@ class CommonInputParameters:
     ] = 0
     rand_pareto_h: typing.Annotated[
         typing.Optional[float],
+        schema.id("rand-pareto-h"),
         schema.name("Rand pareto h"),
         schema.description("parameter h for pareto distribution"),
     ] = 0.2
@@ -158,6 +170,7 @@ class SysbenchCpuInputParams(CommonInputParameters):
 
     cpu_max_prime: typing.Annotated[
         typing.Optional[int],
+        schema.id("cpu-max-prime"),
         schema.name("CPU max prime"),
         schema.description(
             "The upper limit of the number of prime numbers generated"
@@ -175,35 +188,41 @@ class SysbenchMemoryInputParams(CommonInputParameters):
     memory_block_size: typing.Annotated[
         # TODO: Convert to size
         typing.Optional[str],
+        schema.id("memory-block-size"),
         schema.name("Block Size"),
         schema.description("size of memory block for test in KiB/MiB/GiB"),
     ] = "1KiB"
     memory_total_size: typing.Annotated[
         # TODO: Convert to size
         typing.Optional[str],
+        schema.id("memory-total-size"),
         schema.name("Total Size"),
         schema.description("Total size of data to transfer in GiB"),
     ] = "100G"
     memory_scope: typing.Annotated[
         typing.Optional[GlobalLocal],
+        schema.id("memory-scope"),
         schema.name("Memory Scope"),
         schema.description("Memory Access Scope(global/local)"),
-    ] = GlobalLocal("global")
+    ] = GlobalLocal.GLOBAL
     memory_oper: typing.Annotated[
         typing.Optional[RWN],
+        schema.id("memory-oper"),
         schema.name("Memory Operation"),
         schema.description("Type of memory operation(write/read)"),
-    ] = RWN("write")
+    ] = RWN.WRITE
     memory_hugetlb: typing.Annotated[
-        typing.Optional[bool],
+        typing.Optional[OnOff],
+        schema.id("memory-hugetlb"),
         schema.name("Memory hugetlb"),
         schema.description("Allocate memory from HugeTLB pool (on/off)"),
-    ] = False
+    ] = OnOff.OFF
     memory_access_mode: typing.Annotated[
         typing.Optional[SeqRnd],
+        schema.id("memory-access-mode"),
         schema.name("Memory Access Mode"),
         schema.description("memory access mode (seq,rnd)"),
-    ] = SeqRnd("seq")
+    ] = SeqRnd.SEQ
 
 
 @dataclass
@@ -486,7 +505,12 @@ class WorkloadError:
         schema.description("Reason for failure"),
     ]
 
-
+sysbench_cpu_input_schema = plugin.build_object_schema(
+    SysbenchCpuInputParams
+)
+sysbench_memory_input_schema = plugin.build_object_schema(
+    SysbenchMemoryInputParams
+)
 sysbench_cpu_output_schema = plugin.build_object_schema(
     SysbenchCpuOutputParams
 )

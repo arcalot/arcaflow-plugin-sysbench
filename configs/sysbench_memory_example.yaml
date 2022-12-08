@@ -1,7 +1,7 @@
 threads: 5
 events: 0
 time: 15
-memory_block_size: '2KiB'
-memory_total_size: '100GiB'
-memory_scope: 'local'
-memory_oper: 'write'
+memory-block-size: '2KiB'
+memory-total-size: '100GiB'
+memory-scope: 'local'
+memory-oper: 'write'
