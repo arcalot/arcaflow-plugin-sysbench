@@ -311,16 +311,16 @@ class SysbenchCommonOutputParams:
         schema.description("Number of threads used by the workload"),
     ]
     Validationchecks: typing.Annotated[
-        str,
+        typing.Optional[str],
         schema.name("Validation checks"),
         schema.description("Validation on/off"),
-    ]
+    ] = "off"
 
 
 @dataclass
-class SysbenchMemoryOutputParams(SysbenchCommonOutputParams):
+class SysbenchMemoryOutput:
     """
-    This is the data structure for output
+    This is the data structure for specific output
     parameters returned by sysbench memory benchmark.
     """
 
@@ -362,9 +362,9 @@ class SysbenchMemoryOutputParams(SysbenchCommonOutputParams):
 
 
 @dataclass
-class SysbenchCpuOutputParams(SysbenchCommonOutputParams):
+class SysbenchCpuOutput:
     """
-    This is the data structure for output
+    This is the data structure for specific output
     parameters returned by sysbench cpu benchmark.
     """
 
@@ -432,6 +432,19 @@ class SysbenchCpuResultParams:
         ),
     ]
 
+@dataclass
+class SysbenchMemoryOutputParams(SysbenchCommonOutputParams,SysbenchMemoryOutput):
+    """
+    This is the data structure for all output
+    parameters returned by sysbench cpu benchmark.
+    """
+
+@dataclass
+class SysbenchCpuOutputParams(SysbenchCommonOutputParams,SysbenchCpuOutput):
+    """
+    This is the data structure for all output
+    parameters returned by sysbench memory benchmark.
+    """
 
 @dataclass
 class WorkloadResultsCpu:
