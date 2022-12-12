@@ -295,6 +295,7 @@ class SysbenchCommonOutputParams:
     This is the data structure for common output
     parameters returned by sysbench benchmarks.
     """
+
     totaltime: typing.Annotated[
         float,
         schema.name("Total time"),
@@ -375,7 +376,6 @@ class SysbenchCpuOutput:
     ]
 
 
-
 @dataclass
 class SysbenchMemoryResultParams:
     """
@@ -432,19 +432,24 @@ class SysbenchCpuResultParams:
         ),
     ]
 
+
 @dataclass
-class SysbenchMemoryOutputParams(SysbenchCommonOutputParams,SysbenchMemoryOutput):
+class SysbenchMemoryOutputParams(
+    SysbenchCommonOutputParams, SysbenchMemoryOutput
+):
     """
     This is the data structure for all output
     parameters returned by sysbench memory benchmark.
     """
 
+
 @dataclass
-class SysbenchCpuOutputParams(SysbenchCommonOutputParams,SysbenchCpuOutput):
+class SysbenchCpuOutputParams(SysbenchCommonOutputParams, SysbenchCpuOutput):
     """
     This is the data structure for all output
     parameters returned by sysbench cpu benchmark.
     """
+
 
 @dataclass
 class WorkloadResultsCpu:
