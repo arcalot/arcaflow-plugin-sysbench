@@ -11,8 +11,10 @@ from sysbench_schema import (
     WorkloadResultsCpu,
     WorkloadResultsMemory,
     WorkloadError,
+    sysbench_cpu_input_schema,
     sysbench_cpu_output_schema,
     sysbench_cpu_results_schema,
+    sysbench_memory_input_schema,
     sysbench_memory_output_schema,
     sysbench_memory_results_schema,
 )
@@ -80,12 +82,7 @@ def parse_output(output):
 
 def run_sysbench(params, flags, operation):
     try:
-        cmd = [
-            "sysbench",
-            "--threads=" + str(params.threads),
-            "--events=" + str(params.events),
-            "--time=" + str(params.time),
-        ]
+        cmd = ["sysbench"]
         cmd = cmd + flags + [operation, "run"]
         process_out = subprocess.check_output(cmd, stderr=subprocess.STDOUT)
     except subprocess.CalledProcessError as error:
@@ -120,9 +117,11 @@ def RunSysbenchCpu(
 
     print("==>> Running sysbench CPU workload ...")
 
-    cpu_flags = [
-        "--cpu-max-prime=" + str(params.cpu_max_prime),
-    ]
+    serialized_params = sysbench_cpu_input_schema.serialize(params)
+
+    cpu_flags = []
+    for param, value in serialized_params.items():
+        cpu_flags.append(f"--{param}={value}")
 
     try:
         output, results = run_sysbench(params, cpu_flags, "cpu")
@@ -151,12 +150,11 @@ def RunSysbenchMemory(
 
     print("==>> Running sysbench Memory workload ...")
 
-    memory_flags = [
-        "--memory-block-size=" + str(params.memory_block_size),
-        "--memory-total-size=" + str(params.memory_total_size),
-        "--memory-scope=" + str(params.memory_scope),
-        "--memory-oper=" + str(params.memory_oper),
-    ]
+    serialized_params = sysbench_memory_input_schema.serialize(params)
+
+    memory_flags = []
+    for param, value in serialized_params.items():
+        memory_flags.append(f"--{param}={value}")
 
     try:
         output, results = run_sysbench(params, memory_flags, "memory")
