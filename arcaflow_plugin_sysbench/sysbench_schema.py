@@ -436,14 +436,14 @@ class SysbenchCpuResultParams:
 class SysbenchMemoryOutputParams(SysbenchCommonOutputParams,SysbenchMemoryOutput):
     """
     This is the data structure for all output
-    parameters returned by sysbench cpu benchmark.
+    parameters returned by sysbench memory benchmark.
     """
 
 @dataclass
 class SysbenchCpuOutputParams(SysbenchCommonOutputParams,SysbenchCpuOutput):
     """
     This is the data structure for all output
-    parameters returned by sysbench memory benchmark.
+    parameters returned by sysbench cpu benchmark.
     """
 
 @dataclass
