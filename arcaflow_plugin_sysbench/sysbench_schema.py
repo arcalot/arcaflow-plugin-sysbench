@@ -290,12 +290,11 @@ class CPUmetrics:
 
 
 @dataclass
-class SysbenchMemoryOutputParams:
+class SysbenchCommonOutputParams:
     """
-    This is the data structure for output
-    parameters returned by sysbench memory benchmark.
+    This is the data structure for common output
+    parameters returned by sysbench benchmarks.
     """
-
     totaltime: typing.Annotated[
         float,
         schema.name("Total time"),
@@ -306,6 +305,25 @@ class SysbenchMemoryOutputParams:
         schema.name("Total number of events"),
         schema.description("Total number of events performed by the workload"),
     ]
+    Numberofthreads: typing.Annotated[
+        float,
+        schema.name("Number of threads"),
+        schema.description("Number of threads used by the workload"),
+    ]
+    Validationchecks: typing.Annotated[
+        str,
+        schema.name("Validation checks"),
+        schema.description("Validation on/off"),
+    ]
+
+
+@dataclass
+class SysbenchMemoryOutputParams(SysbenchCommonOutputParams):
+    """
+    This is the data structure for output
+    parameters returned by sysbench memory benchmark.
+    """
+
     blocksize: typing.Annotated[
         str,
         schema.name("Block size"),
@@ -341,40 +359,21 @@ class SysbenchMemoryOutputParams:
             "Total number of operations performed by the memory workload"
         ),
     ]
-    Numberofthreads: typing.Annotated[
-        float,
-        schema.name("Number of threads"),
-        schema.description("Number of threads used by the workload"),
-    ]
 
 
 @dataclass
-class SysbenchCpuOutputParams:
+class SysbenchCpuOutputParams(SysbenchCommonOutputParams):
     """
     This is the data structure for output
     parameters returned by sysbench cpu benchmark.
     """
 
-    totaltime: typing.Annotated[
-        float,
-        schema.name("Total time"),
-        schema.description("Total execution time of workload"),
-    ]
-    totalnumberofevents: typing.Annotated[
-        float,
-        schema.name("Total number of events"),
-        schema.description("Total number of events performed by the workload"),
-    ]
     Primenumberslimit: typing.Annotated[
         float,
         schema.name("Prime numbers limit"),
         schema.description("Number of prime numbers to use for CPU workload"),
     ]
-    Numberofthreads: typing.Annotated[
-        float,
-        schema.name("Number of threads"),
-        schema.description("Number of threads used by the workload"),
-    ]
+
 
 
 @dataclass

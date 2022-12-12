@@ -2,3 +2,4 @@ threads: 2
 events: 0
 time: 15
 cpu-max-prime: 12000
+validate: "on"
