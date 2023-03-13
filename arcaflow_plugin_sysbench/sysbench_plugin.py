@@ -8,8 +8,10 @@ import subprocess
 from sysbench_schema import (
     SysbenchCpuInputParams,
     SysbenchMemoryInputParams,
+    SysbenchIoInputParams,
     WorkloadResultsCpu,
     WorkloadResultsMemory,
+    WorkloadResultsIo,
     WorkloadError,
     sysbench_cpu_input_schema,
     sysbench_cpu_output_schema,
@@ -17,6 +19,9 @@ from sysbench_schema import (
     sysbench_memory_input_schema,
     sysbench_memory_output_schema,
     sysbench_memory_results_schema,
+    sysbench_io_input_schema,
+    sysbench_io_output_schema,
+    sysbench_io_results_schema,
 )
 
 
@@ -28,6 +33,7 @@ def parse_output(output):
     for line in output.splitlines():
         if ":" in line:
             key, value = line.split(":")
+
             if key[0].isdigit():
                 key = "P" + key
             if value == "":
@@ -41,6 +47,8 @@ def parse_output(output):
                 continue
 
             if dictionary == sysbench_output:
+                if "/" in key:
+                    key = key.replace("/", "")
                 if "totaltime" in key:
                     value = value.replace("s", "")
                     dictionary[key] = float(value)
@@ -66,6 +74,8 @@ def parse_output(output):
                 elif value.isnumeric():
                     dictionary[section][key] = float(value)
                 else:
+                    # replace / and , with _ for fileio test
+                    key = re.sub(r"[\/,]", "_", key)
                     dictionary[section][key] = value
         if "transferred" in line:
             mem_t, mem_tps = line.split("transferred")
@@ -80,10 +90,10 @@ def parse_output(output):
     return sysbench_output, sysbench_results
 
 
-def run_sysbench(params, flags, operation):
+def run_sysbench(params, flags, operation, test_mode="run"):
     try:
         cmd = ["sysbench"]
-        cmd = cmd + flags + [operation, "run"]
+        cmd = cmd + flags + [operation, test_mode]
         process_out = subprocess.check_output(cmd, stderr=subprocess.STDOUT)
     except subprocess.CalledProcessError as error:
         raise Exception(
@@ -92,17 +102,17 @@ def run_sysbench(params, flags, operation):
                 error.cmd[0], error.returncode, error.output
             ),
         ) from error
-
+    # io tests are made of 3 phases prepare, run, and cleanup the prepare and cleanup doesn't have a meaningful output so parsing is skipped
     stdoutput = process_out.strip().decode("utf-8")
+    if test_mode == "run":
+        try:
+            output, results = parse_output(stdoutput)
+        except (KeyError, ValueError) as error:
+            raise Exception(
+                1, "Failure in parsing sysbench output:\n{}".format(stdoutput)
+            ) from error
 
-    try:
-        output, results = parse_output(stdoutput)
-    except (KeyError, ValueError) as error:
-        raise Exception(
-            1, "Failure in parsing sysbench output:\n{}".format(stdoutput)
-        ) from error
-
-    return output, results
+        return output, results
 
 
 @plugin.step(
@@ -114,7 +124,6 @@ def run_sysbench(params, flags, operation):
 def RunSysbenchCpu(
     params: SysbenchCpuInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsCpu, WorkloadError]]:
-
     print("==>> Running sysbench CPU workload ...")
 
     serialized_params = sysbench_cpu_input_schema.serialize(params)
@@ -147,7 +156,6 @@ def RunSysbenchCpu(
 def RunSysbenchMemory(
     params: SysbenchMemoryInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsMemory, WorkloadError]]:
-
     print("==>> Running sysbench Memory workload ...")
 
     serialized_params = sysbench_memory_input_schema.serialize(params)
@@ -169,7 +177,43 @@ def RunSysbenchMemory(
     )
 
 
+@plugin.step(
+    id="sysbenchio",
+    name="Sysbench I/O Workload",
+    description=("Run the I/O test using the sysbench workload"),
+    outputs={"success": WorkloadResultsIo, "error": WorkloadError},
+)
+def RunSysbenchIo(
+    params: SysbenchIoInputParams,
+) -> typing.Tuple[str, typing.Union[WorkloadResultsIo, WorkloadError]]:
+    print("==>> Running sysbench I/O workload ...")
+
+    serialized_params = sysbench_io_input_schema.serialize(params)
+
+    io_flags = []
+    for param, value in serialized_params.items():
+        io_flags.append(f"--{param}={value}")
+
+    try:
+        run_sysbench(params, io_flags, "fileio", "prepare")
+        output, results = run_sysbench(params, io_flags, "fileio", "run")
+        run_sysbench(params, io_flags, "fileio", "cleanup")
+    except Exception as error:
+        return "error", WorkloadError(error.args[0], error.args[1])
+
+    print("==>> Workload run complete!")
+
+    return "success", WorkloadResultsIo(
+        sysbench_io_output_schema.unserialize(output),
+        sysbench_io_results_schema.unserialize(results),
+    )
+
+
 if __name__ == "__main__":
     sys.exit(
-        plugin.run(plugin.build_schema(RunSysbenchCpu, RunSysbenchMemory))
+        plugin.run(
+            plugin.build_schema(
+                RunSysbenchCpu, RunSysbenchMemory, RunSysbenchIo
+            )
+        )
     )
