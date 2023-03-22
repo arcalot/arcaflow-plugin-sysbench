@@ -3,12 +3,12 @@
 arca-sysbench is a workload plugin of the [sysbench](https://github.com/akopytov/sysbench) benchmark tool
 using the [Arcaflow python SDK](https://github.com/arcalot/arcaflow-plugin-sdk-python).
 
-Supported sysbench input parameters are defined in the `SysbenchInputParams` schema of the [sysbench_plugin.py](sysbench_plugin.py) file.
-You define your test parameters in a YAML file to be passed to the plugin command as shown in either [sysbench_cpu_example.yaml](sysbench_cpu_example.yaml) or [sysbench_memory_example.yaml](sysbench_memory_example.yaml).
+Supported sysbench input parameters are defined in the `CommonInputParameters` along with it's subclasses in [sysbench_schema.py](arcaflow_plugin_sysbench/sysbench_schema.py) file.
+You define your test parameters in a YAML file to be passed to the plugin command as shown in either [sysbench_cpu_example.yaml](configs/sysbench_cpu_example.yaml) or [sysbench_memory_example.yaml](configs/sysbench_memory_example.yaml).
 
 ## To test:
 
-In order to run the [arca-sysbench plugin](sysbench_plugin.py) run the following steps:
+In order to run the [arca-sysbench plugin](arcaflow_plugin_sysbench/sysbench_plugin.py) run the following steps:
 
 ### Containerized
 1. Cone this repository
