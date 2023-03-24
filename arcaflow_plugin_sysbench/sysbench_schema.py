@@ -578,7 +578,7 @@ class SysbenchMemoryResultParams:
     Latency: typing.Annotated[
         LatencyAggregates,
         schema.name("Latency"),
-        schema.description("Memory Latency in mili seconds"),
+        schema.description("Memory Latency in milli seconds"),
     ]
     Threadsfairness: typing.Annotated[
         ThreadsFairness,
@@ -604,7 +604,7 @@ class SysbenchCpuResultParams:
     Latency: typing.Annotated[
         LatencyAggregates,
         schema.name("Latency"),
-        schema.description("CPU latency in miliseconds"),
+        schema.description("CPU latency in milliseconds"),
     ]
     Threadsfairness: typing.Annotated[
         ThreadsFairness,
@@ -635,7 +635,7 @@ class SysbenchIoResultParams:
     Latency: typing.Annotated[
         LatencyAggregates,
         schema.name("Latency"),
-        schema.description("CPU latency in miliseconds"),
+        schema.description("latency in milliseconds"),
     ]
     Threadsfairness: typing.Annotated[
         ThreadsFairness,
