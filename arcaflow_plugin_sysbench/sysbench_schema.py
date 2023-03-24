@@ -32,6 +32,32 @@ class RWN(enum.Enum):
     NONE = "none"
 
 
+class FileTestMode(enum.Enum):
+    SEQWR = "seqwr"
+    SEQREWR = "seqrewr"
+    SEQRD = "seqrd"
+    RNDR = "rndrd"
+    RNDWR = "rndwr"
+    RNDRW = "rndrw"
+
+
+class FileIoMode(enum.Enum):
+    SYNC = "sync"
+    ASYNC = "async"
+    MMAP = "mmap"
+
+
+class FileExtraFlag(enum.Enum):
+    SYNC = "sync"
+    DSYNC = "dsync"
+    DIRECT = "direct"
+
+
+class FileSyncMode(enum.Enum):
+    FSYNC = "fsync"
+    FDATASYNC = "fdatasync"
+
+
 @dataclass
 class CommonInputParameters:
     threads: typing.Annotated[
@@ -224,6 +250,116 @@ class SysbenchMemoryInputParams(CommonInputParameters):
 
 
 @dataclass
+class SysbenchIoInputParams(CommonInputParameters):
+    """
+    This is the data structure for the
+    input parameters of Sysbench I/O benchmark.
+    """
+
+    file_num: typing.Annotated[
+        typing.Optional[int],
+        schema.id("file-num"),
+        schema.name("Files number"),
+        schema.description("Number of files to create"),
+    ] = 128
+    file_block_size: typing.Annotated[
+        typing.Optional[int],
+        schema.id("file-block-size"),
+        schema.name("File Block Size"),
+        schema.description("Block size to use in all IO operations"),
+    ] = 16384
+
+    file_total_size: typing.Annotated[
+        typing.Optional[str],
+        schema.id("file-total-size"),
+        schema.name("File Total Size"),
+        schema.description("Total size of files to create"),
+    ] = "2G"
+
+    file_test_mode: typing.Annotated[
+        typing.Optional[FileTestMode],
+        schema.id("file-test-mode"),
+        schema.name("File Test Mode"),
+        schema.description(
+            "Test mode {seqwr, seqrewr, seqrd, rndrd, rndwr, rndrw}"
+        ),
+    ] = FileTestMode.SEQWR
+
+    file_io_mode: typing.Annotated[
+        typing.Optional[FileIoMode],
+        schema.id("file-io-mode"),
+        schema.name("File I/O Mode"),
+        schema.description("File operations mode {sync,async,mmap}"),
+    ] = FileIoMode.SYNC
+
+    file_async_backlog: typing.Annotated[
+        typing.Optional[int],
+        schema.id("file-async-backlog"),
+        schema.name("File Async Backlog"),
+        schema.description(
+            "Number of asynchronous operatons to queue per thread"
+        ),
+    ] = 128
+
+    file_extra_flags: typing.Annotated[
+        typing.Optional[FileExtraFlag],
+        schema.id("file-extra-flags"),
+        schema.name("File I/O Mode"),
+        schema.description("File operations mode {sync,async,mmap}"),
+    ] = FileExtraFlag.SYNC
+
+    file_fsync_freq: typing.Annotated[
+        typing.Optional[int],
+        schema.id("file-fsync-freq"),
+        schema.name("File Fsync Frequency"),
+        schema.description(
+            "Do fsync() after this number of requests (0 - don't use fsync())"
+        ),
+    ] = 100
+
+    file_fsync_all: typing.Annotated[
+        typing.Optional[OnOff],
+        schema.id("file-fsync-all"),
+        schema.name("File Fsync Frequency"),
+        schema.description(
+            "Do fsync() after this number of requests (0 - don't use fsync())"
+        ),
+    ] = OnOff.OFF
+
+    file_fsync_end: typing.Annotated[
+        typing.Optional[OnOff],
+        schema.id("file-fsync-end"),
+        schema.name("File Fsync At End"),
+        schema.description("Do fsync() at the end of test"),
+    ] = OnOff.ON
+
+    file_fsync_mode: typing.Annotated[
+        typing.Optional[FileSyncMode],
+        schema.id("file-fsync-mode"),
+        schema.name("File Fsync Mode"),
+        schema.description(
+            "Which method to use for synchronization {fsync, fdatasync}"
+        ),
+    ] = FileSyncMode.FSYNC
+
+    file_merged_requests: typing.Annotated[
+        typing.Optional[int],
+        schema.id("file-merged-requests"),
+        schema.name("File Fsync Frequency"),
+        schema.description(
+            "Merge at most this number of IO requests if possible (0 - don't merge)"
+        ),
+    ] = 0
+
+    file_rw_ratio: typing.Annotated[
+        typing.Optional[float],
+        schema.id("file-rw-ratio"),
+        schema.name("File R/W Ratio"),
+        schema.description("Reads/writes ratio for combined test"),
+    ] = 1.5
+
+
+@dataclass
 class LatencyAggregates:
     avg: typing.Annotated[
         float,
@@ -286,6 +422,39 @@ class CPUmetrics:
         float,
         schema.name("Events per second"),
         schema.description("Number of events per second to measure CPU speed"),
+    ]
+
+
+@dataclass
+class FileOperationMetrics:
+    reads_s: typing.Annotated[
+        float,
+        schema.name("Read Ops/sec"),
+        schema.description("Read operations per second"),
+    ]
+    writes_s: typing.Annotated[
+        float,
+        schema.name("Write Ops/s"),
+        schema.description("Write Operations per second"),
+    ]
+    fsyncs_s: typing.Annotated[
+        float,
+        schema.name("Fsync/sec"),
+        schema.description("Number of fsync() per second"),
+    ]
+
+
+@dataclass
+class ThroughputMetrics:
+    read_MiB_s: typing.Annotated[
+        float,
+        schema.name("Read Mebibytes/s"),
+        schema.description("Read Mebibyte (2^20 bytes) per second"),
+    ]
+    written_MiB_s: typing.Annotated[
+        float,
+        schema.name("Written Mebibytes/s"),
+        schema.description("Written Mebibyte (2^20 bytes) per second"),
     ]
 
 
@@ -377,6 +546,20 @@ class SysbenchCpuOutput:
 
 
 @dataclass
+class SysbenchIoOutput:
+    """
+    This is the data structure for specific output
+    parameters returned by sysbench io benchmark.
+    """
+
+    Extrafileopenflags: typing.Annotated[
+        str,
+        schema.name("File Open Flags"),
+        schema.description("File Open Flags"),
+    ]
+
+
+@dataclass
 class SysbenchMemoryResultParams:
     """
     This is the output results data structure for sysbench memory results.
@@ -395,7 +578,7 @@ class SysbenchMemoryResultParams:
     Latency: typing.Annotated[
         LatencyAggregates,
         schema.name("Latency"),
-        schema.description("Memory Latency in mili seconds"),
+        schema.description("Memory Latency in milli seconds"),
     ]
     Threadsfairness: typing.Annotated[
         ThreadsFairness,
@@ -421,7 +604,38 @@ class SysbenchCpuResultParams:
     Latency: typing.Annotated[
         LatencyAggregates,
         schema.name("Latency"),
-        schema.description("CPU latency in miliseconds"),
+        schema.description("CPU latency in milliseconds"),
+    ]
+    Threadsfairness: typing.Annotated[
+        ThreadsFairness,
+        schema.name("Threads fairness"),
+        schema.description(
+            "Event distribution by threads for number of executed events"
+            " by threads and total execution time by thread"
+        ),
+    ]
+
+
+@dataclass
+class SysbenchIoResultParams:
+    """
+    This is the output results data structure for sysbench io results.
+    """
+
+    Fileoperations: typing.Annotated[
+        FileOperationMetrics,
+        schema.name("FileOperations"),
+        schema.description("File Operation Metrics"),
+    ]
+    Throughput: typing.Annotated[
+        ThroughputMetrics,
+        schema.name("Throughput"),
+        schema.description("Throughput metrics"),
+    ]
+    Latency: typing.Annotated[
+        LatencyAggregates,
+        schema.name("Latency"),
+        schema.description("latency in milliseconds"),
     ]
     Threadsfairness: typing.Annotated[
         ThreadsFairness,
@@ -449,6 +663,26 @@ class SysbenchCpuOutputParams(SysbenchCommonOutputParams, SysbenchCpuOutput):
     This is the data structure for all output
     parameters returned by sysbench cpu benchmark.
     """
+
+
+@dataclass
+class SysbenchIoOutputParams(SysbenchCommonOutputParams, SysbenchIoOutput):
+    """
+    This is the data structure for all output
+    parameters returned by sysbench io benchmark.
+    """
+
+    ReadWriteratioforcombinedrandomIOtest: typing.Annotated[
+        typing.Optional[float],
+        schema.name("R/W Ratio Random Test"),
+        schema.description("Read/Write Ratio for combined random I/O test"),
+    ] = 0.0
+
+    NumberofIOrequests: typing.Annotated[
+        typing.Optional[float],
+        schema.name("Number of I/O requests"),
+        schema.description("Number of I/O requests"),
+    ] = 0.0
 
 
 @dataclass
@@ -502,6 +736,32 @@ class WorkloadResultsMemory:
 
 
 @dataclass
+class WorkloadResultsIo:
+    """
+    This is the output results data structure
+    for the Sysbench io success case.
+    """
+
+    sysbench_output_params: typing.Annotated[
+        SysbenchIoOutputParams,
+        schema.name("Sysbench Io Output Parameters"),
+        schema.description(
+            "Ouptut parameters for a successful sysbench io workload"
+            " execution"
+        ),
+    ]
+
+    sysbench_results: typing.Annotated[
+        SysbenchIoResultParams,
+        schema.name("Sysbench io Result Parameters"),
+        schema.description(
+            "Result parameters for a successful io Memory workload"
+            " execution"
+        ),
+    ]
+
+
+@dataclass
 class WorkloadError:
     """
     This is the output data structure in the error case.
@@ -525,6 +785,7 @@ sysbench_cpu_input_schema = plugin.build_object_schema(SysbenchCpuInputParams)
 sysbench_memory_input_schema = plugin.build_object_schema(
     SysbenchMemoryInputParams
 )
+sysbench_io_input_schema = plugin.build_object_schema(SysbenchIoInputParams)
 sysbench_cpu_output_schema = plugin.build_object_schema(
     SysbenchCpuOutputParams
 )
@@ -537,3 +798,5 @@ sysbench_memory_output_schema = plugin.build_object_schema(
 sysbench_memory_results_schema = plugin.build_object_schema(
     SysbenchMemoryResultParams
 )
+sysbench_io_output_schema = plugin.build_object_schema(SysbenchIoOutputParams)
+sysbench_io_results_schema = plugin.build_object_schema(SysbenchIoResultParams)

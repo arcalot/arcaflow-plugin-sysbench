@@ -1,0 +1,6 @@
+events: 0
+threads: 2
+file-num: 10
+file-total-size: "100M"
+file-test-mode: rndrw
+time: 60

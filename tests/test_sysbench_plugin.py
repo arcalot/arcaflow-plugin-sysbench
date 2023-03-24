@@ -4,6 +4,8 @@ import unittest
 import sysbench_plugin
 from arcaflow_plugin_sdk import plugin
 
+import sysbench_schema
+
 
 class SysbenchPluginTest(unittest.TestCase):
     @staticmethod
@@ -15,7 +17,6 @@ class SysbenchPluginTest(unittest.TestCase):
         plugin.test_object_serialization(
             sysbench_plugin.SysbenchMemoryInputParams(threads=2)
         )
-
         plugin.test_object_serialization(
             sysbench_plugin.sysbench_cpu_output_schema.unserialize(
                 {
@@ -83,6 +84,46 @@ class SysbenchPluginTest(unittest.TestCase):
         )
 
         plugin.test_object_serialization(
+            sysbench_plugin.sysbench_io_output_schema.unserialize(
+                {
+                    "Numberofthreads": 2.0,
+                    "NumberofIOrequests": 0,
+                    "ReadWriteratioforcombinedrandomIOtest": 0,
+                    "Extrafileopenflags": "sync",
+                    "totaltime": 0.0114,
+                    "totalnumberofevents": 9.0,
+                }
+            )
+        )
+
+        plugin.test_object_serialization(
+            sysbench_plugin.sysbench_io_results_schema.unserialize(
+                {
+                    "Fileoperations": {
+                        "reads_s": "0.00",
+                        "writes_s": "689.64",
+                        "fsyncs_s": "306.50",
+                    },
+                    "Throughput": {
+                        "read_MiB_s": "0.00",
+                        "written_MiB_s": "10.78",
+                    },
+                    "Latency": {
+                        "min": "1.53",
+                        "avg": "2.31",
+                        "max": "4.08",
+                        "P95thpercentile": "4.10",
+                        "sum": "20.75",
+                    },
+                    "Threadsfairness": {
+                        "events": {"avg": 4.5, "stddev": 0.5},
+                        "executiontime": {"avg": 0.0104, "stddev": 0.0},
+                    },
+                }
+            )
+        )
+
+        plugin.test_object_serialization(
             sysbench_plugin.WorkloadError(
                 exit_code=1, error="This is an error"
             )
@@ -134,6 +175,61 @@ class SysbenchPluginTest(unittest.TestCase):
         )
         self.assertGreaterEqual(output_data.sysbench_results.Latency.avg, 0)
         self.assertGreaterEqual(output_data.sysbench_results.Latency.sum, 0)
+        self.assertGreater(
+            output_data.sysbench_results.Threadsfairness.events.avg, 0
+        )
+        self.assertGreater(
+            output_data.sysbench_results.Threadsfairness.executiontime.avg, 0
+        )
+
+    def test_functional_io(self):
+        input = sysbench_plugin.SysbenchIoInputParams(
+            events=0,
+            threads=2,
+            file_num=2,
+            file_total_size="12M",
+            file_test_mode=sysbench_schema.FileTestMode.RNDRW,
+            time=10,
+        )
+        output_id, output_data = sysbench_plugin.RunSysbenchIo(input)
+
+        self.assertEqual("success", output_id)
+        self.assertEqual(output_data.sysbench_output_params.Numberofthreads, 2)
+        self.assertGreaterEqual(
+            output_data.sysbench_output_params.totaltime, 10
+        )
+        self.assertGreater(
+            output_data.sysbench_output_params.totalnumberofevents, 0
+        )
+        self.assertGreater(
+            output_data.sysbench_output_params.ReadWriteratioforcombinedrandomIOtest,
+            0.0,
+        )
+        self.assertGreater(
+            output_data.sysbench_results.Fileoperations.reads_s, 0
+        )
+        self.assertGreater(
+            output_data.sysbench_results.Fileoperations.writes_s, 0
+        )
+        self.assertGreater(
+            output_data.sysbench_results.Fileoperations.fsyncs_s, 0
+        )
+        self.assertGreater(
+            output_data.sysbench_results.Throughput.read_MiB_s, 0
+        )
+        self.assertGreater(
+            output_data.sysbench_results.Throughput.written_MiB_s, 0
+        )
+        self.assertGreaterEqual(output_data.sysbench_results.Latency.min, 0)
+        self.assertGreater(output_data.sysbench_results.Latency.avg, 0)
+        self.assertGreater(output_data.sysbench_results.Latency.max, 0)
+        self.assertGreater(
+            output_data.sysbench_results.Latency.P95thpercentile, 0
+        )
+        self.assertGreater(output_data.sysbench_results.Latency.sum, 0)
+        self.assertGreater(
+            output_data.sysbench_results.Threadsfairness.events.avg, 0
+        )
         self.assertGreater(
             output_data.sysbench_results.Threadsfairness.events.avg, 0
         )
@@ -198,6 +294,40 @@ class SysbenchPluginTest(unittest.TestCase):
         }
 
         with open("tests/cpu_parse_output.txt", "r") as fout:
+            cpu_output = fout.read()
+
+        output, results = sysbench_plugin.parse_output(cpu_output)
+        self.assertEqual(sysbench_output, output)
+        self.assertEqual(sysbench_results, results)
+
+    def test_parsing_function_io(self):
+        sysbench_output = {
+            "Numberofthreads": 2.0,
+            "Extrafileopenflags": "sync",
+            "totaltime": 60.0028,
+            "totalnumberofevents": 36776.0,
+        }
+
+        sysbench_results = {
+            "Fileoperations": {
+                "reads_s": "0.00",
+                "writes_s": "600.89",
+                "fsyncs_s": "12.07",
+            },
+            "Throughput": {"read_MiB_s": "0.00", "written_MiB_s": "9.39"},
+            "Latency": {
+                "min": "0.10",
+                "avg": "3.26",
+                "max": "43.90",
+                "P95thpercentile": "5.09",
+                "sum": "119963.98",
+            },
+            "Threadsfairness": {
+                "events": {"avg": 18388.0, "stddev": 10.0},
+                "executiontime": {"avg": 59.982, "stddev": 0.0},
+            },
+        }
+        with open("tests/io_parse_output.txt", "r") as fout:
             cpu_output = fout.read()
 
         output, results = sysbench_plugin.parse_output(cpu_output)
