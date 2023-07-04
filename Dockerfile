@@ -2,15 +2,17 @@
 FROM quay.io/centos/centos:stream8 as poetry
 
 RUN dnf -y module install python39 && dnf -y install python39 python39-pip 
-RUN curl -s https://packagecloud.io/install/repositories/akopytov/sysbench/script.rpm.sh | bash
-RUN dnf -y install sysbench-1.0.20
+# RUN curl -s https://packagecloud.io/install/repositories/akopytov/sysbench/script.rpm.sh | bash
+# RUN dnf -y install sysbench-1.0.20 git
+RUN dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+RUN dnf -y install sysbench
 
 WORKDIR /app
 
 COPY poetry.lock /app/
 COPY pyproject.toml /app/
 
-RUN python3.9 -m pip install poetry \
+RUN python3.9 -m pip install poetry==1.4.2 \
  && python3.9 -m poetry config virtualenvs.create false \
  && python3.9 -m poetry install --without dev --no-root \
  && python3.9 -m poetry export -f requirements.txt --output requirements.txt --without-hashes
@@ -34,8 +36,10 @@ FROM quay.io/centos/centos:stream8
 ENV package arcaflow_plugin_sysbench
 
 RUN dnf -y module install python39 && dnf -y install python39 python39-pip
-RUN curl -s https://packagecloud.io/install/repositories/akopytov/sysbench/script.rpm.sh | bash
-RUN dnf -y install sysbench-1.0.20
+# RUN curl -s https://packagecloud.io/install/repositories/akopytov/sysbench/script.rpm.sh | bash
+# RUN dnf -y install sysbench-1.0.20 git
+RUN dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+RUN dnf -y install sysbench
 
 WORKDIR /app
 
