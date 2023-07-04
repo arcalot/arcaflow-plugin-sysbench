@@ -2,8 +2,6 @@
 FROM quay.io/centos/centos:stream8 as poetry
 
 RUN dnf -y module install python39 && dnf -y install python39 python39-pip 
-# RUN curl -s https://packagecloud.io/install/repositories/akopytov/sysbench/script.rpm.sh | bash
-# RUN dnf -y install sysbench-1.0.20 git
 RUN dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 RUN dnf -y install sysbench
 
@@ -21,9 +19,11 @@ ENV package arcaflow_plugin_sysbench
 
 # run tests
 COPY ${package}/ /app/${package}
-COPY tests /app/tests
+COPY tests /app/${package}/tests
 
 ENV PYTHONPATH /app/${package}
+
+WORKDIR /app/${package}
 
 RUN mkdir /htmlcov
 RUN pip3 install coverage
@@ -36,8 +36,6 @@ FROM quay.io/centos/centos:stream8
 ENV package arcaflow_plugin_sysbench
 
 RUN dnf -y module install python39 && dnf -y install python39 python39-pip
-# RUN curl -s https://packagecloud.io/install/repositories/akopytov/sysbench/script.rpm.sh | bash
-# RUN dnf -y install sysbench-1.0.20 git
 RUN dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 RUN dnf -y install sysbench
 
