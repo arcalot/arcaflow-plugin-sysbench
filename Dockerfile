@@ -1,9 +1,9 @@
 # build poetry
 FROM quay.io/centos/centos:stream8 as poetry
 
-RUN dnf -y module install python39 && dnf -y install python39 python39-pip 
-RUN dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-RUN dnf -y install sysbench
+RUN dnf -y module install python39 && dnf -y install python39 python39-pip \
+ && dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm \
+ && dnf -y install sysbench
 
 WORKDIR /app
 
@@ -25,19 +25,19 @@ ENV PYTHONPATH /app/${package}
 
 WORKDIR /app/${package}
 
-RUN mkdir /htmlcov
-RUN pip3 install coverage
-RUN python3 -m coverage run tests/test_sysbench_plugin.py
-RUN python3 -m coverage html -d /htmlcov --omit=/usr/local/*
+RUN mkdir /htmlcov \
+ && pip3 install coverage \
+ && python3 -m coverage run tests/test_sysbench_plugin.py \
+ && python3 -m coverage html -d /htmlcov --omit=/usr/local/*
 
 
 # final image
 FROM quay.io/centos/centos:stream8
 ENV package arcaflow_plugin_sysbench
 
-RUN dnf -y module install python39 && dnf -y install python39 python39-pip
-RUN dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-RUN dnf -y install sysbench
+RUN dnf -y module install python39 && dnf -y install python39 python39-pip \
+ && dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm \
+ && dnf -y install sysbench
 
 WORKDIR /app
 
