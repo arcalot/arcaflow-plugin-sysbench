@@ -1,57 +1,53 @@
-# build poetry
-FROM quay.io/centos/centos:stream8 as poetry
+# Package path for this plugin module relative to the repo root
+ARG package=arcaflow_plugin_sysbench
 
+# STAGE 1 -- Build module dependencies and run tests
+# The 'poetry' and 'coverage' modules are installed and verson-controlled in the
+# quay.io/arcalot/arcaflow-plugin-baseimage-python-buildbase image to limit drift
+FROM quay.io/arcalot/arcaflow-plugin-baseimage-python-buildbase:0.2.0 as build
+ARG package
 RUN dnf -y module install python39 && dnf -y install python39 python39-pip \
  && dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm \
  && dnf -y install sysbench
-
-WORKDIR /app
 
 COPY poetry.lock /app/
 COPY pyproject.toml /app/
 
-RUN python3.9 -m pip install poetry==1.4.2 \
- && python3.9 -m poetry config virtualenvs.create false \
- && python3.9 -m poetry install --without dev --no-root \
- && python3.9 -m poetry export -f requirements.txt --output requirements.txt --without-hashes
+# Convert the dependencies from poetry to a static requirements.txt file
+RUN python -m poetry install --without dev --no-root \
+ && python -m poetry export -f requirements.txt --output requirements.txt --without-hashes
 
-ENV package arcaflow_plugin_sysbench
-
-# run tests
 COPY ${package}/ /app/${package}
 COPY tests /app/${package}/tests
 
 ENV PYTHONPATH /app/${package}
-
 WORKDIR /app/${package}
 
-RUN mkdir /htmlcov \
- && pip3 install coverage \
- && python3 -m coverage run tests/test_sysbench_plugin.py \
- && python3 -m coverage html -d /htmlcov --omit=/usr/local/*
+# Run tests and return coverage analysis
+RUN python -m coverage run tests/test_${package}.py \
+ && python -m coverage html -d /htmlcov --omit=/usr/local/*
 
 
-# final image
-FROM quay.io/centos/centos:stream8
-ENV package arcaflow_plugin_sysbench
+# STAGE 2 -- Build final plugin image
+FROM quay.io/arcalot/arcaflow-plugin-baseimage-python-osbase:0.2.0
+ARG package
 
 RUN dnf -y module install python39 && dnf -y install python39 python39-pip \
  && dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm \
  && dnf -y install sysbench
 
-WORKDIR /app
-
-COPY --from=poetry /app/requirements.txt /app/
-COPY --from=poetry /htmlcov /htmlcov/
+COPY --from=build /app/requirements.txt /app/
+COPY --from=build /htmlcov /htmlcov/
 COPY LICENSE /app/
 COPY README.md /app/
 COPY ${package}/ /app/${package}
 
-RUN python3.9 -m pip install -r requirements.txt
+# Install all plugin dependencies from the generated requirements.txt file
+RUN python -m pip install -r requirements.txt
 
 WORKDIR /app/${package}
 
-ENTRYPOINT ["python3.9", "sysbench_plugin.py"]
+ENTRYPOINT ["python3", "sysbench_plugin.py"]
 CMD []
 
 LABEL org.opencontainers.image.title="Sysbench Arcalot Plugin"
