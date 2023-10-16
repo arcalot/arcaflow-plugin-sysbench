@@ -199,10 +199,10 @@ Run CPU performance test using the sysbench workload
         <table><tbody><tr><th>Name:</th><td>Minimum</td></tr><tr><th>Description:</th><td>Minimum latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>percentile (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>Reported percentile bucket</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>Latency percentile selected for reporting</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>percentile_value (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Percentile Value</td></tr><tr><th>Description:</th><td>Percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Latency Percentile Value</td></tr><tr><th>Description:</th><td>Latency percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>sum (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Sum</td></tr><tr><th>Description:</th><td>Sum of latencies</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
@@ -556,10 +556,10 @@ Run the I/O test using the sysbench workload
         <table><tbody><tr><th>Name:</th><td>Minimum</td></tr><tr><th>Description:</th><td>Minimum latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>percentile (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>Reported percentile bucket</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>Latency percentile selected for reporting</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>percentile_value (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Percentile Value</td></tr><tr><th>Description:</th><td>Percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Latency Percentile Value</td></tr><tr><th>Description:</th><td>Latency percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>sum (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Sum</td></tr><tr><th>Description:</th><td>Sum of latencies</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
@@ -857,10 +857,10 @@ Run the Memory functions speed test using the sysbench workload
         <table><tbody><tr><th>Name:</th><td>Minimum</td></tr><tr><th>Description:</th><td>Minimum latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>percentile (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>Reported percentile bucket</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>Latency percentile selected for reporting</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>percentile_value (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Percentile Value</td></tr><tr><th>Description:</th><td>Percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Latency Percentile Value</td></tr><tr><th>Description:</th><td>Latency percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>sum (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Sum</td></tr><tr><th>Description:</th><td>Sum of latencies</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
