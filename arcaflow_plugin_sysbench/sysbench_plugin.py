@@ -120,7 +120,19 @@ def run_sysbench(flags, operation, test_mode="run"):
             ) from error
 
         return output, results
-
+ 
+def get_sysbench_version():
+    try:
+        cmd = ["sysbench", "--version"]
+        version = subprocess.check_output(cmd, stderr=subprocess.STDOUT).strip().decode("utf-8")
+    except subprocess.CalledProcessError as error:
+        raise Exception(
+            error.returncode,
+                "{} failed with return code {}:\n{}".format(
+                    error.cmd[0], error.returncode, error.output
+                ),
+            ) from error
+    return version
 
 @plugin.step(
     id="sysbenchcpu",
@@ -131,7 +143,9 @@ def run_sysbench(flags, operation, test_mode="run"):
 def RunSysbenchCpu(
     params: SysbenchCpuInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsCpu, WorkloadError]]:
+    print(f"Sysbench version is: {get_sysbench_version()}")
     print("==>> Running sysbench CPU workload ...")
+
 
     serialized_params = sysbench_cpu_input_schema.serialize(params)
 
@@ -163,6 +177,7 @@ def RunSysbenchCpu(
 def RunSysbenchMemory(
     params: SysbenchMemoryInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsMemory, WorkloadError]]:
+    print(f"Sysbench version is: {get_sysbench_version()}")
     print("==>> Running sysbench Memory workload ...")
 
     serialized_params = sysbench_memory_input_schema.serialize(params)
@@ -193,6 +208,7 @@ def RunSysbenchMemory(
 def RunSysbenchIo(
     params: SysbenchIoInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsIo, WorkloadError]]:
+    print(f"Sysbench version is: {get_sysbench_version()}")
     print("==>> Running sysbench I/O workload ...")
 
     serialized_params = sysbench_io_input_schema.serialize(params)
