@@ -189,10 +189,7 @@ Run CPU performance test using the sysbench workload
         </details></td></tr>
 </tbody></table>
         </details><details><summary>LatencyAggregates (<code>object</code>)</summary>
-            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>P95thpercentile (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>95th Percentile</td></tr><tr><th>Description:</th><td>95th percentile latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
-</tbody></table>
-        </details><details><summary>avg (<code>float</code>)</summary>
+            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>avg (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td>Average Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>max (<code>float</code>)</summary>
@@ -200,6 +197,12 @@ Run CPU performance test using the sysbench workload
 </tbody></table>
         </details><details><summary>min (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Minimum</td></tr><tr><th>Description:</th><td>Minimum latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+</tbody></table>
+        </details><details><summary>percentile (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>Reported percentile bucket</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+</tbody></table>
+        </details><details><summary>percentile_value (<code>float</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Percentile Value</td></tr><tr><th>Description:</th><td>Percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>sum (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Sum</td></tr><tr><th>Description:</th><td>Sum of latencies</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
@@ -543,10 +546,7 @@ Run the I/O test using the sysbench workload
         </details></td></tr>
 </tbody></table>
         </details><details><summary>LatencyAggregates (<code>object</code>)</summary>
-            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>P95thpercentile (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>95th Percentile</td></tr><tr><th>Description:</th><td>95th percentile latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
-</tbody></table>
-        </details><details><summary>avg (<code>float</code>)</summary>
+            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>avg (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td>Average Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>max (<code>float</code>)</summary>
@@ -554,6 +554,12 @@ Run the I/O test using the sysbench workload
 </tbody></table>
         </details><details><summary>min (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Minimum</td></tr><tr><th>Description:</th><td>Minimum latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+</tbody></table>
+        </details><details><summary>percentile (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>Reported percentile bucket</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+</tbody></table>
+        </details><details><summary>percentile_value (<code>float</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Percentile Value</td></tr><tr><th>Description:</th><td>Percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>sum (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Sum</td></tr><tr><th>Description:</th><td>Sum of latencies</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
@@ -841,10 +847,7 @@ Run the Memory functions speed test using the sysbench workload
                 <table><tbody><tr><th>Name:</th><td>Sysbench Memory Result Parameters</td></tr><tr><th>Description:</th><td>Result parameters for a successful sysbench Memory workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchMemoryResultParams]</code></td><tr><th>Referenced object:</th><td>SysbenchMemoryResultParams</td></tr></tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>LatencyAggregates (<code>object</code>)</summary>
-            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>P95thpercentile (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>95th Percentile</td></tr><tr><th>Description:</th><td>95th percentile latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
-</tbody></table>
-        </details><details><summary>avg (<code>float</code>)</summary>
+            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>avg (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td>Average Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>max (<code>float</code>)</summary>
@@ -852,6 +855,12 @@ Run the Memory functions speed test using the sysbench workload
 </tbody></table>
         </details><details><summary>min (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Minimum</td></tr><tr><th>Description:</th><td>Minimum latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+</tbody></table>
+        </details><details><summary>percentile (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>Reported percentile bucket</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+</tbody></table>
+        </details><details><summary>percentile_value (<code>float</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Percentile Value</td></tr><tr><th>Description:</th><td>Percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>sum (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Sum</td></tr><tr><th>Description:</th><td>Sum of latencies</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
