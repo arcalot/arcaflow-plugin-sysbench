@@ -96,7 +96,7 @@ def parse_output(output):
     return sysbench_output, sysbench_results
 
 
-def run_sysbench(params, flags, operation, test_mode="run"):
+def run_sysbench(flags, operation, test_mode="run"):
     try:
         cmd = ["sysbench"]
         cmd = cmd + flags + [operation, test_mode]
@@ -140,7 +140,7 @@ def RunSysbenchCpu(
         cpu_flags.append(f"--{param}={value}")
 
     try:
-        output, results = run_sysbench(params, cpu_flags, "cpu")
+        output, results = run_sysbench(cpu_flags, "cpu")
     except Exception as error:
         return "error", WorkloadError(error.args[0], error.args[1])
 
@@ -172,7 +172,7 @@ def RunSysbenchMemory(
         memory_flags.append(f"--{param}={value}")
 
     try:
-        output, results = run_sysbench(params, memory_flags, "memory")
+        output, results = run_sysbench(memory_flags, "memory")
     except Exception as error:
         return "error", WorkloadError(error.args[0], error.args[1])
 
@@ -202,9 +202,9 @@ def RunSysbenchIo(
         io_flags.append(f"--{param}={value}")
 
     try:
-        run_sysbench(params, io_flags, "fileio", "prepare")
-        output, results = run_sysbench(params, io_flags, "fileio", "run")
-        run_sysbench(params, io_flags, "fileio", "cleanup")
+        run_sysbench(io_flags, "fileio", "prepare")
+        output, results = run_sysbench(io_flags, "fileio", "run")
+        run_sysbench(io_flags, "fileio", "cleanup")
     except Exception as error:
         return "error", WorkloadError(error.args[0], error.args[1])
 
