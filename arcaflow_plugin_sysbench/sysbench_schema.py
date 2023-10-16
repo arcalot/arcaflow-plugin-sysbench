@@ -198,9 +198,7 @@ class SysbenchCpuInputParams(CommonInputParameters):
         typing.Optional[int],
         schema.id("cpu-max-prime"),
         schema.name("CPU max prime"),
-        schema.description(
-            "The upper limit of the number of prime numbers generated"
-        ),
+        schema.description("The upper limit of the number of prime numbers generated"),
     ] = 10000
 
 
@@ -280,9 +278,7 @@ class SysbenchIoInputParams(CommonInputParameters):
         typing.Optional[FileTestMode],
         schema.id("file-test-mode"),
         schema.name("File Test Mode"),
-        schema.description(
-            "Test mode {seqwr, seqrewr, seqrd, rndrd, rndwr, rndrw}"
-        ),
+        schema.description("Test mode {seqwr, seqrewr, seqrd, rndrd, rndwr, rndrw}"),
     ] = FileTestMode.SEQWR
 
     file_io_mode: typing.Annotated[
@@ -296,9 +292,7 @@ class SysbenchIoInputParams(CommonInputParameters):
         typing.Optional[int],
         schema.id("file-async-backlog"),
         schema.name("File Async Backlog"),
-        schema.description(
-            "Number of asynchronous operatons to queue per thread"
-        ),
+        schema.description("Number of asynchronous operatons to queue per thread"),
     ] = 128
 
     file_extra_flags: typing.Annotated[
@@ -523,8 +517,7 @@ class SysbenchMemoryOutput:
         float,
         schema.name("Total operations per second"),
         schema.description(
-            "Total number of operations performed by the memory workload"
-            " per second"
+            "Total number of operations performed by the memory workload" " per second"
         ),
     ]
     Totaloperations: typing.Annotated[
@@ -653,9 +646,7 @@ class SysbenchIoResultParams:
 
 
 @dataclass
-class SysbenchMemoryOutputParams(
-    SysbenchCommonOutputParams, SysbenchMemoryOutput
-):
+class SysbenchMemoryOutputParams(SysbenchCommonOutputParams, SysbenchMemoryOutput):
     """
     This is the data structure for all output
     parameters returned by sysbench memory benchmark.
@@ -701,16 +692,14 @@ class WorkloadResultsCpu:
         SysbenchCpuOutputParams,
         schema.name("Sysbench Cpu Output Parameters"),
         schema.description(
-            "Ouptut parameters for a successful sysbench cpu workload"
-            " execution"
+            "Ouptut parameters for a successful sysbench cpu workload" " execution"
         ),
     ]
     sysbench_results: typing.Annotated[
         SysbenchCpuResultParams,
         schema.name("Sysbench Cpu Result Parameters"),
         schema.description(
-            "Result parameters for a successful sysbench cpu workload"
-            " execution"
+            "Result parameters for a successful sysbench cpu workload" " execution"
         ),
     ]
 
@@ -726,16 +715,14 @@ class WorkloadResultsMemory:
         SysbenchMemoryOutputParams,
         schema.name("Sysbench Memory Output Parameters"),
         schema.description(
-            "Ouptut parameters for a successful sysbench memory workload"
-            " execution"
+            "Ouptut parameters for a successful sysbench memory workload" " execution"
         ),
     ]
     sysbench_results: typing.Annotated[
         SysbenchMemoryResultParams,
         schema.name("Sysbench Memory Result Parameters"),
         schema.description(
-            "Result parameters for a successful sysbench Memory workload"
-            " execution"
+            "Result parameters for a successful sysbench Memory workload" " execution"
         ),
     ]
 
@@ -751,8 +738,7 @@ class WorkloadResultsIo:
         SysbenchIoOutputParams,
         schema.name("Sysbench Io Output Parameters"),
         schema.description(
-            "Ouptut parameters for a successful sysbench io workload"
-            " execution"
+            "Ouptut parameters for a successful sysbench io workload" " execution"
         ),
     ]
 
@@ -760,8 +746,7 @@ class WorkloadResultsIo:
         SysbenchIoResultParams,
         schema.name("Sysbench io Result Parameters"),
         schema.description(
-            "Result parameters for a successful io Memory workload"
-            " execution"
+            "Result parameters for a successful io Memory workload" " execution"
         ),
     ]
 
@@ -775,9 +760,7 @@ class WorkloadError:
     exit_code: typing.Annotated[
         int,
         schema.name("Exit Code"),
-        schema.description(
-            "Exit code returned by the program in case of a failure"
-        ),
+        schema.description("Exit code returned by the program in case of a failure"),
     ]
     error: typing.Annotated[
         str,
@@ -787,21 +770,11 @@ class WorkloadError:
 
 
 sysbench_cpu_input_schema = plugin.build_object_schema(SysbenchCpuInputParams)
-sysbench_memory_input_schema = plugin.build_object_schema(
-    SysbenchMemoryInputParams
-)
+sysbench_memory_input_schema = plugin.build_object_schema(SysbenchMemoryInputParams)
 sysbench_io_input_schema = plugin.build_object_schema(SysbenchIoInputParams)
-sysbench_cpu_output_schema = plugin.build_object_schema(
-    SysbenchCpuOutputParams
-)
-sysbench_cpu_results_schema = plugin.build_object_schema(
-    SysbenchCpuResultParams
-)
-sysbench_memory_output_schema = plugin.build_object_schema(
-    SysbenchMemoryOutputParams
-)
-sysbench_memory_results_schema = plugin.build_object_schema(
-    SysbenchMemoryResultParams
-)
+sysbench_cpu_output_schema = plugin.build_object_schema(SysbenchCpuOutputParams)
+sysbench_cpu_results_schema = plugin.build_object_schema(SysbenchCpuResultParams)
+sysbench_memory_output_schema = plugin.build_object_schema(SysbenchMemoryOutputParams)
+sysbench_memory_results_schema = plugin.build_object_schema(SysbenchMemoryResultParams)
 sysbench_io_output_schema = plugin.build_object_schema(SysbenchIoOutputParams)
 sysbench_io_results_schema = plugin.build_object_schema(SysbenchIoResultParams)

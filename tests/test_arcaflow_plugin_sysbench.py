@@ -127,9 +127,7 @@ class SysbenchPluginTest(unittest.TestCase):
         )
 
         plugin.test_object_serialization(
-            sysbench_plugin.WorkloadError(
-                exit_code=1, error="This is an error"
-            )
+            sysbench_plugin.WorkloadError(exit_code=1, error="This is an error")
         )
 
     def test_functional_cpu(self):
@@ -138,21 +136,13 @@ class SysbenchPluginTest(unittest.TestCase):
         output_id, output_data = sysbench_plugin.RunSysbenchCpu(input)
 
         self.assertEqual("success", output_id)
-        self.assertGreaterEqual(
-            output_data.sysbench_output_params.Numberofthreads, 1
-        )
+        self.assertGreaterEqual(output_data.sysbench_output_params.Numberofthreads, 1)
         self.assertGreater(output_data.sysbench_output_params.totaltime, 0)
-        self.assertGreater(
-            output_data.sysbench_output_params.totalnumberofevents, 0
-        )
-        self.assertGreater(
-            output_data.sysbench_results.CPUspeed.eventspersecond, 0
-        )
+        self.assertGreater(output_data.sysbench_output_params.totalnumberofevents, 0)
+        self.assertGreater(output_data.sysbench_results.CPUspeed.eventspersecond, 0)
         self.assertGreaterEqual(output_data.sysbench_results.Latency.avg, 0)
         self.assertGreaterEqual(output_data.sysbench_results.Latency.sum, 0)
-        self.assertGreater(
-            output_data.sysbench_results.Threadsfairness.events.avg, 0
-        )
+        self.assertGreater(output_data.sysbench_results.Threadsfairness.events.avg, 0)
         self.assertGreater(
             output_data.sysbench_results.Threadsfairness.executiontime.avg, 0
         )
@@ -163,24 +153,16 @@ class SysbenchPluginTest(unittest.TestCase):
         output_id, output_data = sysbench_plugin.RunSysbenchMemory(input)
 
         self.assertEqual("success", output_id)
-        self.assertGreaterEqual(
-            output_data.sysbench_output_params.Numberofthreads, 1
-        )
+        self.assertGreaterEqual(output_data.sysbench_output_params.Numberofthreads, 1)
         self.assertGreater(output_data.sysbench_output_params.totaltime, 0)
-        self.assertGreater(
-            output_data.sysbench_output_params.Totaloperations, 0
-        )
+        self.assertGreater(output_data.sysbench_output_params.Totaloperations, 0)
         self.assertIsNotNone(output_data.sysbench_output_params.blocksize)
         self.assertIsNotNone(output_data.sysbench_output_params.operation)
         self.assertGreater(output_data.sysbench_results.transferred_MiB, 0)
-        self.assertGreater(
-            output_data.sysbench_results.transferred_MiBpersec, 0
-        )
+        self.assertGreater(output_data.sysbench_results.transferred_MiBpersec, 0)
         self.assertGreaterEqual(output_data.sysbench_results.Latency.avg, 0)
         self.assertGreaterEqual(output_data.sysbench_results.Latency.sum, 0)
-        self.assertGreater(
-            output_data.sysbench_results.Threadsfairness.events.avg, 0
-        )
+        self.assertGreater(output_data.sysbench_results.Threadsfairness.events.avg, 0)
         self.assertGreater(
             output_data.sysbench_results.Threadsfairness.executiontime.avg, 0
         )
@@ -198,44 +180,24 @@ class SysbenchPluginTest(unittest.TestCase):
 
         self.assertEqual("success", output_id)
         self.assertEqual(output_data.sysbench_output_params.Numberofthreads, 2)
-        self.assertGreaterEqual(
-            output_data.sysbench_output_params.totaltime, 10
-        )
-        self.assertGreater(
-            output_data.sysbench_output_params.totalnumberofevents, 0
-        )
+        self.assertGreaterEqual(output_data.sysbench_output_params.totaltime, 10)
+        self.assertGreater(output_data.sysbench_output_params.totalnumberofevents, 0)
         self.assertGreater(
             output_data.sysbench_output_params.ReadWriteratioforcombinedrandomIOtest,
             0.0,
         )
-        self.assertGreater(
-            output_data.sysbench_results.Fileoperations.reads_s, 0
-        )
-        self.assertGreater(
-            output_data.sysbench_results.Fileoperations.writes_s, 0
-        )
-        self.assertGreater(
-            output_data.sysbench_results.Fileoperations.fsyncs_s, 0
-        )
-        self.assertGreater(
-            output_data.sysbench_results.Throughput.read_MiB_s, 0
-        )
-        self.assertGreater(
-            output_data.sysbench_results.Throughput.written_MiB_s, 0
-        )
+        self.assertGreater(output_data.sysbench_results.Fileoperations.reads_s, 0)
+        self.assertGreater(output_data.sysbench_results.Fileoperations.writes_s, 0)
+        self.assertGreater(output_data.sysbench_results.Fileoperations.fsyncs_s, 0)
+        self.assertGreater(output_data.sysbench_results.Throughput.read_MiB_s, 0)
+        self.assertGreater(output_data.sysbench_results.Throughput.written_MiB_s, 0)
         self.assertGreaterEqual(output_data.sysbench_results.Latency.min, 0)
         self.assertGreater(output_data.sysbench_results.Latency.avg, 0)
         self.assertGreater(output_data.sysbench_results.Latency.max, 0)
-        self.assertGreater(
-            output_data.sysbench_results.Latency.percentile, 0
-        )
+        self.assertGreater(output_data.sysbench_results.Latency.percentile, 0)
         self.assertGreater(output_data.sysbench_results.Latency.sum, 0)
-        self.assertGreater(
-            output_data.sysbench_results.Threadsfairness.events.avg, 0
-        )
-        self.assertGreater(
-            output_data.sysbench_results.Threadsfairness.events.avg, 0
-        )
+        self.assertGreater(output_data.sysbench_results.Threadsfairness.events.avg, 0)
+        self.assertGreater(output_data.sysbench_results.Threadsfairness.events.avg, 0)
         self.assertGreater(
             output_data.sysbench_results.Threadsfairness.executiontime.avg, 0
         )
