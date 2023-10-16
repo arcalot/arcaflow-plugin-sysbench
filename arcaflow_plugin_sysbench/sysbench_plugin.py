@@ -35,7 +35,10 @@ def parse_output(output):
             key, value = line.split(":")
 
             if key[0].isdigit():
-                key = "P" + key
+                percentile_value = value
+                value = re.match(r"([0-9]+)", key).group(0)
+                key = "percentile"
+
             if value == "":
                 key = re.sub(r"\((.*?)\)", "", key)
                 if "options" in key or "General" in key:
@@ -57,7 +60,7 @@ def parse_output(output):
                     tops = tops.replace("persecond)", "")
                     dictionary["Totaloperations"] = float(to)
                     dictionary["Totaloperationspersecond"] = float(tops)
-                elif value.isnumeric():
+                elif "percentile" not in key and value.isnumeric():
                     dictionary[key] = float(value)
                 else:
                     dictionary[key] = value
@@ -71,7 +74,10 @@ def parse_output(output):
                     dictionary[section][key] = {}
                     dictionary[section][key]["avg"] = float(avg)
                     dictionary[section][key]["stddev"] = float(stddev)
-                elif value.isnumeric():
+                elif "percentile" in key:
+                    dictionary[section][key] = int(value)
+                    dictionary[section]["percentile_value"] = percentile_value
+                elif "percentile" not in key and value.isnumeric():
                     dictionary[section][key] = float(value)
                 else:
                     # replace / and , with _ for fileio test

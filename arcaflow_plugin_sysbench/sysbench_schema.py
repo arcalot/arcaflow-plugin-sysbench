@@ -376,10 +376,15 @@ class LatencyAggregates:
         schema.name("Maximum"),
         schema.description("Maximum Latency"),
     ]
-    P95thpercentile: typing.Annotated[
+    percentile: typing.Annotated[
+        int,
+        schema.name("Percentile"),
+        schema.description("Reported percentile bucket"),
+    ]
+    percentile_value: typing.Annotated[
         float,
-        schema.name("95th Percentile"),
-        schema.description("95th percentile latency"),
+        schema.name("Percentile Value"),
+        schema.description("Percentile value"),
     ]
     sum: typing.Annotated[
         float,

@@ -36,7 +36,8 @@ class SysbenchPluginTest(unittest.TestCase):
                         "min": "0.67",
                         "avg": "0.76",
                         "max": "1.26",
-                        "P95thpercentile": "0.87",
+                        "percentile": 95,
+                        "percentile_value": "1.25",
                         "sum": "19987.57",
                     },
                     "Threadsfairness": {
@@ -72,7 +73,8 @@ class SysbenchPluginTest(unittest.TestCase):
                         "min": "0.00",
                         "avg": "0.00",
                         "max": "1.18",
-                        "P95thpercentile": "0.00",
+                        "percentile": 95,
+                        "percentile_value": "1.17",
                         "sum": "13699.95",
                     },
                     "Threadsfairness": {
@@ -112,7 +114,8 @@ class SysbenchPluginTest(unittest.TestCase):
                         "min": "1.53",
                         "avg": "2.31",
                         "max": "4.08",
-                        "P95thpercentile": "4.10",
+                        "percentile": 95,
+                        "percentile_value": "4.07",
                         "sum": "20.75",
                     },
                     "Threadsfairness": {
@@ -224,7 +227,7 @@ class SysbenchPluginTest(unittest.TestCase):
         self.assertGreater(output_data.sysbench_results.Latency.avg, 0)
         self.assertGreater(output_data.sysbench_results.Latency.max, 0)
         self.assertGreater(
-            output_data.sysbench_results.Latency.P95thpercentile, 0
+            output_data.sysbench_results.Latency.percentile, 0
         )
         self.assertGreater(output_data.sysbench_results.Latency.sum, 0)
         self.assertGreater(
@@ -256,7 +259,8 @@ class SysbenchPluginTest(unittest.TestCase):
                 "min": "0.00",
                 "avg": "0.00",
                 "max": "0.11",
-                "P95thpercentile": "0.00",
+                "percentile": 95,
+                "percentile_value": "0.00",
                 "sum": "13958.52",
             },
             "Threadsfairness": {
@@ -284,7 +288,8 @@ class SysbenchPluginTest(unittest.TestCase):
                 "min": "0.67",
                 "avg": "0.68",
                 "max": "1.56",
-                "P95thpercentile": "0.70",
+                "percentile": 95,
+                "percentile_value": "0.70",
                 "sum": "19995.74",
             },
             "Threadsfairness": {
@@ -319,7 +324,8 @@ class SysbenchPluginTest(unittest.TestCase):
                 "min": "0.10",
                 "avg": "3.26",
                 "max": "43.90",
-                "P95thpercentile": "5.09",
+                "percentile": 95,
+                "percentile_value": "5.09",
                 "sum": "119963.98",
             },
             "Threadsfairness": {
