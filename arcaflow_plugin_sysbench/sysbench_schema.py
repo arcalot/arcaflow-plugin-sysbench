@@ -373,12 +373,12 @@ class LatencyAggregates:
     percentile: typing.Annotated[
         int,
         schema.name("Percentile"),
-        schema.description("Reported percentile bucket"),
+        schema.description("Latency percentile selected for reporting"),
     ]
     percentile_value: typing.Annotated[
         float,
-        schema.name("Percentile Value"),
-        schema.description("Percentile value"),
+        schema.name("Latency Percentile Value"),
+        schema.description("Latency percentile value"),
     ]
     sum: typing.Annotated[
         float,
