@@ -106,6 +106,7 @@ def run_sysbench(flags, operation, test_mode="run"):
     try:
         cmd = ["sysbench"]
         cmd = cmd + flags + [operation, test_mode]
+        print("Sysbench command is: " + " ".join(cmd))
         process_out = subprocess.check_output(cmd, stderr=subprocess.STDOUT)
     except subprocess.CalledProcessError as error:
         raise Exception(
