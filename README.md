@@ -210,11 +210,11 @@ Run CPU performance test using the sysbench workload
         </details></td></tr>
 </tbody></table>
         </details><details><summary>SysbenchCpuOutputParams (<code>object</code>)</summary>
-            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>Numberofthreads (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td>Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>Numberofthreads (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td>Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
-        </details><details><summary>Primenumberslimit (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Prime numbers limit</td></tr><tr><th>Description:</th><td>Number of prime numbers to use for CPU workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        </details><details><summary>Primenumberslimit (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Prime numbers limit</td></tr><tr><th>Description:</th><td>Number of prime numbers to use for CPU workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>Validationchecks (<code>string</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Validation checks</td></tr><tr><th>Description:</th><td>Validation on/off</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Default (JSON encoded):</th><td><pre><code>&#34;off&#34;</code></pre></td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
@@ -572,8 +572,8 @@ Run the I/O test using the sysbench workload
         </details><details><summary>NumberofIOrequests (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Number of I/O requests</td></tr><tr><th>Description:</th><td>Number of I/O requests</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Default (JSON encoded):</th><td><pre><code>0.0</code></pre></td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
-        </details><details><summary>Numberofthreads (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td>Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        </details><details><summary>Numberofthreads (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td>Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>ReadWriteratioforcombinedrandomIOtest (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>R/W Ratio Random Test</td></tr><tr><th>Description:</th><td>Read/Write Ratio for combined random I/O test</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Default (JSON encoded):</th><td><pre><code>0.0</code></pre></td></tr><tr><th>Type:</th><td><code>float</code></td>
@@ -868,8 +868,8 @@ Run the Memory functions speed test using the sysbench workload
         </details></td></tr>
 </tbody></table>
         </details><details><summary>SysbenchMemoryOutputParams (<code>object</code>)</summary>
-            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>Numberofthreads (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td>Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+            <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>Numberofthreads (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td>Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>Totaloperations (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Total operations</td></tr><tr><th>Description:</th><td>Total number of operations performed by the memory workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
