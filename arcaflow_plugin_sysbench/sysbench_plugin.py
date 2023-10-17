@@ -61,7 +61,10 @@ def parse_output(output):
                     dictionary["Totaloperations"] = float(to)
                     dictionary["Totaloperationspersecond"] = float(tops)
                 elif "percentile" not in key and value.isnumeric():
-                    dictionary[key] = float(value)
+                    try:
+                        dictionary[key] = int(value)
+                    except ValueError:
+                        dictionary[key] = float(value)
                 else:
                     dictionary[key] = value
 
@@ -78,7 +81,10 @@ def parse_output(output):
                     dictionary[section][key] = int(value)
                     dictionary[section]["percentile_value"] = percentile_value
                 elif "percentile" not in key and value.isnumeric():
-                    dictionary[section][key] = float(value)
+                    try:
+                        dictionary[section][key] = int(value)
+                    except ValueError:
+                        dictionary[section][key] = float(value)
                 else:
                     # replace / and , with _ for fileio test
                     key = re.sub(r"[\/,]", "_", key)

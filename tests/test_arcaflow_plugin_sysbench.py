@@ -21,7 +21,7 @@ class SysbenchPluginTest(unittest.TestCase):
             sysbench_plugin.sysbench_cpu_output_schema.unserialize(
                 {
                     "Numberofthreads": 2.0,
-                    "Primenumberslimit": 10000.0,
+                    "Primenumberslimit": 10000,
                     "totaltime": 10.0008,
                     "totalnumberofevents": 26401.0,
                 }
@@ -240,7 +240,7 @@ class SysbenchPluginTest(unittest.TestCase):
     def test_parsing_function_cpu(self):
         sysbench_output = {
             "Numberofthreads": 2.0,
-            "Primenumberslimit": 10000.0,
+            "Primenumberslimit": 10000,
             "totaltime": 10.0005,
             "totalnumberofevents": 29281.0,
         }

@@ -537,7 +537,7 @@ class SysbenchCpuOutput:
     """
 
     Primenumberslimit: typing.Annotated[
-        float,
+        int,
         schema.name("Prime numbers limit"),
         schema.description("Number of prime numbers to use for CPU workload"),
     ]
