@@ -475,7 +475,7 @@ class SysbenchCommonOutputParams:
         schema.description("Total number of events performed by the workload"),
     ]
     Numberofthreads: typing.Annotated[
-        float,
+        int,
         schema.name("Number of threads"),
         schema.description("Number of threads used by the workload"),
     ]

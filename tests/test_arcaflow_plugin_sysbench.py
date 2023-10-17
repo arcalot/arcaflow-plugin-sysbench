@@ -20,7 +20,7 @@ class SysbenchPluginTest(unittest.TestCase):
         plugin.test_object_serialization(
             sysbench_plugin.sysbench_cpu_output_schema.unserialize(
                 {
-                    "Numberofthreads": 2.0,
+                    "Numberofthreads": 2,
                     "Primenumberslimit": 10000,
                     "totaltime": 10.0008,
                     "totalnumberofevents": 26401.0,
@@ -51,7 +51,7 @@ class SysbenchPluginTest(unittest.TestCase):
         plugin.test_object_serialization(
             sysbench_plugin.sysbench_memory_output_schema.unserialize(
                 {
-                    "Numberofthreads": 2.0,
+                    "Numberofthreads": 2,
                     "blocksize": "1KiB",
                     "totalsize": "102400MiB",
                     "operation": "write",
@@ -88,7 +88,7 @@ class SysbenchPluginTest(unittest.TestCase):
         plugin.test_object_serialization(
             sysbench_plugin.sysbench_io_output_schema.unserialize(
                 {
-                    "Numberofthreads": 2.0,
+                    "Numberofthreads": 2,
                     "NumberofIOrequests": 0,
                     "ReadWriteratioforcombinedrandomIOtest": 0,
                     "Extrafileopenflags": "sync",
@@ -204,7 +204,7 @@ class SysbenchPluginTest(unittest.TestCase):
 
     def test_parsing_function_memory(self):
         sysbench_output = {
-            "Numberofthreads": 2.0,
+            "Numberofthreads": 2,
             "blocksize": "1KiB",
             "totalsize": "102400MiB",
             "operation": "write",
@@ -239,7 +239,7 @@ class SysbenchPluginTest(unittest.TestCase):
 
     def test_parsing_function_cpu(self):
         sysbench_output = {
-            "Numberofthreads": 2.0,
+            "Numberofthreads": 2,
             "Primenumberslimit": 10000,
             "totaltime": 10.0005,
             "totalnumberofevents": 29281.0,
@@ -269,7 +269,7 @@ class SysbenchPluginTest(unittest.TestCase):
 
     def test_parsing_function_io(self):
         sysbench_output = {
-            "Numberofthreads": 2.0,
+            "Numberofthreads": 2,
             "Extrafileopenflags": "sync",
             "totaltime": 60.0028,
             "totalnumberofevents": 36776.0,
