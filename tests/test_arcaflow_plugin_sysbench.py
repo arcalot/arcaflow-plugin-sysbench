@@ -23,7 +23,7 @@ class SysbenchPluginTest(unittest.TestCase):
                     "Numberofthreads": 2,
                     "Primenumberslimit": 10000,
                     "totaltime": 10.0008,
-                    "totalnumberofevents": 26401.0,
+                    "totalnumberofevents": 26401,
                 }
             )
         )
@@ -56,10 +56,10 @@ class SysbenchPluginTest(unittest.TestCase):
                     "totalsize": "102400MiB",
                     "operation": "write",
                     "scope": "global",
-                    "Totaloperations": 72227995.0,
+                    "Totaloperations": 72227995,
                     "Totaloperationspersecond": 7221925.38,
                     "totaltime": 10.0001,
-                    "totalnumberofevents": 72227995.0,
+                    "totalnumberofevents": 72227995,
                 }
             )
         )
@@ -93,7 +93,7 @@ class SysbenchPluginTest(unittest.TestCase):
                     "ReadWriteratioforcombinedrandomIOtest": 0,
                     "Extrafileopenflags": "sync",
                     "totaltime": 0.0114,
-                    "totalnumberofevents": 9.0,
+                    "totalnumberofevents": 9,
                 }
             )
         )
@@ -214,10 +214,10 @@ class SysbenchPluginTest(unittest.TestCase):
             "totalsize": "102400MiB",
             "operation": "write",
             "scope": "global",
-            "Totaloperations": 70040643.0,
+            "Totaloperations": 70040643,
             "Totaloperationspersecond": 7003215.47,
             "totaltime": 10.0001,
-            "totalnumberofevents": 70040643.0,
+            "totalnumberofevents": 70040643,
         }
         sysbench_results = {
             "transferred_MiB": 68399.07,
@@ -247,7 +247,7 @@ class SysbenchPluginTest(unittest.TestCase):
             "Numberofthreads": 2,
             "Primenumberslimit": 10000,
             "totaltime": 10.0005,
-            "totalnumberofevents": 29281.0,
+            "totalnumberofevents": 29281,
         }
         sysbench_results = {
             "CPUspeed": {"eventspersecond": "2927.61"},
@@ -277,7 +277,7 @@ class SysbenchPluginTest(unittest.TestCase):
             "Numberofthreads": 2,
             "Extrafileopenflags": "sync",
             "totaltime": 60.0028,
-            "totalnumberofevents": 36776.0,
+            "totalnumberofevents": 36776,
         }
 
         sysbench_results = {

@@ -470,7 +470,7 @@ class SysbenchCommonOutputParams:
         schema.description("Total execution time of workload"),
     ]
     totalnumberofevents: typing.Annotated[
-        float,
+        int,
         schema.name("Total number of events"),
         schema.description("Total number of events performed by the workload"),
     ]
@@ -521,7 +521,7 @@ class SysbenchMemoryOutput:
         ),
     ]
     Totaloperations: typing.Annotated[
-        float,
+        int,
         schema.name("Total operations"),
         schema.description(
             "Total number of operations performed by the memory workload"
@@ -675,7 +675,7 @@ class SysbenchIoOutputParams(SysbenchCommonOutputParams, SysbenchIoOutput):
     ] = None
 
     NumberofIOrequests: typing.Annotated[
-        typing.Optional[float],
+        typing.Optional[int],
         schema.name("Number of I/O requests"),
         schema.description("Number of I/O requests"),
     ] = None

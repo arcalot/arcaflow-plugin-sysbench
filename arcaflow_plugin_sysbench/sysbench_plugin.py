@@ -58,7 +58,7 @@ def parse_output(output):
                 elif "Totaloperations" in key:
                     to, tops = value.split("(")
                     tops = tops.replace("persecond)", "")
-                    dictionary["Totaloperations"] = float(to)
+                    dictionary["Totaloperations"] = int(to)
                     dictionary["Totaloperationspersecond"] = float(tops)
                 elif "percentile" not in key and value.isnumeric():
                     try:
