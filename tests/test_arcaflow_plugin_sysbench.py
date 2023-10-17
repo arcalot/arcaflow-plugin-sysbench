@@ -223,12 +223,12 @@ class SysbenchPluginTest(unittest.TestCase):
             "transferred_MiB": 68399.07,
             "transferred_MiBpersec": 6839.08,
             "Latency": {
-                "min": "0.00",
-                "avg": "0.00",
-                "max": "0.11",
+                "min": 0.00,
+                "avg": 0.00,
+                "max": 0.11,
                 "percentile": 95,
-                "percentile_value": "0.00",
-                "sum": "13958.52",
+                "percentile_value": 0.00,
+                "sum": 13958.52,
             },
             "Threadsfairness": {
                 "events": {"avg": 35020321.5, "stddev": 955973.5},
@@ -250,14 +250,14 @@ class SysbenchPluginTest(unittest.TestCase):
             "totalnumberofevents": 29281,
         }
         sysbench_results = {
-            "CPUspeed": {"eventspersecond": "2927.61"},
+            "CPUspeed": {"eventspersecond": 2927.61},
             "Latency": {
-                "min": "0.67",
-                "avg": "0.68",
-                "max": "1.56",
+                "min": 0.67,
+                "avg": 0.68,
+                "max": 1.56,
                 "percentile": 95,
-                "percentile_value": "0.70",
-                "sum": "19995.74",
+                "percentile_value": 0.70,
+                "sum": 19995.74,
             },
             "Threadsfairness": {
                 "events": {"avg": 14640.5, "stddev": 1.5},
@@ -282,18 +282,18 @@ class SysbenchPluginTest(unittest.TestCase):
 
         sysbench_results = {
             "Fileoperations": {
-                "reads_s": "0.00",
-                "writes_s": "600.89",
-                "fsyncs_s": "12.07",
+                "reads_s": 0.00,
+                "writes_s": 600.89,
+                "fsyncs_s": 12.07,
             },
-            "Throughput": {"read_MiB_s": "0.00", "written_MiB_s": "9.39"},
+            "Throughput": {"read_MiB_s": 0.00, "written_MiB_s": 9.39},
             "Latency": {
-                "min": "0.10",
-                "avg": "3.26",
-                "max": "43.90",
+                "min": 0.10,
+                "avg": 3.26,
+                "max": 43.90,
                 "percentile": 95,
-                "percentile_value": "5.09",
-                "sum": "119963.98",
+                "percentile_value": 5.09,
+                "sum": 119963.98,
             },
             "Threadsfairness": {
                 "events": {"avg": 18388.0, "stddev": 10.0},
