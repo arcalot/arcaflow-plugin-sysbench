@@ -692,14 +692,14 @@ class WorkloadResultsCpu:
         SysbenchCpuOutputParams,
         schema.name("Sysbench Cpu Output Parameters"),
         schema.description(
-            "Ouptut parameters for a successful sysbench cpu workload" " execution"
+            "Ouptut parameters for a successful sysbench cpu workload execution"
         ),
     ]
     sysbench_results: typing.Annotated[
         SysbenchCpuResultParams,
         schema.name("Sysbench Cpu Result Parameters"),
         schema.description(
-            "Result parameters for a successful sysbench cpu workload" " execution"
+            "Result parameters for a successful sysbench cpu workload execution"
         ),
     ]
 
@@ -715,14 +715,14 @@ class WorkloadResultsMemory:
         SysbenchMemoryOutputParams,
         schema.name("Sysbench Memory Output Parameters"),
         schema.description(
-            "Ouptut parameters for a successful sysbench memory workload" " execution"
+            "Ouptut parameters for a successful sysbench memory workload execution"
         ),
     ]
     sysbench_results: typing.Annotated[
         SysbenchMemoryResultParams,
         schema.name("Sysbench Memory Result Parameters"),
         schema.description(
-            "Result parameters for a successful sysbench Memory workload" " execution"
+            "Result parameters for a successful sysbench Memory workload execution"
         ),
     ]
 
@@ -738,7 +738,7 @@ class WorkloadResultsIo:
         SysbenchIoOutputParams,
         schema.name("Sysbench Io Output Parameters"),
         schema.description(
-            "Ouptut parameters for a successful sysbench io workload" " execution"
+            "Ouptut parameters for a successful sysbench io workload execution"
         ),
     ]
 
@@ -746,7 +746,7 @@ class WorkloadResultsIo:
         SysbenchIoResultParams,
         schema.name("Sysbench io Result Parameters"),
         schema.description(
-            "Result parameters for a successful io Memory workload" " execution"
+            "Result parameters for a successful io Memory workload execution"
         ),
     ]
 
