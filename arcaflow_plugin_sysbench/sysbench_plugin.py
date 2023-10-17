@@ -91,7 +91,7 @@ def parse_output(output):
                             dictionary[section][key] = float(value)
                         except ValueError:
                             dictionary[section][key] = value
-                            
+
         if "transferred" in line:
             mem_t, mem_tps = line.split("transferred")
             mem_tps = re.sub("[()]", "", mem_tps)
