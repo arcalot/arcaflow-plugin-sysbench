@@ -173,6 +173,11 @@ class SysbenchPluginTest(unittest.TestCase):
             threads=2,
             file_num=2,
             file_total_size="12M",
+            file_extra_flags=sysbench_schema.FileExtraFlag.SYNC,
+            file_fsync_freq=100,
+            file_fsync_all=sysbench_schema.OnOff.OFF,
+            file_fsync_end=sysbench_schema.OnOff.ON,
+            file_fsync_mode=sysbench_schema.FileSyncMode.FSYNC,
             file_test_mode=sysbench_schema.FileTestMode.RNDRW,
             time=10,
         )

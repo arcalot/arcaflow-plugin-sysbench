@@ -64,17 +64,17 @@ class CommonInputParameters:
         typing.Optional[int],
         schema.name("Threads"),
         schema.description("Number of worker threads to create"),
-    ] = 1
+    ] = None
     events: typing.Annotated[
         typing.Optional[int],
         schema.name("Number of events"),
         schema.description("Maximum number of events"),
-    ] = 9
+    ] = None
     time: typing.Annotated[
         typing.Optional[int],
         schema.name("Time"),
         schema.description("Limit for total execution time in seconds"),
-    ] = 10
+    ] = None
     forced_shutdown: typing.Annotated[
         typing.Optional[int],
         schema.id("forced-shutdown"),
@@ -89,29 +89,29 @@ class CommonInputParameters:
         schema.id("thread-stack-size"),
         schema.name("Thread stack size"),
         schema.description("size of stack per thread"),
-    ] = "64K"
+    ] = None
     rate: typing.Annotated[
         typing.Optional[int],
         schema.name("Transaction rate"),
         schema.description("average transactions rate. 0 for unlimited rate"),
-    ] = 0
+    ] = None
     validate: typing.Annotated[
         typing.Optional[OnOff],
         schema.name("Validate"),
         schema.description("perform validation checks where possible"),
-    ] = OnOff.OFF
+    ] = None
     rand_type: typing.Annotated[
         typing.Optional[RandType],
         schema.id("rand-type"),
         schema.name("Random Number Type"),
         schema.description("Random numbers distribution"),
-    ] = RandType.SPECIAL
+    ] = None
     rand_spec_iter: typing.Annotated[
         typing.Optional[int],
         schema.id("rand-spec-iter"),
         schema.name("Rand spec iterations"),
         schema.description("Number of iterations used for numbers generation"),
-    ] = 12
+    ] = None
     rand_spec_pct: typing.Annotated[
         typing.Optional[int],
         schema.id("rand-spec-pct"),
@@ -120,7 +120,7 @@ class CommonInputParameters:
             "Percentage of values to be treated as 'special' (for special"
             " distribution)"
         ),
-    ] = 1
+    ] = None
     rand_spec_res: typing.Annotated[
         typing.Optional[int],
         schema.id("rand-spec-res"),
@@ -128,7 +128,7 @@ class CommonInputParameters:
         schema.description(
             "Percentage of 'special' values to use (for special distribution)"
         ),
-    ] = 75
+    ] = None
     rand_seed: typing.Annotated[
         typing.Optional[int],
         schema.id("rand-seed"),
@@ -137,13 +137,13 @@ class CommonInputParameters:
             "seed for random number generator. When 0, the current time is"
             " used as a RNG seed."
         ),
-    ] = 0
+    ] = None
     rand_pareto_h: typing.Annotated[
         typing.Optional[float],
         schema.id("rand-pareto-h"),
         schema.name("Rand pareto h"),
         schema.description("parameter h for pareto distribution"),
-    ] = 0.2
+    ] = None
     percentile: typing.Annotated[
         typing.Optional[int],
         validation.min(0),
@@ -153,7 +153,7 @@ class CommonInputParameters:
             "percentile to calculate in latency statistics (1-100)."
             " Use the special value of 0 to disable percentile calculations"
         ),
-    ] = 95
+    ] = None
 
 
 # Other common parameters to consider...
@@ -199,7 +199,7 @@ class SysbenchCpuInputParams(CommonInputParameters):
         schema.id("cpu-max-prime"),
         schema.name("CPU max prime"),
         schema.description("The upper limit of the number of prime numbers generated"),
-    ] = 10000
+    ] = None
 
 
 @dataclass
@@ -214,37 +214,37 @@ class SysbenchMemoryInputParams(CommonInputParameters):
         schema.id("memory-block-size"),
         schema.name("Block Size"),
         schema.description("size of memory block for test in KiB/MiB/GiB"),
-    ] = "1KiB"
+    ] = None
     memory_total_size: typing.Annotated[
         typing.Optional[str],
         schema.id("memory-total-size"),
         schema.name("Total Size"),
         schema.description("Total size of data to transfer in GiB"),
-    ] = "100G"
+    ] = None
     memory_scope: typing.Annotated[
         typing.Optional[GlobalLocal],
         schema.id("memory-scope"),
         schema.name("Memory Scope"),
         schema.description("Memory Access Scope(global/local)"),
-    ] = GlobalLocal.GLOBAL
+    ] = None
     memory_oper: typing.Annotated[
         typing.Optional[RWN],
         schema.id("memory-oper"),
         schema.name("Memory Operation"),
         schema.description("Type of memory operation(write/read)"),
-    ] = RWN.WRITE
+    ] = None
     memory_hugetlb: typing.Annotated[
         typing.Optional[OnOff],
         schema.id("memory-hugetlb"),
         schema.name("Memory hugetlb"),
         schema.description("Allocate memory from HugeTLB pool (on/off)"),
-    ] = OnOff.OFF
+    ] = None
     memory_access_mode: typing.Annotated[
         typing.Optional[SeqRnd],
         schema.id("memory-access-mode"),
         schema.name("Memory Access Mode"),
         schema.description("memory access mode (seq,rnd)"),
-    ] = SeqRnd.SEQ
+    ] = None
 
 
 @dataclass
@@ -259,48 +259,48 @@ class SysbenchIoInputParams(CommonInputParameters):
         schema.id("file-num"),
         schema.name("Files number"),
         schema.description("Number of files to create"),
-    ] = 128
+    ] = None
     file_block_size: typing.Annotated[
         typing.Optional[int],
         schema.id("file-block-size"),
         schema.name("File Block Size"),
         schema.description("Block size to use in all IO operations"),
-    ] = 16384
+    ] = None
 
     file_total_size: typing.Annotated[
         typing.Optional[str],
         schema.id("file-total-size"),
         schema.name("File Total Size"),
         schema.description("Total size of files to create"),
-    ] = "2G"
+    ] = None
 
     file_test_mode: typing.Annotated[
         typing.Optional[FileTestMode],
         schema.id("file-test-mode"),
         schema.name("File Test Mode"),
         schema.description("Test mode {seqwr, seqrewr, seqrd, rndrd, rndwr, rndrw}"),
-    ] = FileTestMode.SEQWR
+    ] = None
 
     file_io_mode: typing.Annotated[
         typing.Optional[FileIoMode],
         schema.id("file-io-mode"),
         schema.name("File I/O Mode"),
         schema.description("File operations mode {sync,async,mmap}"),
-    ] = FileIoMode.SYNC
+    ] = None
 
     file_async_backlog: typing.Annotated[
         typing.Optional[int],
         schema.id("file-async-backlog"),
         schema.name("File Async Backlog"),
         schema.description("Number of asynchronous operatons to queue per thread"),
-    ] = 128
+    ] = None
 
     file_extra_flags: typing.Annotated[
         typing.Optional[FileExtraFlag],
         schema.id("file-extra-flags"),
         schema.name("File I/O Mode"),
         schema.description("File operations mode {sync,async,mmap}"),
-    ] = FileExtraFlag.SYNC
+    ] = None
 
     file_fsync_freq: typing.Annotated[
         typing.Optional[int],
@@ -309,7 +309,7 @@ class SysbenchIoInputParams(CommonInputParameters):
         schema.description(
             "Do fsync() after this number of requests (0 - don't use fsync())"
         ),
-    ] = 100
+    ] = None
 
     file_fsync_all: typing.Annotated[
         typing.Optional[OnOff],
@@ -318,14 +318,14 @@ class SysbenchIoInputParams(CommonInputParameters):
         schema.description(
             "Do fsync() after this number of requests (0 - don't use fsync())"
         ),
-    ] = OnOff.OFF
+    ] = None
 
     file_fsync_end: typing.Annotated[
         typing.Optional[OnOff],
         schema.id("file-fsync-end"),
         schema.name("File Fsync At End"),
         schema.description("Do fsync() at the end of test"),
-    ] = OnOff.ON
+    ] = None
 
     file_fsync_mode: typing.Annotated[
         typing.Optional[FileSyncMode],
@@ -334,7 +334,7 @@ class SysbenchIoInputParams(CommonInputParameters):
         schema.description(
             "Which method to use for synchronization {fsync, fdatasync}"
         ),
-    ] = FileSyncMode.FSYNC
+    ] = None
 
     file_merged_requests: typing.Annotated[
         typing.Optional[int],
@@ -343,14 +343,14 @@ class SysbenchIoInputParams(CommonInputParameters):
         schema.description(
             "Merge at most this number of IO requests if possible (0 - don't merge)"
         ),
-    ] = 0
+    ] = None
 
     file_rw_ratio: typing.Annotated[
         typing.Optional[float],
         schema.id("file-rw-ratio"),
         schema.name("File R/W Ratio"),
         schema.description("Reads/writes ratio for combined test"),
-    ] = 1.5
+    ] = None
 
 
 @dataclass
@@ -483,7 +483,7 @@ class SysbenchCommonOutputParams:
         typing.Optional[str],
         schema.name("Validation checks"),
         schema.description("Validation on/off"),
-    ] = "off"
+    ] = None
 
 
 @dataclass
@@ -672,13 +672,13 @@ class SysbenchIoOutputParams(SysbenchCommonOutputParams, SysbenchIoOutput):
         typing.Optional[float],
         schema.name("R/W Ratio Random Test"),
         schema.description("Read/Write Ratio for combined random I/O test"),
-    ] = 0.0
+    ] = None
 
     NumberofIOrequests: typing.Annotated[
         typing.Optional[float],
         schema.name("Number of I/O requests"),
         schema.description("Number of I/O requests"),
-    ] = 0.0
+    ] = None
 
 
 @dataclass
