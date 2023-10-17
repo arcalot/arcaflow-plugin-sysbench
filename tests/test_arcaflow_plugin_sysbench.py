@@ -36,7 +36,8 @@ class SysbenchPluginTest(unittest.TestCase):
                         "min": "0.67",
                         "avg": "0.76",
                         "max": "1.26",
-                        "P95thpercentile": "0.87",
+                        "percentile": 95,
+                        "percentile_value": "1.25",
                         "sum": "19987.57",
                     },
                     "Threadsfairness": {
@@ -72,7 +73,8 @@ class SysbenchPluginTest(unittest.TestCase):
                         "min": "0.00",
                         "avg": "0.00",
                         "max": "1.18",
-                        "P95thpercentile": "0.00",
+                        "percentile": 95,
+                        "percentile_value": "1.17",
                         "sum": "13699.95",
                     },
                     "Threadsfairness": {
@@ -112,7 +114,8 @@ class SysbenchPluginTest(unittest.TestCase):
                         "min": "1.53",
                         "avg": "2.31",
                         "max": "4.08",
-                        "P95thpercentile": "4.10",
+                        "percentile": 95,
+                        "percentile_value": "4.07",
                         "sum": "20.75",
                     },
                     "Threadsfairness": {
@@ -124,9 +127,7 @@ class SysbenchPluginTest(unittest.TestCase):
         )
 
         plugin.test_object_serialization(
-            sysbench_plugin.WorkloadError(
-                exit_code=1, error="This is an error"
-            )
+            sysbench_plugin.WorkloadError(exit_code=1, error="This is an error")
         )
 
     def test_functional_cpu(self):
@@ -135,21 +136,13 @@ class SysbenchPluginTest(unittest.TestCase):
         output_id, output_data = sysbench_plugin.RunSysbenchCpu(input)
 
         self.assertEqual("success", output_id)
-        self.assertGreaterEqual(
-            output_data.sysbench_output_params.Numberofthreads, 1
-        )
+        self.assertGreaterEqual(output_data.sysbench_output_params.Numberofthreads, 1)
         self.assertGreater(output_data.sysbench_output_params.totaltime, 0)
-        self.assertGreater(
-            output_data.sysbench_output_params.totalnumberofevents, 0
-        )
-        self.assertGreater(
-            output_data.sysbench_results.CPUspeed.eventspersecond, 0
-        )
+        self.assertGreater(output_data.sysbench_output_params.totalnumberofevents, 0)
+        self.assertGreater(output_data.sysbench_results.CPUspeed.eventspersecond, 0)
         self.assertGreaterEqual(output_data.sysbench_results.Latency.avg, 0)
         self.assertGreaterEqual(output_data.sysbench_results.Latency.sum, 0)
-        self.assertGreater(
-            output_data.sysbench_results.Threadsfairness.events.avg, 0
-        )
+        self.assertGreater(output_data.sysbench_results.Threadsfairness.events.avg, 0)
         self.assertGreater(
             output_data.sysbench_results.Threadsfairness.executiontime.avg, 0
         )
@@ -160,24 +153,16 @@ class SysbenchPluginTest(unittest.TestCase):
         output_id, output_data = sysbench_plugin.RunSysbenchMemory(input)
 
         self.assertEqual("success", output_id)
-        self.assertGreaterEqual(
-            output_data.sysbench_output_params.Numberofthreads, 1
-        )
+        self.assertGreaterEqual(output_data.sysbench_output_params.Numberofthreads, 1)
         self.assertGreater(output_data.sysbench_output_params.totaltime, 0)
-        self.assertGreater(
-            output_data.sysbench_output_params.Totaloperations, 0
-        )
+        self.assertGreater(output_data.sysbench_output_params.Totaloperations, 0)
         self.assertIsNotNone(output_data.sysbench_output_params.blocksize)
         self.assertIsNotNone(output_data.sysbench_output_params.operation)
         self.assertGreater(output_data.sysbench_results.transferred_MiB, 0)
-        self.assertGreater(
-            output_data.sysbench_results.transferred_MiBpersec, 0
-        )
+        self.assertGreater(output_data.sysbench_results.transferred_MiBpersec, 0)
         self.assertGreaterEqual(output_data.sysbench_results.Latency.avg, 0)
         self.assertGreaterEqual(output_data.sysbench_results.Latency.sum, 0)
-        self.assertGreater(
-            output_data.sysbench_results.Threadsfairness.events.avg, 0
-        )
+        self.assertGreater(output_data.sysbench_results.Threadsfairness.events.avg, 0)
         self.assertGreater(
             output_data.sysbench_results.Threadsfairness.executiontime.avg, 0
         )
@@ -195,44 +180,24 @@ class SysbenchPluginTest(unittest.TestCase):
 
         self.assertEqual("success", output_id)
         self.assertEqual(output_data.sysbench_output_params.Numberofthreads, 2)
-        self.assertGreaterEqual(
-            output_data.sysbench_output_params.totaltime, 10
-        )
-        self.assertGreater(
-            output_data.sysbench_output_params.totalnumberofevents, 0
-        )
+        self.assertGreaterEqual(output_data.sysbench_output_params.totaltime, 10)
+        self.assertGreater(output_data.sysbench_output_params.totalnumberofevents, 0)
         self.assertGreater(
             output_data.sysbench_output_params.ReadWriteratioforcombinedrandomIOtest,
             0.0,
         )
-        self.assertGreater(
-            output_data.sysbench_results.Fileoperations.reads_s, 0
-        )
-        self.assertGreater(
-            output_data.sysbench_results.Fileoperations.writes_s, 0
-        )
-        self.assertGreater(
-            output_data.sysbench_results.Fileoperations.fsyncs_s, 0
-        )
-        self.assertGreater(
-            output_data.sysbench_results.Throughput.read_MiB_s, 0
-        )
-        self.assertGreater(
-            output_data.sysbench_results.Throughput.written_MiB_s, 0
-        )
+        self.assertGreater(output_data.sysbench_results.Fileoperations.reads_s, 0)
+        self.assertGreater(output_data.sysbench_results.Fileoperations.writes_s, 0)
+        self.assertGreater(output_data.sysbench_results.Fileoperations.fsyncs_s, 0)
+        self.assertGreater(output_data.sysbench_results.Throughput.read_MiB_s, 0)
+        self.assertGreater(output_data.sysbench_results.Throughput.written_MiB_s, 0)
         self.assertGreaterEqual(output_data.sysbench_results.Latency.min, 0)
         self.assertGreater(output_data.sysbench_results.Latency.avg, 0)
         self.assertGreater(output_data.sysbench_results.Latency.max, 0)
-        self.assertGreater(
-            output_data.sysbench_results.Latency.P95thpercentile, 0
-        )
+        self.assertGreater(output_data.sysbench_results.Latency.percentile, 0)
         self.assertGreater(output_data.sysbench_results.Latency.sum, 0)
-        self.assertGreater(
-            output_data.sysbench_results.Threadsfairness.events.avg, 0
-        )
-        self.assertGreater(
-            output_data.sysbench_results.Threadsfairness.events.avg, 0
-        )
+        self.assertGreater(output_data.sysbench_results.Threadsfairness.events.avg, 0)
+        self.assertGreater(output_data.sysbench_results.Threadsfairness.events.avg, 0)
         self.assertGreater(
             output_data.sysbench_results.Threadsfairness.executiontime.avg, 0
         )
@@ -256,7 +221,8 @@ class SysbenchPluginTest(unittest.TestCase):
                 "min": "0.00",
                 "avg": "0.00",
                 "max": "0.11",
-                "P95thpercentile": "0.00",
+                "percentile": 95,
+                "percentile_value": "0.00",
                 "sum": "13958.52",
             },
             "Threadsfairness": {
@@ -284,7 +250,8 @@ class SysbenchPluginTest(unittest.TestCase):
                 "min": "0.67",
                 "avg": "0.68",
                 "max": "1.56",
-                "P95thpercentile": "0.70",
+                "percentile": 95,
+                "percentile_value": "0.70",
                 "sum": "19995.74",
             },
             "Threadsfairness": {
@@ -319,7 +286,8 @@ class SysbenchPluginTest(unittest.TestCase):
                 "min": "0.10",
                 "avg": "3.26",
                 "max": "43.90",
-                "P95thpercentile": "5.09",
+                "percentile": 95,
+                "percentile_value": "5.09",
                 "sum": "119963.98",
             },
             "Threadsfairness": {

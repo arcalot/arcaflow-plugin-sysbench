@@ -35,7 +35,10 @@ def parse_output(output):
             key, value = line.split(":")
 
             if key[0].isdigit():
-                key = "P" + key
+                percentile_value = value
+                value = re.match(r"([0-9]+)", key).group(0)
+                key = "percentile"
+
             if value == "":
                 key = re.sub(r"\((.*?)\)", "", key)
                 if "options" in key or "General" in key:
@@ -57,7 +60,7 @@ def parse_output(output):
                     tops = tops.replace("persecond)", "")
                     dictionary["Totaloperations"] = float(to)
                     dictionary["Totaloperationspersecond"] = float(tops)
-                elif value.isnumeric():
+                elif "percentile" not in key and value.isnumeric():
                     dictionary[key] = float(value)
                 else:
                     dictionary[key] = value
@@ -71,7 +74,10 @@ def parse_output(output):
                     dictionary[section][key] = {}
                     dictionary[section][key]["avg"] = float(avg)
                     dictionary[section][key]["stddev"] = float(stddev)
-                elif value.isnumeric():
+                elif "percentile" in key:
+                    dictionary[section][key] = int(value)
+                    dictionary[section]["percentile_value"] = percentile_value
+                elif "percentile" not in key and value.isnumeric():
                     dictionary[section][key] = float(value)
                 else:
                     # replace / and , with _ for fileio test
@@ -90,7 +96,7 @@ def parse_output(output):
     return sysbench_output, sysbench_results
 
 
-def run_sysbench(params, flags, operation, test_mode="run"):
+def run_sysbench(flags, operation, test_mode="run"):
     try:
         cmd = ["sysbench"]
         cmd = cmd + flags + [operation, test_mode]
@@ -116,6 +122,24 @@ def run_sysbench(params, flags, operation, test_mode="run"):
         return output, results
 
 
+def get_sysbench_version():
+    try:
+        cmd = ["sysbench", "--version"]
+        version = (
+            subprocess.check_output(cmd, stderr=subprocess.STDOUT)
+            .strip()
+            .decode("utf-8")
+        )
+    except subprocess.CalledProcessError as error:
+        raise Exception(
+            error.returncode,
+            "{} failed with return code {}:\n{}".format(
+                error.cmd[0], error.returncode, error.output
+            ),
+        ) from error
+    return version
+
+
 @plugin.step(
     id="sysbenchcpu",
     name="Sysbench CPU Workload",
@@ -125,6 +149,7 @@ def run_sysbench(params, flags, operation, test_mode="run"):
 def RunSysbenchCpu(
     params: SysbenchCpuInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsCpu, WorkloadError]]:
+    print(f"Sysbench version is: {get_sysbench_version()}")
     print("==>> Running sysbench CPU workload ...")
 
     serialized_params = sysbench_cpu_input_schema.serialize(params)
@@ -134,7 +159,7 @@ def RunSysbenchCpu(
         cpu_flags.append(f"--{param}={value}")
 
     try:
-        output, results = run_sysbench(params, cpu_flags, "cpu")
+        output, results = run_sysbench(cpu_flags, "cpu")
     except Exception as error:
         return "error", WorkloadError(error.args[0], error.args[1])
 
@@ -149,14 +174,13 @@ def RunSysbenchCpu(
 @plugin.step(
     id="sysbenchmemory",
     name="Sysbench Memory Workload",
-    description=(
-        "Run the Memory functions speed test using the sysbench workload"
-    ),
+    description=("Run the Memory functions speed test using the sysbench workload"),
     outputs={"success": WorkloadResultsMemory, "error": WorkloadError},
 )
 def RunSysbenchMemory(
     params: SysbenchMemoryInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsMemory, WorkloadError]]:
+    print(f"Sysbench version is: {get_sysbench_version()}")
     print("==>> Running sysbench Memory workload ...")
 
     serialized_params = sysbench_memory_input_schema.serialize(params)
@@ -166,7 +190,7 @@ def RunSysbenchMemory(
         memory_flags.append(f"--{param}={value}")
 
     try:
-        output, results = run_sysbench(params, memory_flags, "memory")
+        output, results = run_sysbench(memory_flags, "memory")
     except Exception as error:
         return "error", WorkloadError(error.args[0], error.args[1])
 
@@ -187,6 +211,7 @@ def RunSysbenchMemory(
 def RunSysbenchIo(
     params: SysbenchIoInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsIo, WorkloadError]]:
+    print(f"Sysbench version is: {get_sysbench_version()}")
     print("==>> Running sysbench I/O workload ...")
 
     serialized_params = sysbench_io_input_schema.serialize(params)
@@ -196,9 +221,9 @@ def RunSysbenchIo(
         io_flags.append(f"--{param}={value}")
 
     try:
-        run_sysbench(params, io_flags, "fileio", "prepare")
-        output, results = run_sysbench(params, io_flags, "fileio", "run")
-        run_sysbench(params, io_flags, "fileio", "cleanup")
+        run_sysbench(io_flags, "fileio", "prepare")
+        output, results = run_sysbench(io_flags, "fileio", "run")
+        run_sysbench(io_flags, "fileio", "cleanup")
     except Exception as error:
         return "error", WorkloadError(error.args[0], error.args[1])
 
@@ -213,8 +238,6 @@ def RunSysbenchIo(
 if __name__ == "__main__":
     sys.exit(
         plugin.run(
-            plugin.build_schema(
-                RunSysbenchCpu, RunSysbenchMemory, RunSysbenchIo
-            )
+            plugin.build_schema(RunSysbenchCpu, RunSysbenchMemory, RunSysbenchIo)
         )
     )
