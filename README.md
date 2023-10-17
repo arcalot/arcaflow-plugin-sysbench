@@ -218,8 +218,8 @@ Run CPU performance test using the sysbench workload
 </tbody></table>
         </details><details><summary>Validationchecks (<code>string</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Validation checks</td></tr><tr><th>Description:</th><td>Validation on/off</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
-        </details><details><summary>totalnumberofevents (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td>Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        </details><details><summary>totalnumberofevents (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td>Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>totaltime (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Total time</td></tr><tr><th>Description:</th><td>Total execution time of workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
@@ -569,8 +569,8 @@ Run the I/O test using the sysbench workload
         </details><details><summary>SysbenchIoOutputParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>Extrafileopenflags (<code>string</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>File Open Flags</td></tr><tr><th>Description:</th><td>File Open Flags</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
-        </details><details><summary>NumberofIOrequests (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Number of I/O requests</td></tr><tr><th>Description:</th><td>Number of I/O requests</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        </details><details><summary>NumberofIOrequests (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Number of I/O requests</td></tr><tr><th>Description:</th><td>Number of I/O requests</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>Numberofthreads (<code>int</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td>Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
@@ -580,8 +580,8 @@ Run the I/O test using the sysbench workload
 </tbody></table>
         </details><details><summary>Validationchecks (<code>string</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Validation checks</td></tr><tr><th>Description:</th><td>Validation on/off</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
-        </details><details><summary>totalnumberofevents (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td>Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        </details><details><summary>totalnumberofevents (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td>Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>totaltime (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Total time</td></tr><tr><th>Description:</th><td>Total execution time of workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
@@ -871,8 +871,8 @@ Run the Memory functions speed test using the sysbench workload
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>Numberofthreads (<code>int</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td>Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
-        </details><details><summary>Totaloperations (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total operations</td></tr><tr><th>Description:</th><td>Total number of operations performed by the memory workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        </details><details><summary>Totaloperations (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Total operations</td></tr><tr><th>Description:</th><td>Total number of operations performed by the memory workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>Totaloperationspersecond (<code>float</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Total operations per second</td></tr><tr><th>Description:</th><td>Total number of operations performed by the memory workload per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
@@ -885,8 +885,8 @@ Run the Memory functions speed test using the sysbench workload
         <table><tbody><tr><th>Name:</th><td>Operation</td></tr><tr><th>Description:</th><td>memory operation performed</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>scope (<code>string</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Scope</td></tr><tr><th>Description:</th><td>scope of operation</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
-        </details><details><summary>totalnumberofevents (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td>Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        </details><details><summary>totalnumberofevents (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td>Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>totalsize (<code>string</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Total size</td></tr><tr><th>Description:</th><td>Total size in MiB</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
