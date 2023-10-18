@@ -58,12 +58,16 @@ def parse_output(output):
                 elif "Totaloperations" in key:
                     to, tops = value.split("(")
                     tops = tops.replace("persecond)", "")
-                    dictionary["Totaloperations"] = float(to)
+                    dictionary["Totaloperations"] = int(to)
                     dictionary["Totaloperationspersecond"] = float(tops)
-                elif "percentile" not in key and value.isnumeric():
-                    dictionary[key] = float(value)
                 else:
-                    dictionary[key] = value
+                    try:
+                        dictionary[key] = int(value)
+                    except ValueError:
+                        try:
+                            dictionary[key] = float(value)
+                        except ValueError:
+                            dictionary[key] = value
 
             else:
                 if "latency" in key:
@@ -76,13 +80,18 @@ def parse_output(output):
                     dictionary[section][key]["stddev"] = float(stddev)
                 elif "percentile" in key:
                     dictionary[section][key] = int(value)
-                    dictionary[section]["percentile_value"] = percentile_value
-                elif "percentile" not in key and value.isnumeric():
-                    dictionary[section][key] = float(value)
+                    dictionary[section]["percentile_value"] = float(percentile_value)
                 else:
                     # replace / and , with _ for fileio test
                     key = re.sub(r"[\/,]", "_", key)
-                    dictionary[section][key] = value
+                    try:
+                        dictionary[section][key] = int(value)
+                    except ValueError:
+                        try:
+                            dictionary[section][key] = float(value)
+                        except ValueError:
+                            dictionary[section][key] = value
+
         if "transferred" in line:
             mem_t, mem_tps = line.split("transferred")
             mem_tps = re.sub("[()]", "", mem_tps)
@@ -100,6 +109,7 @@ def run_sysbench(flags, operation, test_mode="run"):
     try:
         cmd = ["sysbench"]
         cmd = cmd + flags + [operation, test_mode]
+        print("Sysbench command is: " + " ".join(cmd))
         process_out = subprocess.check_output(cmd, stderr=subprocess.STDOUT)
     except subprocess.CalledProcessError as error:
         raise Exception(

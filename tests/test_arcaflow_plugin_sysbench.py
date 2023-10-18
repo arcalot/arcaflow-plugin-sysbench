@@ -20,10 +20,10 @@ class SysbenchPluginTest(unittest.TestCase):
         plugin.test_object_serialization(
             sysbench_plugin.sysbench_cpu_output_schema.unserialize(
                 {
-                    "Numberofthreads": 2.0,
-                    "Primenumberslimit": 10000.0,
+                    "Numberofthreads": 2,
+                    "Primenumberslimit": 10000,
                     "totaltime": 10.0008,
-                    "totalnumberofevents": 26401.0,
+                    "totalnumberofevents": 26401,
                 }
             )
         )
@@ -51,15 +51,15 @@ class SysbenchPluginTest(unittest.TestCase):
         plugin.test_object_serialization(
             sysbench_plugin.sysbench_memory_output_schema.unserialize(
                 {
-                    "Numberofthreads": 2.0,
+                    "Numberofthreads": 2,
                     "blocksize": "1KiB",
                     "totalsize": "102400MiB",
                     "operation": "write",
                     "scope": "global",
-                    "Totaloperations": 72227995.0,
+                    "Totaloperations": 72227995,
                     "Totaloperationspersecond": 7221925.38,
                     "totaltime": 10.0001,
-                    "totalnumberofevents": 72227995.0,
+                    "totalnumberofevents": 72227995,
                 }
             )
         )
@@ -88,12 +88,12 @@ class SysbenchPluginTest(unittest.TestCase):
         plugin.test_object_serialization(
             sysbench_plugin.sysbench_io_output_schema.unserialize(
                 {
-                    "Numberofthreads": 2.0,
+                    "Numberofthreads": 2,
                     "NumberofIOrequests": 0,
                     "ReadWriteratioforcombinedrandomIOtest": 0,
                     "Extrafileopenflags": "sync",
                     "totaltime": 0.0114,
-                    "totalnumberofevents": 9.0,
+                    "totalnumberofevents": 9,
                 }
             )
         )
@@ -173,6 +173,11 @@ class SysbenchPluginTest(unittest.TestCase):
             threads=2,
             file_num=2,
             file_total_size="12M",
+            file_extra_flags=sysbench_schema.FileExtraFlag.SYNC,
+            file_fsync_freq=100,
+            file_fsync_all=sysbench_schema.OnOff.OFF,
+            file_fsync_end=sysbench_schema.OnOff.ON,
+            file_fsync_mode=sysbench_schema.FileSyncMode.FSYNC,
             file_test_mode=sysbench_schema.FileTestMode.RNDRW,
             time=10,
         )
@@ -204,26 +209,26 @@ class SysbenchPluginTest(unittest.TestCase):
 
     def test_parsing_function_memory(self):
         sysbench_output = {
-            "Numberofthreads": 2.0,
+            "Numberofthreads": 2,
             "blocksize": "1KiB",
             "totalsize": "102400MiB",
             "operation": "write",
             "scope": "global",
-            "Totaloperations": 70040643.0,
+            "Totaloperations": 70040643,
             "Totaloperationspersecond": 7003215.47,
             "totaltime": 10.0001,
-            "totalnumberofevents": 70040643.0,
+            "totalnumberofevents": 70040643,
         }
         sysbench_results = {
             "transferred_MiB": 68399.07,
             "transferred_MiBpersec": 6839.08,
             "Latency": {
-                "min": "0.00",
-                "avg": "0.00",
-                "max": "0.11",
+                "min": 0.00,
+                "avg": 0.00,
+                "max": 0.11,
                 "percentile": 95,
-                "percentile_value": "0.00",
-                "sum": "13958.52",
+                "percentile_value": 0.00,
+                "sum": 13958.52,
             },
             "Threadsfairness": {
                 "events": {"avg": 35020321.5, "stddev": 955973.5},
@@ -239,20 +244,20 @@ class SysbenchPluginTest(unittest.TestCase):
 
     def test_parsing_function_cpu(self):
         sysbench_output = {
-            "Numberofthreads": 2.0,
-            "Primenumberslimit": 10000.0,
+            "Numberofthreads": 2,
+            "Primenumberslimit": 10000,
             "totaltime": 10.0005,
-            "totalnumberofevents": 29281.0,
+            "totalnumberofevents": 29281,
         }
         sysbench_results = {
-            "CPUspeed": {"eventspersecond": "2927.61"},
+            "CPUspeed": {"eventspersecond": 2927.61},
             "Latency": {
-                "min": "0.67",
-                "avg": "0.68",
-                "max": "1.56",
+                "min": 0.67,
+                "avg": 0.68,
+                "max": 1.56,
                 "percentile": 95,
-                "percentile_value": "0.70",
-                "sum": "19995.74",
+                "percentile_value": 0.70,
+                "sum": 19995.74,
             },
             "Threadsfairness": {
                 "events": {"avg": 14640.5, "stddev": 1.5},
@@ -269,26 +274,26 @@ class SysbenchPluginTest(unittest.TestCase):
 
     def test_parsing_function_io(self):
         sysbench_output = {
-            "Numberofthreads": 2.0,
+            "Numberofthreads": 2,
             "Extrafileopenflags": "sync",
             "totaltime": 60.0028,
-            "totalnumberofevents": 36776.0,
+            "totalnumberofevents": 36776,
         }
 
         sysbench_results = {
             "Fileoperations": {
-                "reads_s": "0.00",
-                "writes_s": "600.89",
-                "fsyncs_s": "12.07",
+                "reads_s": 0.00,
+                "writes_s": 600.89,
+                "fsyncs_s": 12.07,
             },
-            "Throughput": {"read_MiB_s": "0.00", "written_MiB_s": "9.39"},
+            "Throughput": {"read_MiB_s": 0.00, "written_MiB_s": 9.39},
             "Latency": {
-                "min": "0.10",
-                "avg": "3.26",
-                "max": "43.90",
+                "min": 0.10,
+                "avg": 3.26,
+                "max": 43.90,
                 "percentile": 95,
-                "percentile_value": "5.09",
-                "sum": "119963.98",
+                "percentile_value": 5.09,
+                "sum": 119963.98,
             },
             "Threadsfairness": {
                 "events": {"avg": 18388.0, "stddev": 10.0},
