@@ -150,7 +150,9 @@ class SysbenchPluginTest(unittest.TestCase):
     def test_functional_memory(self):
         input = sysbench_plugin.SysbenchMemoryInputParams(threads=2)
 
-        output_id, output_data = sysbench_plugin.RunSysbenchMemory(params=input, run_id=1)
+        output_id, output_data = sysbench_plugin.RunSysbenchMemory(
+            params=input, run_id=1
+        )
 
         self.assertEqual("success", output_id)
         self.assertGreaterEqual(output_data.sysbench_output_params.Numberofthreads, 1)
