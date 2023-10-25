@@ -133,7 +133,9 @@ class SysbenchPluginTest(unittest.TestCase):
     def test_functional_cpu(self):
         input = sysbench_plugin.SysbenchCpuInputParams(threads=2)
 
-        output_id, output_data = sysbench_plugin.RunSysbenchCpu(input)
+        output_id, output_data = sysbench_plugin.RunSysbenchCpu(
+            params=input, run_id="ci_test"
+        )
 
         self.assertEqual("success", output_id)
         self.assertGreaterEqual(output_data.sysbench_output_params.Numberofthreads, 1)
@@ -150,7 +152,9 @@ class SysbenchPluginTest(unittest.TestCase):
     def test_functional_memory(self):
         input = sysbench_plugin.SysbenchMemoryInputParams(threads=2)
 
-        output_id, output_data = sysbench_plugin.RunSysbenchMemory(input)
+        output_id, output_data = sysbench_plugin.RunSysbenchMemory(
+            params=input, run_id="ci_test"
+        )
 
         self.assertEqual("success", output_id)
         self.assertGreaterEqual(output_data.sysbench_output_params.Numberofthreads, 1)
@@ -181,7 +185,9 @@ class SysbenchPluginTest(unittest.TestCase):
             file_test_mode=sysbench_schema.FileTestMode.RNDRW,
             time=10,
         )
-        output_id, output_data = sysbench_plugin.RunSysbenchIo(input)
+        output_id, output_data = sysbench_plugin.RunSysbenchIo(
+            params=input, run_id="ci_test"
+        )
 
         self.assertEqual("success", output_id)
         self.assertEqual(output_data.sysbench_output_params.Numberofthreads, 2)
