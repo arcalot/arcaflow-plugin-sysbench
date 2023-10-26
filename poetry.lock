@@ -2,19 +2,19 @@
 
 [[package]]
 name = "arcaflow-plugin-sdk"
-version = "0.12.0"
+version = "0.13.0"
 description = "Plugin SDK for Python for the Arcaflow workflow engine"
 category = "main"
 optional = false
 python-versions = ">=3.9,<4.0"
 files = [
-    {file = "arcaflow_plugin_sdk-0.12.0-py3-none-any.whl", hash = "sha256:527e9fa2da3e35900f64a9f4e413d6ecd3c68e7c872f4a0e5a56cd7f9152d867"},
-    {file = "arcaflow_plugin_sdk-0.12.0.tar.gz", hash = "sha256:acd7bcc495fbfb9dd6e3b4df448d756e169a9d9e41892272b67496feb2a92c6b"},
+    {file = "arcaflow_plugin_sdk-0.13.0-py3-none-any.whl", hash = "sha256:8594b95c88a7eb5262535d1897bedb04cbcf5fdf778c7eb1420f206e319324fb"},
+    {file = "arcaflow_plugin_sdk-0.13.0.tar.gz", hash = "sha256:b1afd4a3ef0f23fca51f4843c2de8f252402a948a0265faf6e140817f3e6fcc0"},
 ]
 
 [package.dependencies]
-cbor2 = ">=5.4.3,<6.0.0"
-PyYAML = ">=6.0.1,<7.0.0"
+cbor2 = ">=5.5.0,<5.6.0"
+PyYAML = ">=6.0.1,<6.1.0"
 
 [[package]]
 name = "autoflake"
@@ -455,4 +455,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "cf62d51dff9819ac110e8cf6246204db5c35ed57823b1718f9cc239a8b96b59b"
+content-hash = "0055cc1d497d8c3fa05ab91d849c8ac771830978bc785b34138378ae537418c0"
