@@ -39,52 +39,52 @@ Run CPU performance test using the sysbench workload
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>SysbenchCpuInputParams</td></tr>
 <tr><th>Properties</th><td><details><summary>cpu-max-prime (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>CPU max prime</td></tr><tr><th>Description:</th><td>The upper limit of the number of prime numbers generated</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>CPU max prime</td></tr><tr><th>Description:</th><td width="500">The upper limit of the number of prime numbers generated</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>events (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Number of events</td></tr><tr><th>Description:</th><td>Maximum number of events</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Number of events</td></tr><tr><th>Description:</th><td width="500">Maximum number of events</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>forced-shutdown (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Forced Shutdown Seconds</td></tr><tr><th>Description:</th><td>Number of seconds to wait after the &#39;time&#39; limit before forcing shutdown, or exclude parameter to disable forced shutdown</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Forced Shutdown Seconds</td></tr><tr><th>Description:</th><td width="500">Number of seconds to wait after the &#39;time&#39; limit before forcing shutdown, or exclude parameter to disable forced shutdown</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>percentile (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>percentile to calculate in latency statistics (1-100). Use the special value of 0 to disable percentile calculations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td><tr><th>Minimum:</th><td>0</td></tr><tr><th>Maximum:</th><td>100</td></tr>
+                <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td width="500">percentile to calculate in latency statistics (1-100). Use the special value of 0 to disable percentile calculations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td><tr><th>Minimum:</th><td>0</td></tr><tr><th>Maximum:</th><td>100</td></tr>
 </tbody></table>
             </details><details><summary>rand-pareto-h (<code>float</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand pareto h</td></tr><tr><th>Description:</th><td>parameter h for pareto distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand pareto h</td></tr><tr><th>Description:</th><td width="500">parameter h for pareto distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
             </details><details><summary>rand-seed (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand seed</td></tr><tr><th>Description:</th><td>seed for random number generator. When 0, the current time is used as a RNG seed.</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand seed</td></tr><tr><th>Description:</th><td width="500">seed for random number generator. When 0, the current time is used as a RNG seed.</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>rand-spec-iter (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand spec iterations</td></tr><tr><th>Description:</th><td>Number of iterations used for numbers generation</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand spec iterations</td></tr><tr><th>Description:</th><td width="500">Number of iterations used for numbers generation</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>rand-spec-pct (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand spec percentage</td></tr><tr><th>Description:</th><td>Percentage of values to be treated as &#39;special&#39; (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand spec percentage</td></tr><tr><th>Description:</th><td width="500">Percentage of values to be treated as &#39;special&#39; (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>rand-spec-res (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand spec res</td></tr><tr><th>Description:</th><td>Percentage of &#39;special&#39; values to use (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand spec res</td></tr><tr><th>Description:</th><td width="500">Percentage of &#39;special&#39; values to use (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>rand-type (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Random Number Type</td></tr><tr><th>Description:</th><td>Random numbers distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>Random Number Type</td></tr><tr><th>Description:</th><td width="500">Random numbers distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>gaussian</code>:</strong> GAUSSIAN</li><li><strong><code>pareto</code>:</strong> PARETO</li><li><strong><code>special</code>:</strong> SPECIAL</li><li><strong><code>uniform</code>:</strong> UNIFORM</li></ul>
         </details>
     </td>
 </tr></tbody></table>
             </details><details><summary>rate (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Transaction rate</td></tr><tr><th>Description:</th><td>average transactions rate. 0 for unlimited rate</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Transaction rate</td></tr><tr><th>Description:</th><td width="500">average transactions rate. 0 for unlimited rate</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>thread-stack-size (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Thread stack size</td></tr><tr><th>Description:</th><td>size of stack per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Thread stack size</td></tr><tr><th>Description:</th><td width="500">size of stack per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>threads (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Threads</td></tr><tr><th>Description:</th><td>Number of worker threads to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Threads</td></tr><tr><th>Description:</th><td width="500">Number of worker threads to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>time (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Time</td></tr><tr><th>Description:</th><td>Limit for total execution time in seconds</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Time</td></tr><tr><th>Description:</th><td width="500">Limit for total execution time in seconds</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>validate (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Validate</td></tr><tr><th>Description:</th><td>perform validation checks where possible</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>Validate</td></tr><tr><th>Description:</th><td width="500">perform validation checks where possible</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>off</code>:</strong> OFF</li><li><strong><code>on</code>:</strong> ON</li></ul>
         </details>
@@ -93,52 +93,52 @@ Run CPU performance test using the sysbench workload
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>SysbenchCpuInputParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>cpu-max-prime (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>CPU max prime</td></tr><tr><th>Description:</th><td>The upper limit of the number of prime numbers generated</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>CPU max prime</td></tr><tr><th>Description:</th><td width="500">The upper limit of the number of prime numbers generated</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>events (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Number of events</td></tr><tr><th>Description:</th><td>Maximum number of events</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Number of events</td></tr><tr><th>Description:</th><td width="500">Maximum number of events</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>forced-shutdown (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Forced Shutdown Seconds</td></tr><tr><th>Description:</th><td>Number of seconds to wait after the &#39;time&#39; limit before forcing shutdown, or exclude parameter to disable forced shutdown</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Forced Shutdown Seconds</td></tr><tr><th>Description:</th><td width="500">Number of seconds to wait after the &#39;time&#39; limit before forcing shutdown, or exclude parameter to disable forced shutdown</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>percentile (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>percentile to calculate in latency statistics (1-100). Use the special value of 0 to disable percentile calculations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td><tr><th>Minimum:</th><td>0</td></tr><tr><th>Maximum:</th><td>100</td></tr>
+        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td width="500">percentile to calculate in latency statistics (1-100). Use the special value of 0 to disable percentile calculations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td><tr><th>Minimum:</th><td>0</td></tr><tr><th>Maximum:</th><td>100</td></tr>
 </tbody></table>
         </details><details><summary>rand-pareto-h (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand pareto h</td></tr><tr><th>Description:</th><td>parameter h for pareto distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand pareto h</td></tr><tr><th>Description:</th><td width="500">parameter h for pareto distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>rand-seed (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand seed</td></tr><tr><th>Description:</th><td>seed for random number generator. When 0, the current time is used as a RNG seed.</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand seed</td></tr><tr><th>Description:</th><td width="500">seed for random number generator. When 0, the current time is used as a RNG seed.</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>rand-spec-iter (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand spec iterations</td></tr><tr><th>Description:</th><td>Number of iterations used for numbers generation</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand spec iterations</td></tr><tr><th>Description:</th><td width="500">Number of iterations used for numbers generation</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>rand-spec-pct (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand spec percentage</td></tr><tr><th>Description:</th><td>Percentage of values to be treated as &#39;special&#39; (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand spec percentage</td></tr><tr><th>Description:</th><td width="500">Percentage of values to be treated as &#39;special&#39; (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>rand-spec-res (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand spec res</td></tr><tr><th>Description:</th><td>Percentage of &#39;special&#39; values to use (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand spec res</td></tr><tr><th>Description:</th><td width="500">Percentage of &#39;special&#39; values to use (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>rand-type (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Random Number Type</td></tr><tr><th>Description:</th><td>Random numbers distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>Random Number Type</td></tr><tr><th>Description:</th><td width="500">Random numbers distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>gaussian</code>:</strong> GAUSSIAN</li><li><strong><code>pareto</code>:</strong> PARETO</li><li><strong><code>special</code>:</strong> SPECIAL</li><li><strong><code>uniform</code>:</strong> UNIFORM</li></ul>
         </details>
     </td>
 </tr></tbody></table>
         </details><details><summary>rate (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Transaction rate</td></tr><tr><th>Description:</th><td>average transactions rate. 0 for unlimited rate</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Transaction rate</td></tr><tr><th>Description:</th><td width="500">average transactions rate. 0 for unlimited rate</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>thread-stack-size (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Thread stack size</td></tr><tr><th>Description:</th><td>size of stack per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Thread stack size</td></tr><tr><th>Description:</th><td width="500">size of stack per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>threads (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Threads</td></tr><tr><th>Description:</th><td>Number of worker threads to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Threads</td></tr><tr><th>Description:</th><td width="500">Number of worker threads to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>time (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Time</td></tr><tr><th>Description:</th><td>Limit for total execution time in seconds</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Time</td></tr><tr><th>Description:</th><td width="500">Limit for total execution time in seconds</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>validate (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Validate</td></tr><tr><th>Description:</th><td>perform validation checks where possible</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>Validate</td></tr><tr><th>Description:</th><td width="500">perform validation checks where possible</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>off</code>:</strong> OFF</li><li><strong><code>on</code>:</strong> ON</li></ul>
         </details>
@@ -157,16 +157,16 @@ Run CPU performance test using the sysbench workload
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>WorkloadError</td></tr>
 <tr><th>Properties</th><td><details><summary>error (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Failure Error</td></tr><tr><th>Description:</th><td>Reason for failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Failure Error</td></tr><tr><th>Description:</th><td width="500">Reason for failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>exit_code (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Exit Code</td></tr><tr><th>Description:</th><td>Exit code returned by the program in case of a failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Exit Code</td></tr><tr><th>Description:</th><td width="500">Exit code returned by the program in case of a failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>WorkloadError (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>error (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Failure Error</td></tr><tr><th>Description:</th><td>Reason for failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Failure Error</td></tr><tr><th>Description:</th><td width="500">Reason for failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>exit_code (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Exit Code</td></tr><tr><th>Description:</th><td>Exit code returned by the program in case of a failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Exit Code</td></tr><tr><th>Description:</th><td width="500">Exit code returned by the program in case of a failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
@@ -178,84 +178,84 @@ Run CPU performance test using the sysbench workload
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>WorkloadResultsCpu</td></tr>
 <tr><th>Properties</th><td><details><summary>sysbench_output_params (<code>reference[SysbenchCpuOutputParams]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Sysbench Cpu Output Parameters</td></tr><tr><th>Description:</th><td>Ouptut parameters for a successful sysbench cpu workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchCpuOutputParams]</code></td><tr><th>Referenced object:</th><td>SysbenchCpuOutputParams</td></tr></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Sysbench Cpu Output Parameters</td></tr><tr><th>Description:</th><td width="500">Ouptut parameters for a successful sysbench cpu workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchCpuOutputParams]</code></td><tr><th>Referenced object:</th><td>SysbenchCpuOutputParams</td></tr></tbody></table>
             </details><details><summary>sysbench_results (<code>reference[SysbenchCpuResultParams]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Sysbench Cpu Result Parameters</td></tr><tr><th>Description:</th><td>Result parameters for a successful sysbench cpu workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchCpuResultParams]</code></td><tr><th>Referenced object:</th><td>SysbenchCpuResultParams</td></tr></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Sysbench Cpu Result Parameters</td></tr><tr><th>Description:</th><td width="500">Result parameters for a successful sysbench cpu workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchCpuResultParams]</code></td><tr><th>Referenced object:</th><td>SysbenchCpuResultParams</td></tr></tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>CPUmetrics (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>eventspersecond (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Events per second</td></tr><tr><th>Description:</th><td>Number of events per second to measure CPU speed</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Events per second</td></tr><tr><th>Description:</th><td width="500">Number of events per second to measure CPU speed</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>LatencyAggregates (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>avg (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td>Average Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td width="500">Average Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>max (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Maximum</td></tr><tr><th>Description:</th><td>Maximum Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Maximum</td></tr><tr><th>Description:</th><td width="500">Maximum Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>min (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Minimum</td></tr><tr><th>Description:</th><td>Minimum latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Minimum</td></tr><tr><th>Description:</th><td width="500">Minimum latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>percentile (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>Latency percentile selected for reporting</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td width="500">Latency percentile selected for reporting</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>percentile_value (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Latency Percentile Value</td></tr><tr><th>Description:</th><td>Latency percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Latency Percentile Value</td></tr><tr><th>Description:</th><td width="500">Latency percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>sum (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Sum</td></tr><tr><th>Description:</th><td>Sum of latencies</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Sum</td></tr><tr><th>Description:</th><td width="500">Sum of latencies</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>SysbenchCpuOutputParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>Numberofthreads (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td>Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td width="500">Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>Primenumberslimit (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Prime numbers limit</td></tr><tr><th>Description:</th><td>Number of prime numbers to use for CPU workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Prime numbers limit</td></tr><tr><th>Description:</th><td width="500">Number of prime numbers to use for CPU workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>Validationchecks (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Validation checks</td></tr><tr><th>Description:</th><td>Validation on/off</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Validation checks</td></tr><tr><th>Description:</th><td width="500">Validation on/off</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>totalnumberofevents (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td>Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td width="500">Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>totaltime (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total time</td></tr><tr><th>Description:</th><td>Total execution time of workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Total time</td></tr><tr><th>Description:</th><td width="500">Total execution time of workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>SysbenchCpuResultParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>CPUspeed (<code>reference[CPUmetrics]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>CPU speed</td></tr><tr><th>Description:</th><td>No of events per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CPUmetrics]</code></td><tr><th>Referenced object:</th><td>CPUmetrics</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>CPU speed</td></tr><tr><th>Description:</th><td width="500">No of events per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[CPUmetrics]</code></td><tr><th>Referenced object:</th><td>CPUmetrics</td></tr></tbody></table>
         </details><details><summary>Latency (<code>reference[LatencyAggregates]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Latency</td></tr><tr><th>Description:</th><td>CPU latency in milliseconds</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[LatencyAggregates]</code></td><tr><th>Referenced object:</th><td>LatencyAggregates</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Latency</td></tr><tr><th>Description:</th><td width="500">CPU latency in milliseconds</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[LatencyAggregates]</code></td><tr><th>Referenced object:</th><td>LatencyAggregates</td></tr></tbody></table>
         </details><details><summary>Threadsfairness (<code>reference[ThreadsFairness]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Threads fairness</td></tr><tr><th>Description:</th><td>Event distribution by threads for number of executed events by threads and total execution time by thread</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadsFairness]</code></td><tr><th>Referenced object:</th><td>ThreadsFairness</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Threads fairness</td></tr><tr><th>Description:</th><td width="500">Event distribution by threads for number of executed events by threads and total execution time by thread</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadsFairness]</code></td><tr><th>Referenced object:</th><td>ThreadsFairness</td></tr></tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>ThreadFairnessAggregates (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>avg (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td>Average value across all threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td width="500">Average value across all threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>stddev (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Standard Deviation</td></tr><tr><th>Description:</th><td>Standard deviation of all threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Standard Deviation</td></tr><tr><th>Description:</th><td width="500">Standard deviation of all threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>ThreadsFairness (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>events (<code>reference[ThreadFairnessAggregates]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Thread Fairness events</td></tr><tr><th>Description:</th><td>number of events executed by the threads </td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadFairnessAggregates]</code></td><tr><th>Referenced object:</th><td>ThreadFairnessAggregates</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Thread Fairness events</td></tr><tr><th>Description:</th><td width="500">number of events executed by the threads </td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadFairnessAggregates]</code></td><tr><th>Referenced object:</th><td>ThreadFairnessAggregates</td></tr></tbody></table>
         </details><details><summary>executiontime (<code>reference[ThreadFairnessAggregates]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Thread Fairness execution time</td></tr><tr><th>Description:</th><td>Execution time of threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadFairnessAggregates]</code></td><tr><th>Referenced object:</th><td>ThreadFairnessAggregates</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Thread Fairness execution time</td></tr><tr><th>Description:</th><td width="500">Execution time of threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadFairnessAggregates]</code></td><tr><th>Referenced object:</th><td>ThreadFairnessAggregates</td></tr></tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>WorkloadResultsCpu (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>sysbench_output_params (<code>reference[SysbenchCpuOutputParams]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Sysbench Cpu Output Parameters</td></tr><tr><th>Description:</th><td>Ouptut parameters for a successful sysbench cpu workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchCpuOutputParams]</code></td><tr><th>Referenced object:</th><td>SysbenchCpuOutputParams</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Sysbench Cpu Output Parameters</td></tr><tr><th>Description:</th><td width="500">Ouptut parameters for a successful sysbench cpu workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchCpuOutputParams]</code></td><tr><th>Referenced object:</th><td>SysbenchCpuOutputParams</td></tr></tbody></table>
         </details><details><summary>sysbench_results (<code>reference[SysbenchCpuResultParams]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Sysbench Cpu Result Parameters</td></tr><tr><th>Description:</th><td>Result parameters for a successful sysbench cpu workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchCpuResultParams]</code></td><tr><th>Referenced object:</th><td>SysbenchCpuResultParams</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Sysbench Cpu Result Parameters</td></tr><tr><th>Description:</th><td width="500">Result parameters for a successful sysbench cpu workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchCpuResultParams]</code></td><tr><th>Referenced object:</th><td>SysbenchCpuResultParams</td></tr></tbody></table>
         </details></td></tr>
 </tbody></table>
         </details></details></td></tr>
@@ -272,111 +272,111 @@ Run the I/O test using the sysbench workload
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>SysbenchIoInputParams</td></tr>
 <tr><th>Properties</th><td><details><summary>events (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Number of events</td></tr><tr><th>Description:</th><td>Maximum number of events</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Number of events</td></tr><tr><th>Description:</th><td width="500">Maximum number of events</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>file-async-backlog (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>File Async Backlog</td></tr><tr><th>Description:</th><td>Number of asynchronous operatons to queue per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>File Async Backlog</td></tr><tr><th>Description:</th><td width="500">Number of asynchronous operatons to queue per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>file-block-size (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>File Block Size</td></tr><tr><th>Description:</th><td>Block size to use in all IO operations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>File Block Size</td></tr><tr><th>Description:</th><td width="500">Block size to use in all IO operations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>file-extra-flags (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>File I/O Mode</td></tr><tr><th>Description:</th><td>File operations mode {sync,async,mmap}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>File I/O Mode</td></tr><tr><th>Description:</th><td width="500">File operations mode {sync,async,mmap}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>direct</code>:</strong> DIRECT</li><li><strong><code>dsync</code>:</strong> DSYNC</li><li><strong><code>sync</code>:</strong> SYNC</li></ul>
         </details>
     </td>
 </tr></tbody></table>
             </details><details><summary>file-fsync-all (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>File Fsync Frequency</td></tr><tr><th>Description:</th><td>Do fsync() after this number of requests (0 - don&#39;t use fsync())</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>File Fsync Frequency</td></tr><tr><th>Description:</th><td width="500">Do fsync() after this number of requests (0 - don&#39;t use fsync())</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>off</code>:</strong> OFF</li><li><strong><code>on</code>:</strong> ON</li></ul>
         </details>
     </td>
 </tr></tbody></table>
             </details><details><summary>file-fsync-end (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>File Fsync At End</td></tr><tr><th>Description:</th><td>Do fsync() at the end of test</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>File Fsync At End</td></tr><tr><th>Description:</th><td width="500">Do fsync() at the end of test</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>off</code>:</strong> OFF</li><li><strong><code>on</code>:</strong> ON</li></ul>
         </details>
     </td>
 </tr></tbody></table>
             </details><details><summary>file-fsync-freq (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>File Fsync Frequency</td></tr><tr><th>Description:</th><td>Do fsync() after this number of requests (0 - don&#39;t use fsync())</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>File Fsync Frequency</td></tr><tr><th>Description:</th><td width="500">Do fsync() after this number of requests (0 - don&#39;t use fsync())</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>file-fsync-mode (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>File Fsync Mode</td></tr><tr><th>Description:</th><td>Which method to use for synchronization {fsync, fdatasync}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>File Fsync Mode</td></tr><tr><th>Description:</th><td width="500">Which method to use for synchronization {fsync, fdatasync}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>fdatasync</code>:</strong> FDATASYNC</li><li><strong><code>fsync</code>:</strong> FSYNC</li></ul>
         </details>
     </td>
 </tr></tbody></table>
             </details><details><summary>file-io-mode (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>File I/O Mode</td></tr><tr><th>Description:</th><td>File operations mode {sync,async,mmap}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>File I/O Mode</td></tr><tr><th>Description:</th><td width="500">File operations mode {sync,async,mmap}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>async</code>:</strong> ASYNC</li><li><strong><code>mmap</code>:</strong> MMAP</li><li><strong><code>sync</code>:</strong> SYNC</li></ul>
         </details>
     </td>
 </tr></tbody></table>
             </details><details><summary>file-merged-requests (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>File Fsync Frequency</td></tr><tr><th>Description:</th><td>Merge at most this number of IO requests if possible (0 - don&#39;t merge)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>File Fsync Frequency</td></tr><tr><th>Description:</th><td width="500">Merge at most this number of IO requests if possible (0 - don&#39;t merge)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>file-num (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Files number</td></tr><tr><th>Description:</th><td>Number of files to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Files number</td></tr><tr><th>Description:</th><td width="500">Number of files to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>file-rw-ratio (<code>float</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>File R/W Ratio</td></tr><tr><th>Description:</th><td>Reads/writes ratio for combined test</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
+                <table><tbody><tr><th>Name:</th><td>File R/W Ratio</td></tr><tr><th>Description:</th><td width="500">Reads/writes ratio for combined test</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
             </details><details><summary>file-test-mode (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>File Test Mode</td></tr><tr><th>Description:</th><td>Test mode {seqwr, seqrewr, seqrd, rndrd, rndwr, rndrw}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>File Test Mode</td></tr><tr><th>Description:</th><td width="500">Test mode {seqwr, seqrewr, seqrd, rndrd, rndwr, rndrw}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>rndrd</code>:</strong> RNDR</li><li><strong><code>rndrw</code>:</strong> RNDRW</li><li><strong><code>rndwr</code>:</strong> RNDWR</li><li><strong><code>seqrd</code>:</strong> SEQRD</li><li><strong><code>seqrewr</code>:</strong> SEQREWR</li><li><strong><code>seqwr</code>:</strong> SEQWR</li></ul>
         </details>
     </td>
 </tr></tbody></table>
             </details><details><summary>file-total-size (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>File Total Size</td></tr><tr><th>Description:</th><td>Total size of files to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>File Total Size</td></tr><tr><th>Description:</th><td width="500">Total size of files to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>forced-shutdown (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Forced Shutdown Seconds</td></tr><tr><th>Description:</th><td>Number of seconds to wait after the &#39;time&#39; limit before forcing shutdown, or exclude parameter to disable forced shutdown</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Forced Shutdown Seconds</td></tr><tr><th>Description:</th><td width="500">Number of seconds to wait after the &#39;time&#39; limit before forcing shutdown, or exclude parameter to disable forced shutdown</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>percentile (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>percentile to calculate in latency statistics (1-100). Use the special value of 0 to disable percentile calculations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td><tr><th>Minimum:</th><td>0</td></tr><tr><th>Maximum:</th><td>100</td></tr>
+                <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td width="500">percentile to calculate in latency statistics (1-100). Use the special value of 0 to disable percentile calculations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td><tr><th>Minimum:</th><td>0</td></tr><tr><th>Maximum:</th><td>100</td></tr>
 </tbody></table>
             </details><details><summary>rand-pareto-h (<code>float</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand pareto h</td></tr><tr><th>Description:</th><td>parameter h for pareto distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand pareto h</td></tr><tr><th>Description:</th><td width="500">parameter h for pareto distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
             </details><details><summary>rand-seed (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand seed</td></tr><tr><th>Description:</th><td>seed for random number generator. When 0, the current time is used as a RNG seed.</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand seed</td></tr><tr><th>Description:</th><td width="500">seed for random number generator. When 0, the current time is used as a RNG seed.</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>rand-spec-iter (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand spec iterations</td></tr><tr><th>Description:</th><td>Number of iterations used for numbers generation</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand spec iterations</td></tr><tr><th>Description:</th><td width="500">Number of iterations used for numbers generation</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>rand-spec-pct (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand spec percentage</td></tr><tr><th>Description:</th><td>Percentage of values to be treated as &#39;special&#39; (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand spec percentage</td></tr><tr><th>Description:</th><td width="500">Percentage of values to be treated as &#39;special&#39; (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>rand-spec-res (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand spec res</td></tr><tr><th>Description:</th><td>Percentage of &#39;special&#39; values to use (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand spec res</td></tr><tr><th>Description:</th><td width="500">Percentage of &#39;special&#39; values to use (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>rand-type (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Random Number Type</td></tr><tr><th>Description:</th><td>Random numbers distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>Random Number Type</td></tr><tr><th>Description:</th><td width="500">Random numbers distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>gaussian</code>:</strong> GAUSSIAN</li><li><strong><code>pareto</code>:</strong> PARETO</li><li><strong><code>special</code>:</strong> SPECIAL</li><li><strong><code>uniform</code>:</strong> UNIFORM</li></ul>
         </details>
     </td>
 </tr></tbody></table>
             </details><details><summary>rate (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Transaction rate</td></tr><tr><th>Description:</th><td>average transactions rate. 0 for unlimited rate</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Transaction rate</td></tr><tr><th>Description:</th><td width="500">average transactions rate. 0 for unlimited rate</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>thread-stack-size (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Thread stack size</td></tr><tr><th>Description:</th><td>size of stack per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Thread stack size</td></tr><tr><th>Description:</th><td width="500">size of stack per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>threads (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Threads</td></tr><tr><th>Description:</th><td>Number of worker threads to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Threads</td></tr><tr><th>Description:</th><td width="500">Number of worker threads to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>time (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Time</td></tr><tr><th>Description:</th><td>Limit for total execution time in seconds</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Time</td></tr><tr><th>Description:</th><td width="500">Limit for total execution time in seconds</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>validate (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Validate</td></tr><tr><th>Description:</th><td>perform validation checks where possible</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>Validate</td></tr><tr><th>Description:</th><td width="500">perform validation checks where possible</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>off</code>:</strong> OFF</li><li><strong><code>on</code>:</strong> ON</li></ul>
         </details>
@@ -385,111 +385,111 @@ Run the I/O test using the sysbench workload
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>SysbenchIoInputParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>events (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Number of events</td></tr><tr><th>Description:</th><td>Maximum number of events</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Number of events</td></tr><tr><th>Description:</th><td width="500">Maximum number of events</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>file-async-backlog (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>File Async Backlog</td></tr><tr><th>Description:</th><td>Number of asynchronous operatons to queue per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>File Async Backlog</td></tr><tr><th>Description:</th><td width="500">Number of asynchronous operatons to queue per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>file-block-size (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>File Block Size</td></tr><tr><th>Description:</th><td>Block size to use in all IO operations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>File Block Size</td></tr><tr><th>Description:</th><td width="500">Block size to use in all IO operations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>file-extra-flags (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>File I/O Mode</td></tr><tr><th>Description:</th><td>File operations mode {sync,async,mmap}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>File I/O Mode</td></tr><tr><th>Description:</th><td width="500">File operations mode {sync,async,mmap}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>direct</code>:</strong> DIRECT</li><li><strong><code>dsync</code>:</strong> DSYNC</li><li><strong><code>sync</code>:</strong> SYNC</li></ul>
         </details>
     </td>
 </tr></tbody></table>
         </details><details><summary>file-fsync-all (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>File Fsync Frequency</td></tr><tr><th>Description:</th><td>Do fsync() after this number of requests (0 - don&#39;t use fsync())</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>File Fsync Frequency</td></tr><tr><th>Description:</th><td width="500">Do fsync() after this number of requests (0 - don&#39;t use fsync())</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>off</code>:</strong> OFF</li><li><strong><code>on</code>:</strong> ON</li></ul>
         </details>
     </td>
 </tr></tbody></table>
         </details><details><summary>file-fsync-end (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>File Fsync At End</td></tr><tr><th>Description:</th><td>Do fsync() at the end of test</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>File Fsync At End</td></tr><tr><th>Description:</th><td width="500">Do fsync() at the end of test</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>off</code>:</strong> OFF</li><li><strong><code>on</code>:</strong> ON</li></ul>
         </details>
     </td>
 </tr></tbody></table>
         </details><details><summary>file-fsync-freq (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>File Fsync Frequency</td></tr><tr><th>Description:</th><td>Do fsync() after this number of requests (0 - don&#39;t use fsync())</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>File Fsync Frequency</td></tr><tr><th>Description:</th><td width="500">Do fsync() after this number of requests (0 - don&#39;t use fsync())</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>file-fsync-mode (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>File Fsync Mode</td></tr><tr><th>Description:</th><td>Which method to use for synchronization {fsync, fdatasync}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>File Fsync Mode</td></tr><tr><th>Description:</th><td width="500">Which method to use for synchronization {fsync, fdatasync}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>fdatasync</code>:</strong> FDATASYNC</li><li><strong><code>fsync</code>:</strong> FSYNC</li></ul>
         </details>
     </td>
 </tr></tbody></table>
         </details><details><summary>file-io-mode (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>File I/O Mode</td></tr><tr><th>Description:</th><td>File operations mode {sync,async,mmap}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>File I/O Mode</td></tr><tr><th>Description:</th><td width="500">File operations mode {sync,async,mmap}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>async</code>:</strong> ASYNC</li><li><strong><code>mmap</code>:</strong> MMAP</li><li><strong><code>sync</code>:</strong> SYNC</li></ul>
         </details>
     </td>
 </tr></tbody></table>
         </details><details><summary>file-merged-requests (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>File Fsync Frequency</td></tr><tr><th>Description:</th><td>Merge at most this number of IO requests if possible (0 - don&#39;t merge)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>File Fsync Frequency</td></tr><tr><th>Description:</th><td width="500">Merge at most this number of IO requests if possible (0 - don&#39;t merge)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>file-num (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Files number</td></tr><tr><th>Description:</th><td>Number of files to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Files number</td></tr><tr><th>Description:</th><td width="500">Number of files to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>file-rw-ratio (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>File R/W Ratio</td></tr><tr><th>Description:</th><td>Reads/writes ratio for combined test</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>File R/W Ratio</td></tr><tr><th>Description:</th><td width="500">Reads/writes ratio for combined test</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>file-test-mode (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>File Test Mode</td></tr><tr><th>Description:</th><td>Test mode {seqwr, seqrewr, seqrd, rndrd, rndwr, rndrw}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>File Test Mode</td></tr><tr><th>Description:</th><td width="500">Test mode {seqwr, seqrewr, seqrd, rndrd, rndwr, rndrw}</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>rndrd</code>:</strong> RNDR</li><li><strong><code>rndrw</code>:</strong> RNDRW</li><li><strong><code>rndwr</code>:</strong> RNDWR</li><li><strong><code>seqrd</code>:</strong> SEQRD</li><li><strong><code>seqrewr</code>:</strong> SEQREWR</li><li><strong><code>seqwr</code>:</strong> SEQWR</li></ul>
         </details>
     </td>
 </tr></tbody></table>
         </details><details><summary>file-total-size (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>File Total Size</td></tr><tr><th>Description:</th><td>Total size of files to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>File Total Size</td></tr><tr><th>Description:</th><td width="500">Total size of files to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>forced-shutdown (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Forced Shutdown Seconds</td></tr><tr><th>Description:</th><td>Number of seconds to wait after the &#39;time&#39; limit before forcing shutdown, or exclude parameter to disable forced shutdown</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Forced Shutdown Seconds</td></tr><tr><th>Description:</th><td width="500">Number of seconds to wait after the &#39;time&#39; limit before forcing shutdown, or exclude parameter to disable forced shutdown</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>percentile (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>percentile to calculate in latency statistics (1-100). Use the special value of 0 to disable percentile calculations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td><tr><th>Minimum:</th><td>0</td></tr><tr><th>Maximum:</th><td>100</td></tr>
+        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td width="500">percentile to calculate in latency statistics (1-100). Use the special value of 0 to disable percentile calculations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td><tr><th>Minimum:</th><td>0</td></tr><tr><th>Maximum:</th><td>100</td></tr>
 </tbody></table>
         </details><details><summary>rand-pareto-h (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand pareto h</td></tr><tr><th>Description:</th><td>parameter h for pareto distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand pareto h</td></tr><tr><th>Description:</th><td width="500">parameter h for pareto distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>rand-seed (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand seed</td></tr><tr><th>Description:</th><td>seed for random number generator. When 0, the current time is used as a RNG seed.</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand seed</td></tr><tr><th>Description:</th><td width="500">seed for random number generator. When 0, the current time is used as a RNG seed.</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>rand-spec-iter (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand spec iterations</td></tr><tr><th>Description:</th><td>Number of iterations used for numbers generation</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand spec iterations</td></tr><tr><th>Description:</th><td width="500">Number of iterations used for numbers generation</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>rand-spec-pct (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand spec percentage</td></tr><tr><th>Description:</th><td>Percentage of values to be treated as &#39;special&#39; (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand spec percentage</td></tr><tr><th>Description:</th><td width="500">Percentage of values to be treated as &#39;special&#39; (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>rand-spec-res (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand spec res</td></tr><tr><th>Description:</th><td>Percentage of &#39;special&#39; values to use (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand spec res</td></tr><tr><th>Description:</th><td width="500">Percentage of &#39;special&#39; values to use (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>rand-type (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Random Number Type</td></tr><tr><th>Description:</th><td>Random numbers distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>Random Number Type</td></tr><tr><th>Description:</th><td width="500">Random numbers distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>gaussian</code>:</strong> GAUSSIAN</li><li><strong><code>pareto</code>:</strong> PARETO</li><li><strong><code>special</code>:</strong> SPECIAL</li><li><strong><code>uniform</code>:</strong> UNIFORM</li></ul>
         </details>
     </td>
 </tr></tbody></table>
         </details><details><summary>rate (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Transaction rate</td></tr><tr><th>Description:</th><td>average transactions rate. 0 for unlimited rate</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Transaction rate</td></tr><tr><th>Description:</th><td width="500">average transactions rate. 0 for unlimited rate</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>thread-stack-size (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Thread stack size</td></tr><tr><th>Description:</th><td>size of stack per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Thread stack size</td></tr><tr><th>Description:</th><td width="500">size of stack per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>threads (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Threads</td></tr><tr><th>Description:</th><td>Number of worker threads to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Threads</td></tr><tr><th>Description:</th><td width="500">Number of worker threads to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>time (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Time</td></tr><tr><th>Description:</th><td>Limit for total execution time in seconds</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Time</td></tr><tr><th>Description:</th><td width="500">Limit for total execution time in seconds</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>validate (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Validate</td></tr><tr><th>Description:</th><td>perform validation checks where possible</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>Validate</td></tr><tr><th>Description:</th><td width="500">perform validation checks where possible</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>off</code>:</strong> OFF</li><li><strong><code>on</code>:</strong> ON</li></ul>
         </details>
@@ -508,16 +508,16 @@ Run the I/O test using the sysbench workload
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>WorkloadError</td></tr>
 <tr><th>Properties</th><td><details><summary>error (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Failure Error</td></tr><tr><th>Description:</th><td>Reason for failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Failure Error</td></tr><tr><th>Description:</th><td width="500">Reason for failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>exit_code (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Exit Code</td></tr><tr><th>Description:</th><td>Exit code returned by the program in case of a failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Exit Code</td></tr><tr><th>Description:</th><td width="500">Exit code returned by the program in case of a failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>WorkloadError (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>error (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Failure Error</td></tr><tr><th>Description:</th><td>Reason for failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Failure Error</td></tr><tr><th>Description:</th><td width="500">Reason for failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>exit_code (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Exit Code</td></tr><tr><th>Description:</th><td>Exit code returned by the program in case of a failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Exit Code</td></tr><tr><th>Description:</th><td width="500">Exit code returned by the program in case of a failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
@@ -529,106 +529,106 @@ Run the I/O test using the sysbench workload
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>WorkloadResultsIo</td></tr>
 <tr><th>Properties</th><td><details><summary>sysbench_output_params (<code>reference[SysbenchIoOutputParams]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Sysbench Io Output Parameters</td></tr><tr><th>Description:</th><td>Ouptut parameters for a successful sysbench io workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchIoOutputParams]</code></td><tr><th>Referenced object:</th><td>SysbenchIoOutputParams</td></tr></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Sysbench Io Output Parameters</td></tr><tr><th>Description:</th><td width="500">Ouptut parameters for a successful sysbench io workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchIoOutputParams]</code></td><tr><th>Referenced object:</th><td>SysbenchIoOutputParams</td></tr></tbody></table>
             </details><details><summary>sysbench_results (<code>reference[SysbenchIoResultParams]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Sysbench io Result Parameters</td></tr><tr><th>Description:</th><td>Result parameters for a successful io Memory workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchIoResultParams]</code></td><tr><th>Referenced object:</th><td>SysbenchIoResultParams</td></tr></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Sysbench io Result Parameters</td></tr><tr><th>Description:</th><td width="500">Result parameters for a successful io Memory workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchIoResultParams]</code></td><tr><th>Referenced object:</th><td>SysbenchIoResultParams</td></tr></tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>FileOperationMetrics (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>fsyncs_s (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Fsync/sec</td></tr><tr><th>Description:</th><td>Number of fsync() per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Fsync/sec</td></tr><tr><th>Description:</th><td width="500">Number of fsync() per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>reads_s (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Read Ops/sec</td></tr><tr><th>Description:</th><td>Read operations per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Read Ops/sec</td></tr><tr><th>Description:</th><td width="500">Read operations per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>writes_s (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Write Ops/s</td></tr><tr><th>Description:</th><td>Write Operations per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Write Ops/s</td></tr><tr><th>Description:</th><td width="500">Write Operations per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>LatencyAggregates (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>avg (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td>Average Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td width="500">Average Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>max (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Maximum</td></tr><tr><th>Description:</th><td>Maximum Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Maximum</td></tr><tr><th>Description:</th><td width="500">Maximum Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>min (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Minimum</td></tr><tr><th>Description:</th><td>Minimum latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Minimum</td></tr><tr><th>Description:</th><td width="500">Minimum latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>percentile (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>Latency percentile selected for reporting</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td width="500">Latency percentile selected for reporting</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>percentile_value (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Latency Percentile Value</td></tr><tr><th>Description:</th><td>Latency percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Latency Percentile Value</td></tr><tr><th>Description:</th><td width="500">Latency percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>sum (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Sum</td></tr><tr><th>Description:</th><td>Sum of latencies</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Sum</td></tr><tr><th>Description:</th><td width="500">Sum of latencies</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>SysbenchIoOutputParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>Extrafileopenflags (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>File Open Flags</td></tr><tr><th>Description:</th><td>File Open Flags</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>File Open Flags</td></tr><tr><th>Description:</th><td width="500">File Open Flags</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>NumberofIOrequests (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Number of I/O requests</td></tr><tr><th>Description:</th><td>Number of I/O requests</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Number of I/O requests</td></tr><tr><th>Description:</th><td width="500">Number of I/O requests</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>Numberofthreads (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td>Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td width="500">Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>ReadWriteratioforcombinedrandomIOtest (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>R/W Ratio Random Test</td></tr><tr><th>Description:</th><td>Read/Write Ratio for combined random I/O test</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>R/W Ratio Random Test</td></tr><tr><th>Description:</th><td width="500">Read/Write Ratio for combined random I/O test</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>Validationchecks (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Validation checks</td></tr><tr><th>Description:</th><td>Validation on/off</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Validation checks</td></tr><tr><th>Description:</th><td width="500">Validation on/off</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>totalnumberofevents (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td>Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td width="500">Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>totaltime (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total time</td></tr><tr><th>Description:</th><td>Total execution time of workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Total time</td></tr><tr><th>Description:</th><td width="500">Total execution time of workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>SysbenchIoResultParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>Fileoperations (<code>reference[FileOperationMetrics]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>FileOperations</td></tr><tr><th>Description:</th><td>File Operation Metrics</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[FileOperationMetrics]</code></td><tr><th>Referenced object:</th><td>FileOperationMetrics</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>FileOperations</td></tr><tr><th>Description:</th><td width="500">File Operation Metrics</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[FileOperationMetrics]</code></td><tr><th>Referenced object:</th><td>FileOperationMetrics</td></tr></tbody></table>
         </details><details><summary>Latency (<code>reference[LatencyAggregates]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Latency</td></tr><tr><th>Description:</th><td>latency in milliseconds</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[LatencyAggregates]</code></td><tr><th>Referenced object:</th><td>LatencyAggregates</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Latency</td></tr><tr><th>Description:</th><td width="500">latency in milliseconds</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[LatencyAggregates]</code></td><tr><th>Referenced object:</th><td>LatencyAggregates</td></tr></tbody></table>
         </details><details><summary>Threadsfairness (<code>reference[ThreadsFairness]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Threads fairness</td></tr><tr><th>Description:</th><td>Event distribution by threads for number of executed events by threads and total execution time by thread</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadsFairness]</code></td><tr><th>Referenced object:</th><td>ThreadsFairness</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Threads fairness</td></tr><tr><th>Description:</th><td width="500">Event distribution by threads for number of executed events by threads and total execution time by thread</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadsFairness]</code></td><tr><th>Referenced object:</th><td>ThreadsFairness</td></tr></tbody></table>
         </details><details><summary>Throughput (<code>reference[ThroughputMetrics]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Throughput</td></tr><tr><th>Description:</th><td>Throughput metrics</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThroughputMetrics]</code></td><tr><th>Referenced object:</th><td>ThroughputMetrics</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Throughput</td></tr><tr><th>Description:</th><td width="500">Throughput metrics</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThroughputMetrics]</code></td><tr><th>Referenced object:</th><td>ThroughputMetrics</td></tr></tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>ThreadFairnessAggregates (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>avg (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td>Average value across all threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td width="500">Average value across all threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>stddev (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Standard Deviation</td></tr><tr><th>Description:</th><td>Standard deviation of all threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Standard Deviation</td></tr><tr><th>Description:</th><td width="500">Standard deviation of all threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>ThreadsFairness (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>events (<code>reference[ThreadFairnessAggregates]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Thread Fairness events</td></tr><tr><th>Description:</th><td>number of events executed by the threads </td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadFairnessAggregates]</code></td><tr><th>Referenced object:</th><td>ThreadFairnessAggregates</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Thread Fairness events</td></tr><tr><th>Description:</th><td width="500">number of events executed by the threads </td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadFairnessAggregates]</code></td><tr><th>Referenced object:</th><td>ThreadFairnessAggregates</td></tr></tbody></table>
         </details><details><summary>executiontime (<code>reference[ThreadFairnessAggregates]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Thread Fairness execution time</td></tr><tr><th>Description:</th><td>Execution time of threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadFairnessAggregates]</code></td><tr><th>Referenced object:</th><td>ThreadFairnessAggregates</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Thread Fairness execution time</td></tr><tr><th>Description:</th><td width="500">Execution time of threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadFairnessAggregates]</code></td><tr><th>Referenced object:</th><td>ThreadFairnessAggregates</td></tr></tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>ThroughputMetrics (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>read_MiB_s (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Read Mebibytes/s</td></tr><tr><th>Description:</th><td>Read Mebibyte (2^20 bytes) per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Read Mebibytes/s</td></tr><tr><th>Description:</th><td width="500">Read Mebibyte (2^20 bytes) per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>written_MiB_s (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Written Mebibytes/s</td></tr><tr><th>Description:</th><td>Written Mebibyte (2^20 bytes) per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Written Mebibytes/s</td></tr><tr><th>Description:</th><td width="500">Written Mebibyte (2^20 bytes) per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>WorkloadResultsIo (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>sysbench_output_params (<code>reference[SysbenchIoOutputParams]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Sysbench Io Output Parameters</td></tr><tr><th>Description:</th><td>Ouptut parameters for a successful sysbench io workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchIoOutputParams]</code></td><tr><th>Referenced object:</th><td>SysbenchIoOutputParams</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Sysbench Io Output Parameters</td></tr><tr><th>Description:</th><td width="500">Ouptut parameters for a successful sysbench io workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchIoOutputParams]</code></td><tr><th>Referenced object:</th><td>SysbenchIoOutputParams</td></tr></tbody></table>
         </details><details><summary>sysbench_results (<code>reference[SysbenchIoResultParams]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Sysbench io Result Parameters</td></tr><tr><th>Description:</th><td>Result parameters for a successful io Memory workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchIoResultParams]</code></td><tr><th>Referenced object:</th><td>SysbenchIoResultParams</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Sysbench io Result Parameters</td></tr><tr><th>Description:</th><td width="500">Result parameters for a successful io Memory workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchIoResultParams]</code></td><tr><th>Referenced object:</th><td>SysbenchIoResultParams</td></tr></tbody></table>
         </details></td></tr>
 </tbody></table>
         </details></details></td></tr>
@@ -645,81 +645,81 @@ Run the Memory functions speed test using the sysbench workload
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>SysbenchMemoryInputParams</td></tr>
 <tr><th>Properties</th><td><details><summary>events (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Number of events</td></tr><tr><th>Description:</th><td>Maximum number of events</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Number of events</td></tr><tr><th>Description:</th><td width="500">Maximum number of events</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>forced-shutdown (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Forced Shutdown Seconds</td></tr><tr><th>Description:</th><td>Number of seconds to wait after the &#39;time&#39; limit before forcing shutdown, or exclude parameter to disable forced shutdown</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Forced Shutdown Seconds</td></tr><tr><th>Description:</th><td width="500">Number of seconds to wait after the &#39;time&#39; limit before forcing shutdown, or exclude parameter to disable forced shutdown</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>memory-access-mode (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Memory Access Mode</td></tr><tr><th>Description:</th><td>memory access mode (seq,rnd)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>Memory Access Mode</td></tr><tr><th>Description:</th><td width="500">memory access mode (seq,rnd)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>rnd</code>:</strong> RND</li><li><strong><code>seq</code>:</strong> SEQ</li></ul>
         </details>
     </td>
 </tr></tbody></table>
             </details><details><summary>memory-block-size (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Block Size</td></tr><tr><th>Description:</th><td>size of memory block for test in KiB/MiB/GiB</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Block Size</td></tr><tr><th>Description:</th><td width="500">size of memory block for test in KiB/MiB/GiB</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>memory-hugetlb (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Memory hugetlb</td></tr><tr><th>Description:</th><td>Allocate memory from HugeTLB pool (on/off)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>Memory hugetlb</td></tr><tr><th>Description:</th><td width="500">Allocate memory from HugeTLB pool (on/off)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>off</code>:</strong> OFF</li><li><strong><code>on</code>:</strong> ON</li></ul>
         </details>
     </td>
 </tr></tbody></table>
             </details><details><summary>memory-oper (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Memory Operation</td></tr><tr><th>Description:</th><td>Type of memory operation(write/read)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>Memory Operation</td></tr><tr><th>Description:</th><td width="500">Type of memory operation(write/read)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>none</code>:</strong> NONE</li><li><strong><code>read</code>:</strong> READ</li><li><strong><code>write</code>:</strong> WRITE</li></ul>
         </details>
     </td>
 </tr></tbody></table>
             </details><details><summary>memory-scope (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Memory Scope</td></tr><tr><th>Description:</th><td>Memory Access Scope(global/local)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>Memory Scope</td></tr><tr><th>Description:</th><td width="500">Memory Access Scope(global/local)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>global</code>:</strong> GLOBAL</li><li><strong><code>local</code>:</strong> LOCAL</li></ul>
         </details>
     </td>
 </tr></tbody></table>
             </details><details><summary>memory-total-size (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Total Size</td></tr><tr><th>Description:</th><td>Total size of data to transfer in GiB</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Total Size</td></tr><tr><th>Description:</th><td width="500">Total size of data to transfer in GiB</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>percentile (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>percentile to calculate in latency statistics (1-100). Use the special value of 0 to disable percentile calculations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td><tr><th>Minimum:</th><td>0</td></tr><tr><th>Maximum:</th><td>100</td></tr>
+                <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td width="500">percentile to calculate in latency statistics (1-100). Use the special value of 0 to disable percentile calculations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td><tr><th>Minimum:</th><td>0</td></tr><tr><th>Maximum:</th><td>100</td></tr>
 </tbody></table>
             </details><details><summary>rand-pareto-h (<code>float</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand pareto h</td></tr><tr><th>Description:</th><td>parameter h for pareto distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand pareto h</td></tr><tr><th>Description:</th><td width="500">parameter h for pareto distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
             </details><details><summary>rand-seed (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand seed</td></tr><tr><th>Description:</th><td>seed for random number generator. When 0, the current time is used as a RNG seed.</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand seed</td></tr><tr><th>Description:</th><td width="500">seed for random number generator. When 0, the current time is used as a RNG seed.</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>rand-spec-iter (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand spec iterations</td></tr><tr><th>Description:</th><td>Number of iterations used for numbers generation</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand spec iterations</td></tr><tr><th>Description:</th><td width="500">Number of iterations used for numbers generation</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>rand-spec-pct (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand spec percentage</td></tr><tr><th>Description:</th><td>Percentage of values to be treated as &#39;special&#39; (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand spec percentage</td></tr><tr><th>Description:</th><td width="500">Percentage of values to be treated as &#39;special&#39; (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>rand-spec-res (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Rand spec res</td></tr><tr><th>Description:</th><td>Percentage of &#39;special&#39; values to use (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Rand spec res</td></tr><tr><th>Description:</th><td width="500">Percentage of &#39;special&#39; values to use (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>rand-type (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Random Number Type</td></tr><tr><th>Description:</th><td>Random numbers distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>Random Number Type</td></tr><tr><th>Description:</th><td width="500">Random numbers distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>gaussian</code>:</strong> GAUSSIAN</li><li><strong><code>pareto</code>:</strong> PARETO</li><li><strong><code>special</code>:</strong> SPECIAL</li><li><strong><code>uniform</code>:</strong> UNIFORM</li></ul>
         </details>
     </td>
 </tr></tbody></table>
             </details><details><summary>rate (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Transaction rate</td></tr><tr><th>Description:</th><td>average transactions rate. 0 for unlimited rate</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Transaction rate</td></tr><tr><th>Description:</th><td width="500">average transactions rate. 0 for unlimited rate</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>thread-stack-size (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Thread stack size</td></tr><tr><th>Description:</th><td>size of stack per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Thread stack size</td></tr><tr><th>Description:</th><td width="500">size of stack per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>threads (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Threads</td></tr><tr><th>Description:</th><td>Number of worker threads to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Threads</td></tr><tr><th>Description:</th><td width="500">Number of worker threads to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>time (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Time</td></tr><tr><th>Description:</th><td>Limit for total execution time in seconds</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Time</td></tr><tr><th>Description:</th><td width="500">Limit for total execution time in seconds</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details><details><summary>validate (<code>enum[string]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Validate</td></tr><tr><th>Description:</th><td>perform validation checks where possible</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+                <table><tbody><tr><th>Name:</th><td>Validate</td></tr><tr><th>Description:</th><td width="500">perform validation checks where possible</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>off</code>:</strong> OFF</li><li><strong><code>on</code>:</strong> ON</li></ul>
         </details>
@@ -728,81 +728,81 @@ Run the Memory functions speed test using the sysbench workload
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>SysbenchMemoryInputParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>events (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Number of events</td></tr><tr><th>Description:</th><td>Maximum number of events</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Number of events</td></tr><tr><th>Description:</th><td width="500">Maximum number of events</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>forced-shutdown (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Forced Shutdown Seconds</td></tr><tr><th>Description:</th><td>Number of seconds to wait after the &#39;time&#39; limit before forcing shutdown, or exclude parameter to disable forced shutdown</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Forced Shutdown Seconds</td></tr><tr><th>Description:</th><td width="500">Number of seconds to wait after the &#39;time&#39; limit before forcing shutdown, or exclude parameter to disable forced shutdown</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>memory-access-mode (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Memory Access Mode</td></tr><tr><th>Description:</th><td>memory access mode (seq,rnd)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>Memory Access Mode</td></tr><tr><th>Description:</th><td width="500">memory access mode (seq,rnd)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>rnd</code>:</strong> RND</li><li><strong><code>seq</code>:</strong> SEQ</li></ul>
         </details>
     </td>
 </tr></tbody></table>
         </details><details><summary>memory-block-size (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Block Size</td></tr><tr><th>Description:</th><td>size of memory block for test in KiB/MiB/GiB</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Block Size</td></tr><tr><th>Description:</th><td width="500">size of memory block for test in KiB/MiB/GiB</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>memory-hugetlb (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Memory hugetlb</td></tr><tr><th>Description:</th><td>Allocate memory from HugeTLB pool (on/off)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>Memory hugetlb</td></tr><tr><th>Description:</th><td width="500">Allocate memory from HugeTLB pool (on/off)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>off</code>:</strong> OFF</li><li><strong><code>on</code>:</strong> ON</li></ul>
         </details>
     </td>
 </tr></tbody></table>
         </details><details><summary>memory-oper (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Memory Operation</td></tr><tr><th>Description:</th><td>Type of memory operation(write/read)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>Memory Operation</td></tr><tr><th>Description:</th><td width="500">Type of memory operation(write/read)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>none</code>:</strong> NONE</li><li><strong><code>read</code>:</strong> READ</li><li><strong><code>write</code>:</strong> WRITE</li></ul>
         </details>
     </td>
 </tr></tbody></table>
         </details><details><summary>memory-scope (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Memory Scope</td></tr><tr><th>Description:</th><td>Memory Access Scope(global/local)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>Memory Scope</td></tr><tr><th>Description:</th><td width="500">Memory Access Scope(global/local)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>global</code>:</strong> GLOBAL</li><li><strong><code>local</code>:</strong> LOCAL</li></ul>
         </details>
     </td>
 </tr></tbody></table>
         </details><details><summary>memory-total-size (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total Size</td></tr><tr><th>Description:</th><td>Total size of data to transfer in GiB</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Total Size</td></tr><tr><th>Description:</th><td width="500">Total size of data to transfer in GiB</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>percentile (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>percentile to calculate in latency statistics (1-100). Use the special value of 0 to disable percentile calculations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td><tr><th>Minimum:</th><td>0</td></tr><tr><th>Maximum:</th><td>100</td></tr>
+        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td width="500">percentile to calculate in latency statistics (1-100). Use the special value of 0 to disable percentile calculations</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td><tr><th>Minimum:</th><td>0</td></tr><tr><th>Maximum:</th><td>100</td></tr>
 </tbody></table>
         </details><details><summary>rand-pareto-h (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand pareto h</td></tr><tr><th>Description:</th><td>parameter h for pareto distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand pareto h</td></tr><tr><th>Description:</th><td width="500">parameter h for pareto distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>rand-seed (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand seed</td></tr><tr><th>Description:</th><td>seed for random number generator. When 0, the current time is used as a RNG seed.</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand seed</td></tr><tr><th>Description:</th><td width="500">seed for random number generator. When 0, the current time is used as a RNG seed.</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>rand-spec-iter (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand spec iterations</td></tr><tr><th>Description:</th><td>Number of iterations used for numbers generation</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand spec iterations</td></tr><tr><th>Description:</th><td width="500">Number of iterations used for numbers generation</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>rand-spec-pct (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand spec percentage</td></tr><tr><th>Description:</th><td>Percentage of values to be treated as &#39;special&#39; (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand spec percentage</td></tr><tr><th>Description:</th><td width="500">Percentage of values to be treated as &#39;special&#39; (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>rand-spec-res (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Rand spec res</td></tr><tr><th>Description:</th><td>Percentage of &#39;special&#39; values to use (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Rand spec res</td></tr><tr><th>Description:</th><td width="500">Percentage of &#39;special&#39; values to use (for special distribution)</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>rand-type (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Random Number Type</td></tr><tr><th>Description:</th><td>Random numbers distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>Random Number Type</td></tr><tr><th>Description:</th><td width="500">Random numbers distribution</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>gaussian</code>:</strong> GAUSSIAN</li><li><strong><code>pareto</code>:</strong> PARETO</li><li><strong><code>special</code>:</strong> SPECIAL</li><li><strong><code>uniform</code>:</strong> UNIFORM</li></ul>
         </details>
     </td>
 </tr></tbody></table>
         </details><details><summary>rate (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Transaction rate</td></tr><tr><th>Description:</th><td>average transactions rate. 0 for unlimited rate</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Transaction rate</td></tr><tr><th>Description:</th><td width="500">average transactions rate. 0 for unlimited rate</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>thread-stack-size (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Thread stack size</td></tr><tr><th>Description:</th><td>size of stack per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Thread stack size</td></tr><tr><th>Description:</th><td width="500">size of stack per thread</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>threads (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Threads</td></tr><tr><th>Description:</th><td>Number of worker threads to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Threads</td></tr><tr><th>Description:</th><td width="500">Number of worker threads to create</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>time (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Time</td></tr><tr><th>Description:</th><td>Limit for total execution time in seconds</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Time</td></tr><tr><th>Description:</th><td width="500">Limit for total execution time in seconds</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>validate (<code>enum[string]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Validate</td></tr><tr><th>Description:</th><td>perform validation checks where possible</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
+        <table><tbody><tr><th>Name:</th><td>Validate</td></tr><tr><th>Description:</th><td width="500">perform validation checks where possible</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>enum[string]</code></td><tr><td colspan="2">
         <details><summary>Values</summary>
             <ul><li><strong><code>off</code>:</strong> OFF</li><li><strong><code>on</code>:</strong> ON</li></ul>
         </details>
@@ -821,16 +821,16 @@ Run the Memory functions speed test using the sysbench workload
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>WorkloadError</td></tr>
 <tr><th>Properties</th><td><details><summary>error (<code>string</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Failure Error</td></tr><tr><th>Description:</th><td>Reason for failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Failure Error</td></tr><tr><th>Description:</th><td width="500">Reason for failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
             </details><details><summary>exit_code (<code>int</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Exit Code</td></tr><tr><th>Description:</th><td>Exit code returned by the program in case of a failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+                <table><tbody><tr><th>Name:</th><td>Exit Code</td></tr><tr><th>Description:</th><td width="500">Exit code returned by the program in case of a failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>WorkloadError (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>error (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Failure Error</td></tr><tr><th>Description:</th><td>Reason for failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Failure Error</td></tr><tr><th>Description:</th><td width="500">Reason for failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>exit_code (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Exit Code</td></tr><tr><th>Description:</th><td>Exit code returned by the program in case of a failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Exit Code</td></tr><tr><th>Description:</th><td width="500">Exit code returned by the program in case of a failure</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
@@ -842,93 +842,93 @@ Run the Memory functions speed test using the sysbench workload
 <table><tbody>
 <tr><th>Type:</th><td><code>scope</code></td><tr><th>Root object:</th><td>WorkloadResultsMemory</td></tr>
 <tr><th>Properties</th><td><details><summary>sysbench_output_params (<code>reference[SysbenchMemoryOutputParams]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Sysbench Memory Output Parameters</td></tr><tr><th>Description:</th><td>Ouptut parameters for a successful sysbench memory workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchMemoryOutputParams]</code></td><tr><th>Referenced object:</th><td>SysbenchMemoryOutputParams</td></tr></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Sysbench Memory Output Parameters</td></tr><tr><th>Description:</th><td width="500">Ouptut parameters for a successful sysbench memory workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchMemoryOutputParams]</code></td><tr><th>Referenced object:</th><td>SysbenchMemoryOutputParams</td></tr></tbody></table>
             </details><details><summary>sysbench_results (<code>reference[SysbenchMemoryResultParams]</code>)</summary>
-                <table><tbody><tr><th>Name:</th><td>Sysbench Memory Result Parameters</td></tr><tr><th>Description:</th><td>Result parameters for a successful sysbench Memory workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchMemoryResultParams]</code></td><tr><th>Referenced object:</th><td>SysbenchMemoryResultParams</td></tr></tbody></table>
+                <table><tbody><tr><th>Name:</th><td>Sysbench Memory Result Parameters</td></tr><tr><th>Description:</th><td width="500">Result parameters for a successful sysbench Memory workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchMemoryResultParams]</code></td><tr><th>Referenced object:</th><td>SysbenchMemoryResultParams</td></tr></tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>LatencyAggregates (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>avg (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td>Average Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td width="500">Average Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>max (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Maximum</td></tr><tr><th>Description:</th><td>Maximum Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Maximum</td></tr><tr><th>Description:</th><td width="500">Maximum Latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>min (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Minimum</td></tr><tr><th>Description:</th><td>Minimum latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Minimum</td></tr><tr><th>Description:</th><td width="500">Minimum latency</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>percentile (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td>Latency percentile selected for reporting</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Percentile</td></tr><tr><th>Description:</th><td width="500">Latency percentile selected for reporting</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>percentile_value (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Latency Percentile Value</td></tr><tr><th>Description:</th><td>Latency percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Latency Percentile Value</td></tr><tr><th>Description:</th><td width="500">Latency percentile value</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>sum (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Sum</td></tr><tr><th>Description:</th><td>Sum of latencies</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Sum</td></tr><tr><th>Description:</th><td width="500">Sum of latencies</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>SysbenchMemoryOutputParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>Numberofthreads (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td>Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Number of threads</td></tr><tr><th>Description:</th><td width="500">Number of threads used by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>Totaloperations (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total operations</td></tr><tr><th>Description:</th><td>Total number of operations performed by the memory workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Total operations</td></tr><tr><th>Description:</th><td width="500">Total number of operations performed by the memory workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>Totaloperationspersecond (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total operations per second</td></tr><tr><th>Description:</th><td>Total number of operations performed by the memory workload per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Total operations per second</td></tr><tr><th>Description:</th><td width="500">Total number of operations performed by the memory workload per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>Validationchecks (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Validation checks</td></tr><tr><th>Description:</th><td>Validation on/off</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Validation checks</td></tr><tr><th>Description:</th><td width="500">Validation on/off</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>blocksize (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Block size</td></tr><tr><th>Description:</th><td>Block size in KiB</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Block size</td></tr><tr><th>Description:</th><td width="500">Block size in KiB</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>operation (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Operation</td></tr><tr><th>Description:</th><td>memory operation performed</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Operation</td></tr><tr><th>Description:</th><td width="500">memory operation performed</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>scope (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Scope</td></tr><tr><th>Description:</th><td>scope of operation</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Scope</td></tr><tr><th>Description:</th><td width="500">scope of operation</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>totalnumberofevents (<code>int</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td>Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
+        <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td width="500">Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tbody></table>
         </details><details><summary>totalsize (<code>string</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total size</td></tr><tr><th>Description:</th><td>Total size in MiB</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Total size</td></tr><tr><th>Description:</th><td width="500">Total size in MiB</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tbody></table>
         </details><details><summary>totaltime (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Total time</td></tr><tr><th>Description:</th><td>Total execution time of workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Total time</td></tr><tr><th>Description:</th><td width="500">Total execution time of workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>SysbenchMemoryResultParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>Latency (<code>reference[LatencyAggregates]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Latency</td></tr><tr><th>Description:</th><td>Memory Latency in milli seconds</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[LatencyAggregates]</code></td><tr><th>Referenced object:</th><td>LatencyAggregates</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Latency</td></tr><tr><th>Description:</th><td width="500">Memory Latency in milli seconds</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[LatencyAggregates]</code></td><tr><th>Referenced object:</th><td>LatencyAggregates</td></tr></tbody></table>
         </details><details><summary>Threadsfairness (<code>reference[ThreadsFairness]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Threads fairness</td></tr><tr><th>Description:</th><td>Event distribution by threads for number of executed events by threads and total execution time by thread</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadsFairness]</code></td><tr><th>Referenced object:</th><td>ThreadsFairness</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Threads fairness</td></tr><tr><th>Description:</th><td width="500">Event distribution by threads for number of executed events by threads and total execution time by thread</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadsFairness]</code></td><tr><th>Referenced object:</th><td>ThreadsFairness</td></tr></tbody></table>
         </details><details><summary>transferred_MiB (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Transferred memory</td></tr><tr><th>Description:</th><td>Total Memory Transferred</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Transferred memory</td></tr><tr><th>Description:</th><td width="500">Total Memory Transferred</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>transferred_MiBpersec (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Transferred memory per second</td></tr><tr><th>Description:</th><td>Total Memory Transferred per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Transferred memory per second</td></tr><tr><th>Description:</th><td width="500">Total Memory Transferred per second</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>ThreadFairnessAggregates (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>avg (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td>Average value across all threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Average</td></tr><tr><th>Description:</th><td width="500">Average value across all threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details><details><summary>stddev (<code>float</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Standard Deviation</td></tr><tr><th>Description:</th><td>Standard deviation of all threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
+        <table><tbody><tr><th>Name:</th><td>Standard Deviation</td></tr><tr><th>Description:</th><td width="500">Standard deviation of all threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>float</code></td>
 </tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>ThreadsFairness (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>events (<code>reference[ThreadFairnessAggregates]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Thread Fairness events</td></tr><tr><th>Description:</th><td>number of events executed by the threads </td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadFairnessAggregates]</code></td><tr><th>Referenced object:</th><td>ThreadFairnessAggregates</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Thread Fairness events</td></tr><tr><th>Description:</th><td width="500">number of events executed by the threads </td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadFairnessAggregates]</code></td><tr><th>Referenced object:</th><td>ThreadFairnessAggregates</td></tr></tbody></table>
         </details><details><summary>executiontime (<code>reference[ThreadFairnessAggregates]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Thread Fairness execution time</td></tr><tr><th>Description:</th><td>Execution time of threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadFairnessAggregates]</code></td><tr><th>Referenced object:</th><td>ThreadFairnessAggregates</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Thread Fairness execution time</td></tr><tr><th>Description:</th><td width="500">Execution time of threads</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[ThreadFairnessAggregates]</code></td><tr><th>Referenced object:</th><td>ThreadFairnessAggregates</td></tr></tbody></table>
         </details></td></tr>
 </tbody></table>
         </details><details><summary>WorkloadResultsMemory (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>sysbench_output_params (<code>reference[SysbenchMemoryOutputParams]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Sysbench Memory Output Parameters</td></tr><tr><th>Description:</th><td>Ouptut parameters for a successful sysbench memory workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchMemoryOutputParams]</code></td><tr><th>Referenced object:</th><td>SysbenchMemoryOutputParams</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Sysbench Memory Output Parameters</td></tr><tr><th>Description:</th><td width="500">Ouptut parameters for a successful sysbench memory workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchMemoryOutputParams]</code></td><tr><th>Referenced object:</th><td>SysbenchMemoryOutputParams</td></tr></tbody></table>
         </details><details><summary>sysbench_results (<code>reference[SysbenchMemoryResultParams]</code>)</summary>
-        <table><tbody><tr><th>Name:</th><td>Sysbench Memory Result Parameters</td></tr><tr><th>Description:</th><td>Result parameters for a successful sysbench Memory workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchMemoryResultParams]</code></td><tr><th>Referenced object:</th><td>SysbenchMemoryResultParams</td></tr></tbody></table>
+        <table><tbody><tr><th>Name:</th><td>Sysbench Memory Result Parameters</td></tr><tr><th>Description:</th><td width="500">Result parameters for a successful sysbench Memory workload execution</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>reference[SysbenchMemoryResultParams]</code></td><tr><th>Referenced object:</th><td>SysbenchMemoryResultParams</td></tr></tbody></table>
         </details></td></tr>
 </tbody></table>
         </details></details></td></tr>
