@@ -244,7 +244,7 @@ class SysbenchMemoryInputParams(CommonInputParameters):
         schema.id("memory-access-mode"),
         schema.name("Memory Access Mode"),
         schema.description("memory access mode (seq,rnd)"),
-    ] = None
+    ] = SeqRnd.SEQ
 
 
 @dataclass
@@ -526,6 +526,11 @@ class SysbenchMemoryOutput:
         schema.description(
             "Total number of operations performed by the memory workload"
         ),
+    ]
+    memory_access_mode: typing.Annotated[
+        SeqRnd,
+        schema.name("Memory Access Mode"),
+        schema.description("memory access mode (seq,rnd)"),
     ]
 
 

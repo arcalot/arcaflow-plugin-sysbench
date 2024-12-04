@@ -60,6 +60,7 @@ class SysbenchPluginTest(unittest.TestCase):
                     "Totaloperationspersecond": 7221925.38,
                     "totaltime": 10.0001,
                     "totalnumberofevents": 72227995,
+                    "memory_access_mode": "rnd",
                 }
             )
         )
