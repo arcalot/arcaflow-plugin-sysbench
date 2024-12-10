@@ -201,6 +201,7 @@ def RunSysbenchMemory(
 
     try:
         output, results = run_sysbench(memory_flags, "memory")
+        output["memory_access_mode"] = params.memory_access_mode
     except Exception as error:
         return "error", WorkloadError(error.args[0], error.args[1])
 
