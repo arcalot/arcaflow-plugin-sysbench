@@ -7,7 +7,7 @@ ARG package=arcaflow_plugin_sysbench
 FROM quay.io/arcalot/arcaflow-plugin-baseimage-python-buildbase:0.4.2 as build
 ARG package
 RUN dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm \
- && dnf -y install sysbench
+ && dnf -y install sysbench-1.0.20-5.el8
 
 COPY poetry.lock /app/
 COPY pyproject.toml /app/
@@ -32,7 +32,7 @@ FROM quay.io/arcalot/arcaflow-plugin-baseimage-python-osbase:0.4.2
 ARG package
 
 RUN dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm \
- && dnf -y install sysbench
+ && dnf -y install sysbench-1.0.20-5.el8
 
 COPY --from=build /app/requirements.txt /app/
 COPY --from=build /htmlcov /htmlcov/

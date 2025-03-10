@@ -464,6 +464,11 @@ class SysbenchCommonOutputParams:
     parameters returned by sysbench benchmarks.
     """
 
+    sysbenchversion: typing.Annotated[
+        str,
+        schema.name("Sysbench version"),
+        schema.description("Version as reported by sysbench"),
+    ]
     totaltime: typing.Annotated[
         float,
         schema.name("Total time"),
