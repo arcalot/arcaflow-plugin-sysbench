@@ -270,6 +270,9 @@ Run CPU performance test using the sysbench workload
         </details><details><summary>Validationchecks (<code>string</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Validation checks</td></tr><tr><th>Description:</th><td width="500">Validation on/off</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tr>
 </tbody></table>
+        </details><details><summary>sysbenchversion (<code>string</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Sysbench version</td></tr><tr><th>Description:</th><td width="500">Version as reported by sysbench</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tr>
+</tbody></table>
         </details><details><summary>totalnumberofevents (<code>int</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td width="500">Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tr>
@@ -729,6 +732,9 @@ Run the I/O test using the sysbench workload
         </details><details><summary>Validationchecks (<code>string</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Validation checks</td></tr><tr><th>Description:</th><td width="500">Validation on/off</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>string</code></td></tr>
 </tbody></table>
+        </details><details><summary>sysbenchversion (<code>string</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Sysbench version</td></tr><tr><th>Description:</th><td width="500">Version as reported by sysbench</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tr>
+</tbody></table>
         </details><details><summary>totalnumberofevents (<code>int</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td width="500">Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>
 </tr>
@@ -1126,6 +1132,9 @@ Run the Memory functions speed test using the sysbench workload
 </tbody></table>
         </details><details><summary>scope (<code>string</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Scope</td></tr><tr><th>Description:</th><td width="500">scope of operation</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tr>
+</tbody></table>
+        </details><details><summary>sysbenchversion (<code>string</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Sysbench version</td></tr><tr><th>Description:</th><td width="500">Version as reported by sysbench</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>string</code></td></tr>
 </tbody></table>
         </details><details><summary>totalnumberofevents (<code>int</code>)</summary>
         <table><tbody><tr><th>Name:</th><td>Total number of events</td></tr><tr><th>Description:</th><td width="500">Total number of events performed by the workload</td></tr><tr><th>Required:</th><td>Yes</td></tr><tr><th>Type:</th><td><code>int</code></td>

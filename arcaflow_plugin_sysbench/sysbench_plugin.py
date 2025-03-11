@@ -159,7 +159,8 @@ def get_sysbench_version():
 def RunSysbenchCpu(
     params: SysbenchCpuInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsCpu, WorkloadError]]:
-    print(f"Sysbench version is: {get_sysbench_version()}")
+    version = get_sysbench_version()
+    print(f"Sysbench version is: {version}")
     print("==>> Running sysbench CPU workload ...")
 
     serialized_params = sysbench_cpu_input_schema.serialize(params)
@@ -174,6 +175,8 @@ def RunSysbenchCpu(
         return "error", WorkloadError(error.args[0], error.args[1])
 
     print("==>> Workload run complete!")
+
+    output["sysbenchversion"] = version
 
     return "success", WorkloadResultsCpu(
         sysbench_cpu_output_schema.unserialize(output),
@@ -190,7 +193,8 @@ def RunSysbenchCpu(
 def RunSysbenchMemory(
     params: SysbenchMemoryInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsMemory, WorkloadError]]:
-    print(f"Sysbench version is: {get_sysbench_version()}")
+    version = get_sysbench_version()
+    print(f"Sysbench version is: {version}")
     print("==>> Running sysbench Memory workload ...")
 
     serialized_params = sysbench_memory_input_schema.serialize(params)
@@ -207,6 +211,8 @@ def RunSysbenchMemory(
 
     print("==>> Workload run complete!")
 
+    output["sysbenchversion"] = version
+
     return "success", WorkloadResultsMemory(
         sysbench_memory_output_schema.unserialize(output),
         sysbench_memory_results_schema.unserialize(results),
@@ -222,7 +228,8 @@ def RunSysbenchMemory(
 def RunSysbenchIo(
     params: SysbenchIoInputParams,
 ) -> typing.Tuple[str, typing.Union[WorkloadResultsIo, WorkloadError]]:
-    print(f"Sysbench version is: {get_sysbench_version()}")
+    version = get_sysbench_version()
+    print(f"Sysbench version is: {version}")
     print("==>> Running sysbench I/O workload ...")
 
     serialized_params = sysbench_io_input_schema.serialize(params)
@@ -239,6 +246,8 @@ def RunSysbenchIo(
         return "error", WorkloadError(error.args[0], error.args[1])
 
     print("==>> Workload run complete!")
+
+    output["sysbenchversion"] = version
 
     return "success", WorkloadResultsIo(
         sysbench_io_output_schema.unserialize(output),

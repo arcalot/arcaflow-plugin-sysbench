@@ -20,6 +20,7 @@ class SysbenchPluginTest(unittest.TestCase):
         plugin.test_object_serialization(
             sysbench_plugin.sysbench_cpu_output_schema.unserialize(
                 {
+                    "sysbenchversion": "sysbench 1.0.20",
                     "Numberofthreads": 2,
                     "Primenumberslimit": 10000,
                     "totaltime": 10.0008,
@@ -51,6 +52,7 @@ class SysbenchPluginTest(unittest.TestCase):
         plugin.test_object_serialization(
             sysbench_plugin.sysbench_memory_output_schema.unserialize(
                 {
+                    "sysbenchversion": "sysbench 1.0.20",
                     "Numberofthreads": 2,
                     "blocksize": "1KiB",
                     "totalsize": "102400MiB",
@@ -89,6 +91,7 @@ class SysbenchPluginTest(unittest.TestCase):
         plugin.test_object_serialization(
             sysbench_plugin.sysbench_io_output_schema.unserialize(
                 {
+                    "sysbenchversion": "sysbench 1.0.20",
                     "Numberofthreads": 2,
                     "NumberofIOrequests": 0,
                     "ReadWriteratioforcombinedrandomIOtest": 0,
