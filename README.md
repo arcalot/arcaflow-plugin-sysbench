@@ -105,6 +105,10 @@ Run CPU performance test using the sysbench workload
     </td>
 </tr></tr>
 </tbody></table>
+            </details><details><summary>warmup-time (<code>int</code>)</summary>
+                <table><tbody><tr><th>Name:</th><td>Warmup Time</td></tr><tr><th>Description:</th><td width="500">Execute events for this many seconds with statistics disabled before the actual benchmark run with statistics enabled. This is useful when you want to exclude the initial period of a benchmark run from statistics. In many benchmarks, the initial period is not representative because CPU/database/page and other caches need some time to warm up</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+</tr>
+</tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>SysbenchCpuInputParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>cpu-max-prime (<code>int</code>)</summary>
@@ -173,6 +177,10 @@ Run CPU performance test using the sysbench workload
         </details>
     </td>
 </tr></tr>
+</tbody></table>
+        </details><details><summary>warmup-time (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Warmup Time</td></tr><tr><th>Description:</th><td width="500">Execute events for this many seconds with statistics disabled before the actual benchmark run with statistics enabled. This is useful when you want to exclude the initial period of a benchmark run from statistics. In many benchmarks, the initial period is not representative because CPU/database/page and other caches need some time to warm up</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+</tr>
 </tbody></table>
         </details></td></tr>
 </tr>
@@ -481,6 +489,10 @@ Run the I/O test using the sysbench workload
     </td>
 </tr></tr>
 </tbody></table>
+            </details><details><summary>warmup-time (<code>int</code>)</summary>
+                <table><tbody><tr><th>Name:</th><td>Warmup Time</td></tr><tr><th>Description:</th><td width="500">Execute events for this many seconds with statistics disabled before the actual benchmark run with statistics enabled. This is useful when you want to exclude the initial period of a benchmark run from statistics. In many benchmarks, the initial period is not representative because CPU/database/page and other caches need some time to warm up</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+</tr>
+</tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>SysbenchIoInputParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>events (<code>int</code>)</summary>
@@ -620,6 +632,10 @@ Run the I/O test using the sysbench workload
         </details>
     </td>
 </tr></tr>
+</tbody></table>
+        </details><details><summary>warmup-time (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Warmup Time</td></tr><tr><th>Description:</th><td width="500">Execute events for this many seconds with statistics disabled before the actual benchmark run with statistics enabled. This is useful when you want to exclude the initial period of a benchmark run from statistics. In many benchmarks, the initial period is not representative because CPU/database/page and other caches need some time to warm up</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+</tr>
 </tbody></table>
         </details></td></tr>
 </tr>
@@ -921,6 +937,10 @@ Run the Memory functions speed test using the sysbench workload
     </td>
 </tr></tr>
 </tbody></table>
+            </details><details><summary>warmup-time (<code>int</code>)</summary>
+                <table><tbody><tr><th>Name:</th><td>Warmup Time</td></tr><tr><th>Description:</th><td width="500">Execute events for this many seconds with statistics disabled before the actual benchmark run with statistics enabled. This is useful when you want to exclude the initial period of a benchmark run from statistics. In many benchmarks, the initial period is not representative because CPU/database/page and other caches need some time to warm up</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+</tr>
+</tbody></table>
             </details></td></tr>
 <tr><td colspan="2"><details><summary><strong>Objects</strong></summary><details><summary>SysbenchMemoryInputParams (<code>object</code>)</summary>
             <table><tbody><tr><th>Type:</th><td><code>object</code></td><tr><th>Properties</th><td><details><summary>events (<code>int</code>)</summary>
@@ -1023,6 +1043,10 @@ Run the Memory functions speed test using the sysbench workload
         </details>
     </td>
 </tr></tr>
+</tbody></table>
+        </details><details><summary>warmup-time (<code>int</code>)</summary>
+        <table><tbody><tr><th>Name:</th><td>Warmup Time</td></tr><tr><th>Description:</th><td width="500">Execute events for this many seconds with statistics disabled before the actual benchmark run with statistics enabled. This is useful when you want to exclude the initial period of a benchmark run from statistics. In many benchmarks, the initial period is not representative because CPU/database/page and other caches need some time to warm up</td></tr><tr><th>Required:</th><td>No</td></tr><tr><th>Type:</th><td><code>int</code></td>
+</tr>
 </tbody></table>
         </details></td></tr>
 </tr>
