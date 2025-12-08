@@ -75,6 +75,18 @@ class CommonInputParameters:
         schema.name("Time"),
         schema.description("Limit for total execution time in seconds"),
     ] = None
+    warmup_time: typing.Annotated[
+        typing.Optional[int],
+        schema.id("warmup-time"),
+        schema.name("Warmup Time"),
+        schema.description(
+            "Execute events for this many seconds with statistics disabled before the "
+            "actual benchmark run with statistics enabled. This is useful when you "
+            "want to exclude the initial period of a benchmark run from statistics. In "
+            "many benchmarks, the initial period is not representative because "
+            "CPU/database/page and other caches need some time to warm up"
+        ),
+    ] = None
     forced_shutdown: typing.Annotated[
         typing.Optional[int],
         schema.id("forced-shutdown"),
